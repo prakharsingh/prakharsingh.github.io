@@ -8,7 +8,7 @@ import {Heading} from '../../../components/heading'
 import {TEducationalDetail} from '../resume';
 
 interface EducationalDetailsProps {
-  details: TEducationalDetail[]
+  details: TEducationalDetail[];
 }
 
 const useStyles = makeStyles({
