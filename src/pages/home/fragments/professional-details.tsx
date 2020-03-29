@@ -46,13 +46,13 @@ export default ({details}: ProfessionalDetailsProps) => {
                 {
                   detail.summary &&
                   <React.Fragment>
-                    <Typography variant='caption' align='justify'>
+                    <Typography variant='body2' align='justify'>
                       {detail.summary}
                     </Typography>
                     <br/>
                   </React.Fragment>
                 }
-                <Typography variant='caption' align='justify' className={classes.boldTypography}>
+                <Typography variant='body2' align='justify' className={classes.boldTypography}>
                   {`Tech Stack: ${detail.tech.join(', ')}`}
                 </Typography>
                 <ul>
@@ -61,7 +61,7 @@ export default ({details}: ProfessionalDetailsProps) => {
                       .responsibilities
                       .map((responsibility, index) => (
                         <li key={`responsibility-${index}`}>
-                          <Typography variant='caption' align='justify'>
+                          <Typography variant='body2' align='justify'>
                             {responsibility}
                           </Typography>
                         </li>
