@@ -1,0 +1,261 @@
+{
+  "address": {
+    "home": "37",
+    "street_address": "Lohar Bagh",
+    "city": "Sitapur",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "post_code": "261001"
+  },
+  "educational_details": [
+    {
+      "degree": "Master Of Computer Applications",
+      "specialization": "Computer Science",
+      "university": "Maharishi Markandeshwar University",
+      "place": "Ambala, HR",
+      "year": 2014
+    },
+    {
+      "degree": "Bachelor Of Computer Applications",
+      "specialization": "Computer Science",
+      "university": "Chatrapati Shahuji Maharaj University",
+      "place": "Kanpur, UP",
+      "year": 2011
+    }
+  ],
+  "email": "prakharsingh007@gmail.com",
+  "name": "Prakhar Singh",
+  "phone": {
+    "mobile": 9569807894,
+    "country_code": "+91"
+  },
+  "profiles": {
+    "linkedIn": "https://www.linkedin.com/in/singh-prakhar",
+    "stackOverflow": "https://stackoverflow.com/story/prakhar-singh",
+    "github": "https://github.com/prakharsingh"
+  },
+  "skills": [
+    {
+      "name": "JavaScript/ES6",
+      "link": "",
+      "level": "expert"
+    },
+    {
+      "name": "TypeScript",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Node Js",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Hapi Js",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Gulp Js",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Webpack Js",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "ElasticSearch",
+      "link": "",
+      "level": "beginner"
+    },
+    {
+      "name": "GIT",
+      "link": "",
+      "level": "expert"
+    },
+    {
+      "name": "Docker",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "React/React Native",
+      "link": "",
+      "level": "expert"
+    },
+    {
+      "name": "FLUX: Alt Js, Redux",
+      "link": "",
+      "level": "expert"
+    },
+    {
+      "name": "HTML",
+      "link": "",
+      "level": "expert"
+    },
+    {
+      "name": "Bootstrap",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Material UI",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "CSS/SASS/SCSS/LESS",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Socket IO",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "WebRTC",
+      "link": "",
+      "level": "intermediate"
+    },
+    {
+      "name": "Web/Mobile development",
+      "link": "",
+      "level": "expert"
+    }
+  ],
+  "summary": "I am a JavaScript Full Stack Web Developer with 6+ years of experience and love working with OpenSource Technologies including Node, Angular, React, React Native, NGINX, Webpack, WebRTC, Socket IO, FLUX, Hapi Js, ES6/7, Gulp, Docker, and anything that is open source and provides best solutions. I have the privilege of architecting and delivering challenging projects that pushed me to learn new tech stacks and also enjoy training junior developers.",
+  "professional_details": [
+    {
+      "company": "Deutsche Bank Operations International",
+      "designation": "Associate",
+      "role": "Front End Lead",
+      "duration": {
+        "startedAt": "Jun 2018",
+        "endedAt": "Current"
+      },
+      "tech": [
+        "ReactJS",
+        "JavaScript",
+        "TypeScript",
+        "Webpack"
+      ],
+      "summary": "Working for The DWS Group GmbH & Co. KGaA ( DWS ), one of Deutsche Bank's associated, publicly traded asset manager.",
+      "responsibilities": [
+        "Lead a team of 5 developers focusing on delivery and performant code.",
+        "Extensively involved in agile development methodologies along with daily stand up scrum meeting with the Product Owner and team for sprint planning and estimation.",
+        "Extensively involved in code review on a regular basis.",
+        "Involved in refactoring legacy code and rewriting wherever necessary.",
+        "Involved in unit testing and maintaining a Test Driven Development approach.",
+        "Ensured goals were met by mentoring and coaching other team members including graduate interns and freshers.",
+        "Maximized productivity by keeping detailed records of daily progress and identifying and rectifying areas for improvement.",
+        "Contributing into the bank's internal UI framework and data layer."
+      ]
+    },
+    {
+      "company": "noon.com",
+      "designation": "Senior Software Engineer",
+      "role": "Front End Lead",
+      "duration": {
+        "startedAt": "Aug 2017",
+        "endedAt": "Jun 2018"
+      },
+      "tech": [
+        "ReactJS",
+        "React Native",
+        "JavaScript",
+        "TypeScript",
+        "Webpack"
+      ],
+      "summary": "noon.com is an e-commerce website with a large catalog of products targeting customers in UAE, Saudi Arabia, Egypt and constantly expanding in the middle east.",
+      "responsibilities": [
+        "Extensively involved in agile development methodologies along with daily stand up scrum meeting with the Product Owner and team for sprint planning and estimation.",
+        "Work closely with Front-end architect, visual designer and back end team for the development of UI components to achieve pixel perfect designs in agile environment. Responsible for proving UI related front-end solutions requested by product owner and stockholders along with defects and bug fixes reported by the testing team.",
+        "Extensively involved in code review on a regular basis.",
+        "Involved in unit testing and maintaining a Test Driven Development approach.",
+        "Proactive participation in slide preparation along with slide consolidation of team members and presentation for the sprint demo to stockholders, product owner, project manager, technical product managers and web editorial team.",
+        "Involved in wiki documentation along with organizing and providing necessary knowledge sharing to team members in tech sync and web editorial team on the improvement areas identified through retro meeting."
+      ]
+    },
+    {
+      "company": "TalkValley LLC",
+      "designation": "Senior JavaScript Engineer",
+      "role": "Full Stack Engineer",
+      "duration": {
+        "startedAt": "Jul 2016",
+        "endedAt": "Aug 2017"
+      },
+      "tech": [
+        "ReactJS",
+        "JavaScript",
+        "TypeScript",
+        "Webpack",
+        "NodeJS",
+        "MongoDB",
+        "WebRTC",
+        "NGINX",
+        "AWS"
+      ],
+      "summary": "mentorstudents.org is a product startup based out of USA. It helps prospective students to speak with current/ex-students from various college programs of interest. It also helps current students speak with hiring managers from various companies.",
+      "responsibilities": [
+        "SDLC Planning.",
+        "Database Design.",
+        "Implementation of Video conferencing using WebRTC (Licode).",
+        "Involve in coding and help in development.",
+        "Managing a remote team of 5 developers.",
+        "Helping other developers and training interns."
+      ]
+    },
+    {
+      "company": "Simsaw Software Pvt Ltd (formerly Pink Hand Technologies Pvt Ltd)",
+      "designation": "Web Developer",
+      "role": "Full Stack Engineer",
+      "duration": {
+        "startedAt": "Jul 2014",
+        "endedAt": "Jul 2016"
+      },
+      "tech": [
+        "ReactJS",
+        "AngularJS",
+        "JavaScript",
+        "Webpack",
+        "NodeJS",
+        "MongoDB",
+        "NGINX",
+        "AWS"
+      ],
+      "summary": "Pink Hand Technologies Pvt. Ltd. is a service based company with multiple clients mostly based in the U.S.",
+      "responsibilities": [
+        "Work with OpenSource Javascript technologies including NodeJS, AngularJS, ReactJS, Webpack and many more.",
+        "Involve in the agile development methodologies and work closely with other teams for FrontEnd as well as Backend development.",
+        "Involve in the testing phase. Write test cases for Unit testing the code and fixing bugs reported by the QA teams."
+      ]
+    },
+    {
+      "company": "Simsaw Software Pvt Ltd (formerly Pink Hand Technologies Pvt Ltd)",
+      "designation": "Trainee Engineer",
+      "role": "Full Stack Engineer",
+      "duration": {
+        "startedAt": "Jan 2014",
+        "endedAt": "Jun 2014"
+      },
+      "tech": [
+        "ReactJS",
+        "AngularJS",
+        "JavaScript",
+        "NodeJS",
+        "MongoDB"
+      ],
+      "summary": "",
+      "responsibilities": [
+        "Learn Javascript and Web Development techniques",
+        "Collaborated with senior engineers on complex projects.",
+        "Wrote all technical documentation for new software in development.",
+        "Wrote clean, clear and well-tested code for various projects.",
+        "Attended development team trainings, daily meetings and huddles."
+      ]
+    }
+  ]
+}
