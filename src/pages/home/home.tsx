@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Grid from '@material-ui/core/Grid';
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 import BasicDetails from './fragments/basic-details';
 import Summary from './fragments/summary';
@@ -8,15 +8,13 @@ import Skills from './fragments/skills';
 import EducationalDetails from './fragments/educational-details';
 import ProfessionalDetails from './fragments/professional-details';
 
-import {TResume, ResumeContext, ResumeProvider} from './resume';
+import { TResume, ResumeContext, ResumeProvider } from './resume';
 
-
-const useStyles = makeStyles(theme => ({
-    margin: {
-      margin: theme.spacing(4),
-    },
-  })
-);
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(4),
+  },
+}));
 
 const Home = () => {
   const classes = useStyles();
@@ -28,32 +26,26 @@ const Home = () => {
     profiles,
     summary,
     skills,
-    educational_details,
-    professional_details,
+    educationalDetails,
+    professionalDetails,
   }: TResume = useContext(ResumeContext);
 
   return (
     <Grid className={classes.margin}>
-      <BasicDetails
-        name={name}
-        email={email}
-        phone={phone}
-        address={address}
-        profiles={profiles}
-      />
-      <Summary summary={summary}/>
-      <br/>
-      <Skills skills={skills}/>
-      <br/>
-      <ProfessionalDetails details={professional_details} />
-      <br/>
-      <EducationalDetails details={educational_details}/>
+      <BasicDetails name={name} email={email} phone={phone} address={address} profiles={profiles} />
+      <Summary summary={summary} />
+      <br />
+      <Skills skills={skills} />
+      <br />
+      <ProfessionalDetails details={professionalDetails} />
+      <br />
+      <EducationalDetails details={educationalDetails} />
     </Grid>
   );
 };
 
 export default () => (
   <ResumeProvider>
-    <Home/>
+    <Home />
   </ResumeProvider>
 );

@@ -1,15 +1,3 @@
-export interface TResume {
-  name: string;
-  email: string;
-  phone: TPhone;
-  address: TAddress;
-  profiles: TProfiles;
-  summary: string;
-  skills: TSkill[];
-  educational_details: TEducationalDetail[];
-  professional_details: TProfessionalDetail[];
-}
-
 export interface TPhone {
   mobile: number;
   country_code: string;
@@ -50,10 +38,21 @@ export interface TProfessionalDetail {
   role: string;
   duration: {
     startedAt: string;
-    endedAt: string
+    endedAt: string;
   };
   tech: string[];
   summary: string;
   responsibilities: string[];
 }
 
+export interface TResume {
+  name: string;
+  email: string;
+  phone: TPhone;
+  address: TAddress;
+  profiles: TProfiles;
+  summary: string;
+  skills: TSkill[];
+  educationalDetails: TEducationalDetail[];
+  professionalDetails: TProfessionalDetail[];
+}

@@ -1,0 +1,9 @@
+{
+  "arrowParens": "always",
+  "proseWrap": "preserve",
+  "jsxSingleQuote": true,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "tabWidth": 2
+}

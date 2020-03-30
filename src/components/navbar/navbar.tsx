@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,41 +8,34 @@ import Tooltip from '@material-ui/core/Tooltip';
 import SettingsBrightnessIcon from '@material-ui/icons/SettingsBrightness';
 
 interface NavBarProps {
-  darkMode: boolean,
-  toggleDarkMode: (darkMode: boolean) => void
+  darkMode: boolean;
+  toggleDarkMode: (darkMode: boolean) => void;
 }
 
 const useStyles = makeStyles(() => ({
-    root: {
-      flexGrow: 1,
-    },
-    title: {
-      flexGrow: 1,
-    },
-  })
-);
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-const NavBar = ({darkMode, toggleDarkMode}: NavBarProps) => {
+const NavBar = ({ darkMode, toggleDarkMode }: NavBarProps) => {
   const classes = useStyles();
 
-  const handleBrightness = () =>
-    toggleDarkMode(!darkMode);
+  const handleBrightness = () => toggleDarkMode(!darkMode);
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <Typography variant="button" display="block" className={classes.title}>
+      <AppBar position='static'>
+        <Toolbar variant='dense'>
+          <Typography variant='button' display='block' className={classes.title}>
             Resume
           </Typography>
-          <Tooltip title="Toggle dark mode">
-            <IconButton
-              onClick={handleBrightness}
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-            >
-              <SettingsBrightnessIcon/>
+          <Tooltip title='Toggle dark mode'>
+            <IconButton onClick={handleBrightness} edge='start' color='inherit' aria-label='menu'>
+              <SettingsBrightnessIcon />
             </IconButton>
           </Tooltip>
         </Toolbar>

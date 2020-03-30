@@ -6,18 +6,11 @@ export interface HeadingProps {
   rightContent: JSX.Element;
 }
 
-export default ({
-                  leftContent,
-                  rightContent,
-                }: HeadingProps) => (
-  <div style={{width: '100%'}}>
-    <Box display="flex">
-      <Box flexGrow={1}>
-        {leftContent}
-      </Box>
-      <Box>
-        {rightContent}
-      </Box>
+export default ({ leftContent, rightContent }: HeadingProps) => (
+  <div style={{ width: '100%' }}>
+    <Box display='flex'>
+      <Box flexGrow={1}>{leftContent}</Box>
+      <Box>{rightContent}</Box>
     </Box>
   </div>
 );

@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {createMuiTheme, responsiveFontSizes, ThemeProvider} from '@material-ui/core/styles';
+import React, { useEffect, useState } from 'react';
+import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import CssBaseline from '@material-ui/core/CssBaseline'
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
 import Routes from '../routes';
 import NavBar from '../navbar';
-import {darkTheme, lightTheme} from '../themes';
+import { darkTheme, lightTheme } from '../themes';
 
 const defaultTheme = createMuiTheme();
 
 const App = () => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {noSsr: true});
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', { noSsr: true });
 
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
   const [theme, setTheme] = useState(defaultTheme);
@@ -22,10 +22,10 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <NavBar darkMode={darkMode} toggleDarkMode={setDarkMode}/>
+      <CssBaseline />
+      <NavBar darkMode={darkMode} toggleDarkMode={setDarkMode} />
       <Container>
-        <Routes/>
+        <Routes />
       </Container>
     </ThemeProvider>
   );

@@ -7,7 +7,7 @@
     "country": "India",
     "post_code": "261001"
   },
-  "educational_details": [
+  "educationalDetails": [
     {
       "degree": "Master Of Computer Applications",
       "specialization": "Computer Science",
@@ -127,7 +127,7 @@
     }
   ],
   "summary": "I am a JavaScript Full Stack Web Developer with 6+ years of experience and love working with OpenSource Technologies including Node, Angular, React, React Native, NGINX, Webpack, WebRTC, Socket IO, FLUX, Hapi Js, ES6/7, Gulp, Docker, and anything that is open source and provides best solutions. I have the privilege of architecting and delivering challenging projects that pushed me to learn new tech stacks and also enjoy training junior developers.",
-  "professional_details": [
+  "professionalDetails": [
     {
       "company": "Deutsche Bank Operations International",
       "designation": "Associate",
@@ -136,12 +136,7 @@
         "startedAt": "Jun 2018",
         "endedAt": "Current"
       },
-      "tech": [
-        "ReactJS",
-        "JavaScript",
-        "TypeScript",
-        "Webpack"
-      ],
+      "tech": ["ReactJS", "JavaScript", "TypeScript", "Webpack"],
       "summary": "Working for The DWS Group GmbH & Co. KGaA ( DWS ), one of Deutsche Bank's associated, publicly traded asset manager.",
       "responsibilities": [
         "Lead a team of 5 developers focusing on delivery and performant code.",
@@ -162,13 +157,7 @@
         "startedAt": "Aug 2017",
         "endedAt": "Jun 2018"
       },
-      "tech": [
-        "ReactJS",
-        "React Native",
-        "JavaScript",
-        "TypeScript",
-        "Webpack"
-      ],
+      "tech": ["ReactJS", "React Native", "JavaScript", "TypeScript", "Webpack"],
       "summary": "noon.com is an e-commerce website with a large catalog of products targeting customers in UAE, Saudi Arabia, Egypt and constantly expanding in the middle east.",
       "responsibilities": [
         "Extensively involved in agile development methodologies along with daily stand up scrum meeting with the Product Owner and team for sprint planning and estimation.",
@@ -241,13 +230,7 @@
         "startedAt": "Jan 2014",
         "endedAt": "Jun 2014"
       },
-      "tech": [
-        "ReactJS",
-        "AngularJS",
-        "JavaScript",
-        "NodeJS",
-        "MongoDB"
-      ],
+      "tech": ["ReactJS", "AngularJS", "JavaScript", "NodeJS", "MongoDB"],
       "summary": "",
       "responsibilities": [
         "Learn Javascript and Web Development techniques",
