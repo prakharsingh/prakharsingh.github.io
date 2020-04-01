@@ -1,13 +1,13 @@
 import grey from '@material-ui/core/colors/grey';
-import indigo from '@material-ui/core/colors/indigo';
+import blue from '@material-ui/core/colors/blue';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 export default createMuiTheme({
   palette: {
     primary: {
-      light: indigo[300],
-      main: indigo[500],
-      dark: indigo[700],
+      light: blue[300],
+      main: blue[500],
+      dark: blue[700],
       contrastText: grey[50],
     },
     secondary: {
@@ -18,7 +18,7 @@ export default createMuiTheme({
     },
     text: {
       primary: grey[900],
-      secondary: indigo[500],
+      secondary: blue[600],
     },
     divider: grey[400],
   },
