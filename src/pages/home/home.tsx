@@ -33,6 +33,7 @@ const Home = () => {
   return (
     <Grid className={classes.margin}>
       <BasicDetails name={name} email={email} phone={phone} address={address} profiles={profiles} />
+      <br />
       <Summary summary={summary} />
       <br />
       <Skills skills={skills} />

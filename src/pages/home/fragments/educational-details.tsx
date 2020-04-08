@@ -11,11 +11,16 @@ interface EducationalDetailsProps {
   details: TEducationalDetail[];
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   boldTypography: {
     fontWeight: 'bold',
   },
-});
+  block: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
+  },
+}));
 
 export default ({ details }: EducationalDetailsProps) => {
   const classes = useStyles();
@@ -27,7 +32,7 @@ export default ({ details }: EducationalDetailsProps) => {
           Education
         </Typography>
       </Grid>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} className={classes.block}>
         {details.map((detail, idx) => (
           // eslint-disable-next-line react/no-array-index-key
           <Grid item sm={12} key={idx}>

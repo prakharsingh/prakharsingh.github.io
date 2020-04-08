@@ -2,7 +2,10 @@ import grey from '@material-ui/core/colors/grey';
 import blue from '@material-ui/core/colors/blue';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
+import core from './core';
+
 export default createMuiTheme({
+  ...core,
   palette: {
     primary: {
       light: blue[300],
@@ -22,5 +25,4 @@ export default createMuiTheme({
     },
     divider: grey[400],
   },
-  spacing: 4,
 });

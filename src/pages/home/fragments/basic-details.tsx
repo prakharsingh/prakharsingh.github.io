@@ -35,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(0.8),
   },
+  block: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
+  },
 }));
 
 const BasicDetails = ({ name, email, phone, address, profiles }: BasicDetailsProps) => {
@@ -42,16 +47,16 @@ const BasicDetails = ({ name, email, phone, address, profiles }: BasicDetailsPro
 
   return (
     <Grid item sm={12}>
-      <Grid container alignItems='flex-start' justify='flex-end' direction='row'>
+      <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
         <Grid item>
           <Typography variant='h4' component='h1' className={classes.heading} color='textSecondary'>
             {name}
           </Typography>
         </Grid>
       </Grid>
-      <Grid container alignItems='flex-start' justify='flex-end' direction='row'>
+      <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
         <Grid item>
-          <Grid container className={classes.subHeading}>
+          <Grid container className={`${classes.subHeading} ${classes.block}`}>
             <Typography variant='caption'>
               {`${address.home}, ${address.street_address}, ${address.city}, ${address.state} ${address.post_code}`}
             </Typography>
@@ -62,7 +67,7 @@ const BasicDetails = ({ name, email, phone, address, profiles }: BasicDetailsPro
           </Grid>
         </Grid>
       </Grid>
-      <Grid container alignItems='flex-start' justify='flex-end' direction='row'>
+      <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
         <Grid item>
           <Grid container className={classes.subHeading}>
             <Link href={profiles.linkedIn} target='_blank' rel='noopener'>
