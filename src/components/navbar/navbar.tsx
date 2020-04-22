@@ -5,7 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
-import SettingsBrightnessIcon from '@material-ui/icons/SettingsBrightness';
+import NightIcon from '@material-ui/icons/NightsStayOutlined';
+import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 
 interface NavBarProps {
   darkMode: boolean;
@@ -35,7 +36,7 @@ const NavBar = ({ darkMode, toggleDarkMode }: NavBarProps) => {
           </Typography>
           <Tooltip title='Toggle dark mode'>
             <IconButton onClick={handleBrightness} edge='start' color='inherit' aria-label='menu'>
-              <SettingsBrightnessIcon />
+              {darkMode ? <DayIcon /> : <NightIcon />}
             </IconButton>
           </Tooltip>
         </Toolbar>
