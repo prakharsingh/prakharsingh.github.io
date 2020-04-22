@@ -136,6 +136,7 @@
         "startedAt": "Jun 2018",
         "endedAt": "Current"
       },
+      "location": "Pune, Maharashtra",
       "tech": ["ReactJS", "JavaScript", "TypeScript", "Webpack"],
       "summary": "Working for The DWS Group GmbH & Co. KGaA ( DWS ), one of Deutsche Bank's associated, publicly traded asset manager.",
       "responsibilities": [
@@ -157,6 +158,7 @@
         "startedAt": "Aug 2017",
         "endedAt": "Jun 2018"
       },
+      "location": "Gurugram, Haryana",
       "tech": ["ReactJS", "React Native", "JavaScript", "TypeScript", "Webpack"],
       "summary": "noon.com is an e-commerce website with a large catalog of products targeting customers in UAE, Saudi Arabia, Egypt and constantly expanding in the middle east.",
       "responsibilities": [
@@ -176,6 +178,7 @@
         "startedAt": "Jul 2016",
         "endedAt": "Aug 2017"
       },
+      "location": "Remote",
       "tech": [
         "ReactJS",
         "JavaScript",
@@ -205,6 +208,7 @@
         "startedAt": "Jul 2014",
         "endedAt": "Jul 2016"
       },
+      "location": "Mohali, Punjab",
       "tech": [
         "ReactJS",
         "AngularJS",
@@ -230,6 +234,7 @@
         "startedAt": "Jan 2014",
         "endedAt": "Jun 2014"
       },
+      "location": "Mohali, Punjab",
       "tech": ["ReactJS", "AngularJS", "JavaScript", "NodeJS", "MongoDB"],
       "summary": "",
       "responsibilities": [

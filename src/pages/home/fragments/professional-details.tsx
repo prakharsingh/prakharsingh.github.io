@@ -30,9 +30,14 @@ export default ({ details }: ProfessionalDetailsProps) => {
         {details.map((detail, idx) => (
           // eslint-disable-next-line react/no-array-index-key
           <Grid item sm={12} key={idx}>
-            <Typography variant='body2' className={classes.boldTypography}>
-              {`${detail.designation} (${detail.role})`}
-            </Typography>
+            <Heading
+              leftContent={
+                <Typography variant='body2' className={classes.boldTypography}>
+                  {`${detail.designation} (${detail.role})`}
+                </Typography>
+              }
+              rightContent={<Typography variant='caption'>{detail.location}</Typography>}
+            />
             <Heading
               leftContent={<Typography variant='caption'>{detail.company}</Typography>}
               rightContent={

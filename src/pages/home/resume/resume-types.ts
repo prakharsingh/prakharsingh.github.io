@@ -40,6 +40,7 @@ export interface TProfessionalDetail {
     startedAt: string;
     endedAt: string;
   };
+  location: string;
   tech: string[];
   summary: string;
   responsibilities: string[];
