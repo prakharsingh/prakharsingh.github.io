@@ -20,9 +20,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 
 export default {
   typography: {
-    fontFamily: ['"Roboto"', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'sans-serif'].join(
-      ','
-    ),
+    fontFamily: ['"Roboto"', '-apple-system', 'Arial', 'sans-serif'].join(','),
   },
   spacing: 4,
 };

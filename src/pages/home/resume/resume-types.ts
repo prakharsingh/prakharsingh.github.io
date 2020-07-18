@@ -1,9 +1,9 @@
-export interface TPhone {
+export interface IPhone {
   mobile: number;
   country_code: string;
 }
 
-export interface TAddress {
+export interface IAddress {
   home: string;
   street_address: string;
   city: string;
@@ -12,19 +12,19 @@ export interface TAddress {
   post_code: string;
 }
 
-export interface TProfiles {
+export interface IProfiles {
   linkedIn: string;
   stackOverflow: string;
   github: string;
 }
 
-export interface TSkill {
+export interface ISkill {
   name: string;
   link?: string;
   level?: string;
 }
 
-export interface TEducationalDetail {
+export interface IEducationalDetail {
   degree: string;
   specialization: string;
   university: string;
@@ -32,7 +32,7 @@ export interface TEducationalDetail {
   year: number;
 }
 
-export interface TProfessionalDetail {
+export interface IProfessionalDetail {
   company: string;
   designation: string;
   role: string;
@@ -46,14 +46,14 @@ export interface TProfessionalDetail {
   responsibilities: string[];
 }
 
-export interface TResume {
+export interface IResume {
   name: string;
   email: string;
-  phone: TPhone;
-  address: TAddress;
-  profiles: TProfiles;
+  phone: IPhone;
+  address: IAddress;
+  profiles: IProfiles;
   summary: string;
-  skills: TSkill[];
-  educationalDetails: TEducationalDetail[];
-  professionalDetails: TProfessionalDetail[];
+  skills: ISkill[];
+  educationalDetails: IEducationalDetail[];
+  professionalDetails: IProfessionalDetail[];
 }

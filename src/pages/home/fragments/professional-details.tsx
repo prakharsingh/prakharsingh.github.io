@@ -3,16 +3,25 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { TProfessionalDetail } from '../resume';
+import { IProfessionalDetail } from '../resume';
 import { Heading } from '../../../components/heading';
 
 interface ProfessionalDetailsProps {
-  details: TProfessionalDetail[];
+  details: IProfessionalDetail[];
 }
 
 const useStyles = makeStyles({
+  item: {
+    flexGrow: 1,
+  },
   boldTypography: {
     fontWeight: 'bold',
+  },
+  avoidPageBreak: {
+    pageBreakInside: 'avoid',
+  },
+  pageBreakAfter: {
+    pageBreakAfter: 'always',
   },
 });
 
@@ -21,15 +30,19 @@ export default ({ details }: ProfessionalDetailsProps) => {
 
   return (
     <Grid container>
-      <Grid item sm={12}>
+      <Grid item>
         <Typography variant='h5' component='h2' gutterBottom>
           Work
         </Typography>
       </Grid>
       <Grid container spacing={4}>
         {details.map((detail, idx) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Grid item sm={12} key={idx}>
+          <Grid
+            key={idx} // eslint-disable-line react/no-array-index-key
+            className={classes.avoidPageBreak}
+            classes={{ item: classes.item }}
+            item
+          >
             <Heading
               leftContent={
                 <Typography variant='body2' className={classes.boldTypography}>

@@ -8,7 +8,7 @@ import Skills from './fragments/skills';
 import EducationalDetails from './fragments/educational-details';
 import ProfessionalDetails from './fragments/professional-details';
 
-import { TResume, ResumeContext, ResumeProvider } from './resume';
+import { IResume, ResumeContext, ResumeProvider } from './resume';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -28,7 +28,7 @@ const Home = () => {
     skills,
     educationalDetails,
     professionalDetails,
-  }: TResume = useContext(ResumeContext);
+  } = useContext<IResume>(ResumeContext);
 
   return (
     <Grid className={classes.margin}>

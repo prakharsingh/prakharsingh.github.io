@@ -24,6 +24,8 @@
     "strictNullChecks": true
   },
   "include": [
-    "src"
+    "src",
+    "scripts",
+    "node_modules/@types/puppeteer/index.d.ts"
   ]
 }

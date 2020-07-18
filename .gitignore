@@ -24,3 +24,6 @@ yarn-error.log*
 
 # editor
 /.idea
+
+# dynamic
+/public/cv_singh_prakhar.pdf

@@ -1,15 +1,41 @@
 import React, { createContext } from 'react';
-import RESUME from './resume.json';
+import { IResume } from './resume-types';
+import {
+  name,
+  email,
+  address,
+  phone,
+  profiles,
+  summary,
+  skills,
+  educationalDetails,
+  professionalDetails,
+} from './resume.json';
 
-interface TProps {
+interface IProps {
   children: React.ReactNode;
 }
 
-const ResumeContext = createContext(RESUME);
+const ResumeContext = createContext<IResume>({} as IResume);
 
-// tslint:disable-next-line:no-any
-const ResumeProvider = ({ children }: TProps) => {
-  return <ResumeContext.Provider value={RESUME}>{children}</ResumeContext.Provider>;
+const ResumeProvider = ({ children }: IProps) => {
+  return (
+    <ResumeContext.Provider
+      value={{
+        name,
+        email,
+        address,
+        phone,
+        profiles,
+        summary,
+        skills,
+        educationalDetails,
+        professionalDetails,
+      }}
+    >
+      {children}
+    </ResumeContext.Provider>
+  );
 };
 
 export { ResumeProvider, ResumeContext };

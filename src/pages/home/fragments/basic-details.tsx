@@ -8,14 +8,14 @@ import IconButton from '@material-ui/core/IconButton';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { StackOverflowIcon, GitHubIcon } from '../../../components/icons';
 
-import { TPhone, TAddress, TProfiles } from '../resume';
+import { IPhone, IAddress, IProfiles } from '../resume';
 
 interface BasicDetailsProps {
   name: string;
   email: string;
-  phone: TPhone;
-  address: TAddress;
-  profiles: TProfiles;
+  phone: IPhone;
+  address: IAddress;
+  profiles: IProfiles;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +46,7 @@ const BasicDetails = ({ name, email, phone, address, profiles }: BasicDetailsPro
   const classes = useStyles();
 
   return (
-    <Grid item sm={12}>
+    <Grid item>
       <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
         <Grid item>
           <Typography variant='h4' component='h1' className={classes.heading} color='textSecondary'>

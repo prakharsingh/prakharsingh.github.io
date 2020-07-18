@@ -5,20 +5,26 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { Heading } from '../../../components/heading';
 
-import { TEducationalDetail } from '../resume';
+import { IEducationalDetail } from '../resume';
 
 interface EducationalDetailsProps {
-  details: TEducationalDetail[];
+  details: IEducationalDetail[];
 }
 
 const useStyles = makeStyles((theme) => ({
+  item: {
+    flexGrow: 1,
+  },
   boldTypography: {
     fontWeight: 'bold',
   },
   block: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+  },
+  avoidPageBreak: {
+    pageBreakInside: 'avoid',
   },
 }));
 
@@ -26,16 +32,20 @@ export default ({ details }: EducationalDetailsProps) => {
   const classes = useStyles();
 
   return (
-    <Grid container>
-      <Grid item sm={12}>
+    <Grid container className={classes.avoidPageBreak}>
+      <Grid item>
         <Typography variant='h5' component='h2' gutterBottom>
           Education
         </Typography>
       </Grid>
-      <Grid container spacing={4} className={classes.block}>
+      <Grid container spacing={4}>
         {details.map((detail, idx) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Grid item sm={12} key={idx}>
+          <Grid
+            key={idx} // eslint-disable-line react/no-array-index-key
+            className={classes.avoidPageBreak}
+            classes={{ item: classes.item }}
+            item
+          >
             <Heading
               leftContent={
                 <Typography variant='body2' className={classes.boldTypography}>
