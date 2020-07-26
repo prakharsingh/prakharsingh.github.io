@@ -26,14 +26,13 @@ const basePath = path.resolve(__dirname, '..', 'public');
     format: 'A4',
     printBackground: false,
     margin: {
-      top: '1cm',
-      left: '1cm',
-      bottom: '1cm',
-      right: '1cm',
+      top: '1 cm',
+      left: '1 cm',
+      bottom: '1 cm',
+      right: '1 cm',
     }
   });
 
   await browser.close();
-  // await server.close();
 })();
 

@@ -10,6 +10,7 @@ interface SummaryProps {
 const useStyles = makeStyles({
   avoidPageBreak: {
     pageBreakInside: 'avoid',
+    pageBreakAfter: 'auto',
   },
 });
 
@@ -20,7 +21,7 @@ export default ({ summary }: SummaryProps) => {
       <Typography variant='h5' component='h2' gutterBottom>
         Professional Summary
       </Typography>
-      <Typography variant='subtitle2' align='justify' gutterBottom>
+      <Typography variant='body2' align='justify' gutterBottom>
         {summary}
       </Typography>
     </Grid>

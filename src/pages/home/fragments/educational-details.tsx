@@ -13,18 +13,14 @@ interface EducationalDetailsProps {
 
 const useStyles = makeStyles((theme) => ({
   item: {
-    flexGrow: 1,
+    width: '100%',
   },
   boldTypography: {
     fontWeight: 'bold',
   },
-  block: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
   avoidPageBreak: {
     pageBreakInside: 'avoid',
+    pageBreakAfter: 'auto',
   },
 }));
 
@@ -55,8 +51,8 @@ export default ({ details }: EducationalDetailsProps) => {
               rightContent={<Typography variant='body2'>{detail.year}</Typography>}
             />
             <Heading
-              leftContent={<Typography variant='caption'>{detail.university}</Typography>}
-              rightContent={<Typography variant='caption'>{detail.place}</Typography>}
+              leftContent={<Typography variant='subtitle1'>{detail.university}</Typography>}
+              rightContent={<Typography variant='subtitle1'>{detail.place}</Typography>}
             />
           </Grid>
         ))}

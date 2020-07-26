@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 
 import Routes from '../routes';
 import NavBar from '../navbar';
-import { darkTheme, lightTheme, printTheme } from './themes';
+import { darkTheme, lightTheme, printTheme } from '../../themes';
 
 const App = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', { noSsr: true });

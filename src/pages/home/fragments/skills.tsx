@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { ISkill } from '../resume';
 
@@ -11,7 +12,14 @@ interface SkillsProps {
   skills: ISkill[];
 }
 
+const useStyles = makeStyles(() => ({
+  printList: {
+    columnCount: 3,
+  },
+}));
+
 export default ({ skills }: SkillsProps) => {
+  const classes = useStyles();
   const matchesPrint = useMediaQuery('print');
 
   return (
@@ -23,19 +31,13 @@ export default ({ skills }: SkillsProps) => {
       </Grid>
       <Grid item xs={12}>
         {matchesPrint ? (
-          <Box
-            display='flex'
-            p={2}
-            flexDirection='column'
-            height={skills.length * 12}
-            flexWrap='wrap'
-          >
+          <ul className={classes.printList}>
             {skills.map(({ name }) => (
-              <Box key={`${name}-box`}>
-                <Typography variant='body1'>{name}</Typography>
-              </Box>
+              <li key={`${name}-item`}>
+                <Typography variant='body2'>{name}</Typography>
+              </li>
             ))}
-          </Box>
+          </ul>
         ) : (
           <Box display='flex' flexWrap='wrap'>
             {skills.map(({ name }) => (

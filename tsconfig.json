@@ -27,5 +27,8 @@
     "src",
     "scripts",
     "node_modules/@types/puppeteer/index.d.ts"
+  ],
+  "plugins": [
+    { "name": "tslint-language-service"}
   ]
 }

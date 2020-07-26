@@ -1,11 +1,15 @@
+import 'typeface-roboto';
 import grey from '@material-ui/core/colors/grey';
 import lightBlue from '@material-ui/core/colors/lightBlue';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
-import core from './core';
-
 export default createMuiTheme({
-  ...core,
+  typography: {
+    fontFamily: ['"Roboto"', '-apple-system', 'Arial', 'sans-serif'].join(','),
+    body2: {
+      fontSize: 15,
+    },
+  },
   palette: {
     primary: {
       light: grey[300],
@@ -25,4 +29,5 @@ export default createMuiTheme({
     },
     divider: grey[400],
   },
+  spacing: 4,
 });

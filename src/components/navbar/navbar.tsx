@@ -8,6 +8,8 @@ import NightIcon from '@material-ui/icons/NightsStayOutlined';
 import DayIcon from '@material-ui/icons/WbSunnyOutlined';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Slide from '@material-ui/core/Slide';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 interface NavBarProps {
   darkMode: boolean;
@@ -26,6 +28,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const HideOnScroll = ({ children }: { children: React.ReactElement }): JSX.Element => {
+  const trigger = useScrollTrigger();
+
+  return (
+    <Slide appear={false} direction='down' in={!trigger}>
+      {children}
+    </Slide>
+  );
+};
+
 const NavBar = ({ darkMode, toggleDarkMode }: NavBarProps) => {
   const classes = useStyles();
   const matchesPrint = useMediaQuery('print');
@@ -37,8 +49,8 @@ const NavBar = ({ darkMode, toggleDarkMode }: NavBarProps) => {
   const handleDownloadPdf = () => window.open('/cv_singh_prakhar.pdf', '_blank');
 
   return (
-    <div className={classes.root}>
-      <AppBar position='static'>
+    <HideOnScroll>
+      <AppBar position='static' variant={darkMode ? 'outlined' : 'elevation'}>
         <Toolbar variant='dense'>
           <Typography variant='button' display='block' className={classes.title}>
             Resume
@@ -49,7 +61,7 @@ const NavBar = ({ darkMode, toggleDarkMode }: NavBarProps) => {
           <MenuItem onClick={handleBrightness}>{darkMode ? <DayIcon /> : <NightIcon />}</MenuItem>
         </Toolbar>
       </AppBar>
-    </div>
+    </HideOnScroll>
   );
 };
 

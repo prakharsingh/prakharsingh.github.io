@@ -19,9 +19,7 @@ const useStyles = makeStyles({
   },
   avoidPageBreak: {
     pageBreakInside: 'avoid',
-  },
-  pageBreakAfter: {
-    pageBreakAfter: 'always',
+    pageBreakAfter: 'auto',
   },
 });
 
@@ -49,12 +47,12 @@ export default ({ details }: ProfessionalDetailsProps) => {
                   {`${detail.designation} (${detail.role})`}
                 </Typography>
               }
-              rightContent={<Typography variant='caption'>{detail.location}</Typography>}
+              rightContent={<Typography variant='subtitle1'>{detail.location}</Typography>}
             />
             <Heading
-              leftContent={<Typography variant='caption'>{detail.company}</Typography>}
+              leftContent={<Typography variant='subtitle1'>{detail.company}</Typography>}
               rightContent={
-                <Typography variant='caption'>
+                <Typography variant='subtitle1'>
                   {`${detail.duration.startedAt} - ${detail.duration.endedAt}`}
                 </Typography>
               }
@@ -74,7 +72,7 @@ export default ({ details }: ProfessionalDetailsProps) => {
             <ul>
               {detail.responsibilities.map((responsibility, index) => (
                 // eslint-disable-next-line react/no-array-index-key
-                <li key={`responsibility-${index}`}>
+                <li key={`responsibility-${index}`} className={classes.avoidPageBreak}>
                   <Typography variant='body2' align='justify'>
                     {responsibility}
                   </Typography>

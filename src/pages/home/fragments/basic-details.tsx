@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { StackOverflowIcon, GitHubIcon } from '../../../components/icons';
@@ -23,11 +22,6 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontWeight: 600,
   },
-  subHeading: {
-    '& hr': {
-      margin: theme.spacing(0, 1),
-    },
-  },
   icon: {
     width: 18,
     height: 18,
@@ -35,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(0.8),
   },
-  block: {
+  displayNone: {
     [theme.breakpoints.down('xs')]: {
-      display: 'block',
+      display: 'none',
     },
   },
 }));
@@ -47,29 +41,36 @@ const BasicDetails = ({ name, email, phone, address, profiles }: BasicDetailsPro
 
   return (
     <Grid item>
-      <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
+      <Grid container alignItems='flex-start' justify='flex-end'>
         <Grid item>
           <Typography variant='h4' component='h1' className={classes.heading} color='textSecondary'>
             {name}
           </Typography>
         </Grid>
       </Grid>
-      <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
+      <Grid container alignItems='flex-start' justify='flex-end'>
         <Grid item>
-          <Grid container className={`${classes.subHeading} ${classes.block}`}>
-            <Typography variant='caption'>
-              {`${address.home}, ${address.street_address}, ${address.city}, ${address.state} ${address.post_code}`}
-            </Typography>
-            <Divider orientation='vertical' flexItem />
-            <Typography variant='caption'>{`${phone.country_code}-${phone.mobile}`}</Typography>
-            <Divider orientation='vertical' flexItem />
-            <Typography variant='caption'>{email}</Typography>
-          </Grid>
+          <Typography variant='subtitle1'>
+            {`
+              ${address.home}, ${address.street_address}, ${address.city}, ${address.state} 
+              ${address.post_code}, ${address.country}
+            `}
+          </Typography>
         </Grid>
       </Grid>
-      <Grid container alignItems='flex-start' justify='flex-end' className={classes.block}>
+      <Grid container alignItems='flex-start' justify='flex-end'>
         <Grid item>
-          <Grid container className={classes.subHeading}>
+          <Typography variant='subtitle1'>{email}</Typography>
+        </Grid>
+      </Grid>
+      <Grid container alignItems='flex-start' justify='flex-end'>
+        <Grid item>
+          <Typography variant='subtitle1'>{`${phone.country_code}-${phone.mobile}`}</Typography>
+        </Grid>
+      </Grid>
+      <Grid container alignItems='flex-start' justify='flex-end'>
+        <Grid item>
+          <Grid container>
             <Link href={profiles.linkedIn} target='_blank' rel='noopener'>
               <IconButton size='small' color='secondary'>
                 <LinkedInIcon />
