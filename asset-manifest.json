@@ -1,0 +1,19 @@
+{
+  "files": {
+    "home.js": "/static/js/home.48c68e93.chunk.js",
+    "main.js": "/static/js/main.e86b31db.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.69063388.js",
+    "static/css/3.1bc2d557.chunk.css": "/static/css/3.1bc2d557.chunk.css",
+    "static/js/3.6c625e7f.chunk.js": "/static/js/3.6c625e7f.chunk.js",
+    "static/js/4.94f4e41f.chunk.js": "/static/js/4.94f4e41f.chunk.js",
+    "index.html": "/index.html",
+    "static/js/3.6c625e7f.chunk.js.LICENSE.txt": "/static/js/3.6c625e7f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/share-tech-mono-latin-400.ebf921e9.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69063388.js",
+    "static/css/3.1bc2d557.chunk.css",
+    "static/js/3.6c625e7f.chunk.js",
+    "static/js/main.e86b31db.chunk.js"
+  ]
+}
