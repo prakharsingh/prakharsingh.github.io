@@ -6,6 +6,10 @@ Disallow: /cv_singh_prakhar.pdf
 # Content-Signal (IETF draft-romm-aipref-contentsignals) — declare AI usage
 # preferences. This site is a public personal resume; being indexed, cited at
 # runtime by AI assistants, and present in training data all serve its purpose.
+# Note: validator-flagged by design — Content-Signal is an IETF draft, not
+# part of RFC 9309, so strict robots.txt validators (Vercel, etc.) report
+# it as "Unknown directive". Conforming crawlers that don't recognize it
+# skip the line per RFC 9309's unknown-token rule; no operational impact.
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # Explicit allow for LLM training and retrieval crawlers.
