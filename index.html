@@ -68,6 +68,13 @@
     <!-- rel="me" verifies identity across platforms (IndieAuth, Mastodon, some AI agents). -->
     <link rel="me" href="https://github.com/prakharsingh" />
     <link rel="me" href="https://linkedin.com/in/singh-prakhar" />
+
+    <!-- Machine-readable alternates. Markdown for AI assistants; JSON
+         Resume schema for recruiting/sourcing tooling. RFC 8288 link
+         relations, static-site equivalent of the HTTP Link header. -->
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="Resume in Markdown (llms.txt)" />
+    <link rel="alternate" type="application/json" href="/resume.json" title="Resume in JSON Resume schema" />
+
     <meta name="author" content="Prakhar Singh" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta
@@ -324,6 +331,20 @@
             "sameAs": [
               "https://linkedin.com/in/singh-prakhar",
               "https://github.com/prakharsingh"
+            ],
+            "subjectOf": [
+              {
+                "@type": "DataDownload",
+                "encodingFormat": "text/markdown",
+                "contentUrl": "https://prakharsingh.github.io/llms.txt",
+                "name": "Resume in Markdown"
+              },
+              {
+                "@type": "DataDownload",
+                "encodingFormat": "application/json",
+                "contentUrl": "https://prakharsingh.github.io/resume.json",
+                "name": "Resume in JSON Resume schema"
+              }
             ]
           },
           {

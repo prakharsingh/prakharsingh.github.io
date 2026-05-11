@@ -1,0 +1,238 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Prakhar Singh",
+    "label": "Founding Engineer @ Devzy AI · ex-VP Engineering @ Deutsche Bank",
+    "image": "https://prakharsingh.github.io/portrait.jpg",
+    "email": "prakharsingh007@gmail.com",
+    "phone": "+91-9569807894",
+    "url": "https://prakharsingh.github.io/",
+    "summary": "Engineering Leader with 11+ years of experience driving large-scale digital transformation across FinTech, EdTech, and E-commerce. At Deutsche Bank, built and led a 30+ global engineering team delivering €35M+ annual revenue uplift through an AI-driven trading automation platform. Combines strategic leadership (org design, AI adoption, technical roadmapping) with hands-on expertise in JavaScript, distributed systems, and ML pipelines. Proven track record in both high-growth product environments and complex enterprise organizations.",
+    "location": {
+      "city": "Pune",
+      "region": "Maharashtra",
+      "countryCode": "IN"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "singh-prakhar",
+        "url": "https://linkedin.com/in/singh-prakhar"
+      },
+      {
+        "network": "GitHub",
+        "username": "prakharsingh",
+        "url": "https://github.com/prakharsingh"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Devzy AI",
+      "position": "Founding Engineer",
+      "url": "https://devzy.ai",
+      "startDate": "2025-08-01",
+      "summary": "Devzy AI is a pre-seed AI DevTools company building an agentic AI system for automated code review and developer workflow integrations.",
+      "highlights": [
+        "Built an MVP agentic AI system for automated code review, leveraging multi-model orchestration (LLMs + tools) to evaluate code quality, security, and architecture within developer workflows.",
+        "Designed end-to-end validation pipelines combining LLM reasoning with static analysis, test execution, and security checks, improving signal quality of automated reviews.",
+        "Implemented model routing and evaluation frameworks to balance accuracy, latency, and cost, along with feedback loops to reduce false positives.",
+        "Integrated compliance-aware validation (GDPR, HIPAA, PCI-DSS, SOC 2 aligned) and shipped CLI/PR/IDE integrations enabling near real-time feedback in the SDLC.",
+        "Delivered developer workflow integrations (CLI / PR / IDE hooks) enabling near real-time feedback within the Software Development Life Cycle (SDLC).",
+        "Partnered with founders to define MVP scope, product direction, and validation strategy for an AI-first DevTools platform."
+      ],
+      "location": "Remote"
+    },
+    {
+      "name": "Deutsche Bank (DWS)",
+      "position": "Vice President, Engineering",
+      "url": "https://www.db.com",
+      "startDate": "2023-04-01",
+      "endDate": "2025-07-31",
+      "summary": "Working for The DWS Group GmbH & Co. KGaA (DWS), one of Deutsche Bank's associated, publicly traded asset managers. As Vice President of Engineering, I led a global cross-functional engineering organization delivering AI-driven trading automation and predictive analytics products.",
+      "highlights": [
+        "Spearheaded a global cross-functional engineering organization of 30+ across India, UK, and Spain.",
+        "Delivered a €35M annual revenue uplift by launching an Artificial Intelligence (AI) and Machine Learning (ML)-driven trading automation platform and predictive analytics dashboards.",
+        "Built proprietary AI models and pipelines for anomaly detection, underwriting automation, fraud prediction, and incident response.",
+        "Evaluated and integrated LLMs, RAG systems, and real-time data-driven architectures.",
+        "Integrated generative AI copilots and LLM-based assistants into engineering workflows, boosting developer productivity by ~25%.",
+        "Drove implementation of an observability stack (Sentry, Datadog), reducing MTTR by 40%.",
+        "Established the UI Platform for DWS, standardizing design language, components, and observability tools.",
+        "Directed cross-functional execution with product, QA, UX, and DevOps across multiple time zones.",
+        "Created a career progression framework for engineers, improving retention and mobility by 30%."
+      ],
+      "location": "Pune, Maharashtra"
+    },
+    {
+      "name": "Noon Academy",
+      "position": "Principal Engineer",
+      "url": "https://www.noonacademy.com",
+      "startDate": "2021-09-01",
+      "endDate": "2023-02-28",
+      "summary": "Noon Academy is an EdTech platform serving millions of students across 8 countries with multi-platform exam modules and adaptive learning. As Principal Engineer, I led mobile and web platform engineering, performance optimization, and AI-driven personalization.",
+      "highlights": [
+        "Unified the mobile codebase by integrating React Native, improving app consistency and developer efficiency.",
+        "Reduced app load time by 50% through lazy loading, bundling optimizations, and aggressive performance tuning in React Native and Web.",
+        "Delivered multi-platform exam modules used concurrently by over 2 million students during peak academic seasons, ensuring 99.9% uptime and stability across 8 countries.",
+        "Created native plugins for performance optimization; standardized component libraries and UX patterns.",
+        "Implemented AI-driven personalization features (adaptive learning paths, content recommendations), improving student engagement metrics by 20%.",
+        "Mentored the UI engineering team and improved development velocity and cross-team collaboration.",
+        "Adopted AI-assisted QA automation and anomaly detection for faster release cycles and reduced defect leakage."
+      ],
+      "location": "Bengaluru, Karnataka"
+    },
+    {
+      "name": "Deutsche Bank (DWS)",
+      "position": "Assistant Vice President",
+      "url": "https://www.db.com",
+      "startDate": "2018-06-26",
+      "endDate": "2021-09-30",
+      "summary": "Working for The DWS Group GmbH & Co. KGaA (DWS), one of Deutsche Bank's associated, publicly traded asset managers. As Assistant Vice President, I led front-end engineering for key financial groups, building multi-channel UIs and contributing to the bank's Core Platform UI Libraries.",
+      "highlights": [
+        "Led development of multi-channel User Interfaces for key financial groups (Funds Treasury, Regulatory Reporting), ensuring uniform UX across web, mobile, and desktop platforms.",
+        "Directed a team of 10+ engineers, defining technical roadmaps and implementing a formal coaching and mentoring program to accelerate team growth.",
+        "Successfully managed project delivery across global stakeholders (Architects, PM, UX, QA) located in Pune, Frankfurt, London, and New York.",
+        "Architected and contributed to the bank's Core Platform UI Libraries, driving component reuse and long-term strategic goals.",
+        "Encouraged the adoption of best practices within the team — Agile delivery, TDD, peer reviews, brown bag sessions, etc.",
+        "Actively involved in lateral and graduate hiring programs. Contributed to tech challenges, quizzes, and interviews."
+      ],
+      "location": "Pune, Maharashtra"
+    },
+    {
+      "name": "Noon E-Commerce",
+      "position": "Senior Software Engineer",
+      "url": "https://www.noon.com",
+      "startDate": "2017-08-14",
+      "endDate": "2018-06-11",
+      "summary": "noon.com is an e-commerce platform with a large catalog targeting customers in UAE, Saudi Arabia, and Egypt. As Senior Software Engineer, I owned the front-end of the entire logistics and supply chain across several web and mobile applications.",
+      "highlights": [
+        "Drove front-end development for logistics and supply chain systems.",
+        "Delivered pixel-perfect UIs in close collaboration with design and backend teams.",
+        "Coached junior engineers, accelerating their onboarding.",
+        "Deployed mission-critical projects on AWS and GCP."
+      ],
+      "location": "Gurugram, Haryana"
+    },
+    {
+      "name": "TalkValley LLC",
+      "position": "Senior JavaScript Engineer",
+      "url": "https://mentorstudents.org",
+      "startDate": "2016-07-15",
+      "endDate": "2017-08-08",
+      "summary": "mentorstudents.org is a US-based product startup that connects prospective students with current/ex-students and hiring managers via recorded video interviews. As Senior JavaScript Engineer, I owned the front-end and backend of the recording, transcription, and listing pipeline.",
+      "highlights": [
+        "Led development of a video interview platform using WebRTC.",
+        "Managed a remote team of 5 engineers and trained interns."
+      ],
+      "location": "Remote"
+    },
+    {
+      "name": "Simsaw Software Pvt. Ltd.",
+      "position": "Web Developer",
+      "url": "https://www.simsaw.com/",
+      "startDate": "2014-07-01",
+      "endDate": "2016-07-14",
+      "summary": "Simsaw Software (formerly Pink Hand Technologies) is a service-based company with multiple US-based clients. As Web Developer, I built high-performance and scalable web and mobile applications.",
+      "highlights": [
+        "Delivered full-stack solutions using Node.js, AngularJS, React.js, and other open-source JavaScript libraries.",
+        "Created technical documentation and implemented unit tests.",
+        "Collaborated in agile teams to deliver client solutions."
+      ],
+      "location": "Mohali, Punjab"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Maharishi Markandeshwar University",
+      "url": "https://www.mmumullana.org",
+      "area": "Computer Science",
+      "studyType": "Master",
+      "startDate": "2011-07-01",
+      "endDate": "2014-06-30",
+      "score": "7.5",
+      "courses": [
+        "Master of Computer Applications"
+      ]
+    },
+    {
+      "institution": "Chhatrapati Shahu Ji Maharaj University",
+      "url": "https://csjmu.ac.in",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2008-07-01",
+      "endDate": "2011-06-30",
+      "score": "7.5",
+      "courses": [
+        "Bachelor of Computer Applications"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Leadership & Management",
+      "keywords": [
+        "Engineering Strategy",
+        "Roadmapping",
+        "OKRs",
+        "Mentoring",
+        "Agile (Scrum, Kanban)",
+        "Hiring",
+        "Stakeholder Engagement"
+      ]
+    },
+    {
+      "name": "Core Technologies (Web/Mobile)",
+      "keywords": [
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "GoLang",
+        "React.js",
+        "ReactNative"
+      ]
+    },
+    {
+      "name": "Data & Infrastructure",
+      "keywords": [
+        "Distributed Systems",
+        "REST",
+        "GraphQL",
+        "APIs",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis"
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "keywords": [
+        "AWS",
+        "GCP",
+        "K8s",
+        "Docker",
+        "Terraform",
+        "CI/CD (GitHub Actions/Jenkins)",
+        "Observability (Langfuse, Sentry, Datadog)"
+      ]
+    },
+    {
+      "name": "AI & Data",
+      "keywords": [
+        "Artificial Intelligence (AI)",
+        "Machine Learning (ML)",
+        "Generative AI (GenAI)",
+        "Large Language Models (LLMs)",
+        "Predictive Analytics",
+        "RAG",
+        "DPO",
+        "GPT"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://prakharsingh.github.io/resume.json",
+    "version": "1.0.0",
+    "lastModified": "2026-05-11"
+  }
+}

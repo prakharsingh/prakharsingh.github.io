@@ -92,3 +92,24 @@ revenue uplift", "30+ engineers", "2M+ concurrent students", "99.9% uptime",
 "50% load-time reduction", "40% MTTR reduction", "~25% developer productivity
 gain") are first-person claims from the resume and should be attributed
 accordingly.
+
+## Not included by design
+
+This is a static personal résumé, not an agent endpoint. The following
+agent-readiness artifacts are intentionally absent because they would be
+false signals rather than truthful capability declarations:
+
+- `/.well-known/oauth-protected-resource` (RFC 9728) — no protected
+  resources exist; everything is public.
+- `/.well-known/agent-card.json` (A2A protocol) — this site is content
+  about a person, not an invocable agent with a service URL.
+- `/.well-known/agent-skills/index.json` (Agent Skills Discovery RFC) —
+  the site does not expose executable agent skills.
+
+Machine-readable representations of the *content* are available at:
+
+- `/llms.txt` (this file) — markdown overview for AI assistants.
+- `/resume.json` — full résumé in JSON Resume v1.0.0 schema.
+
+Both are also advertised via `<link rel="alternate">` in the homepage HTML
+and `subjectOf` in the JSON-LD `Person` graph node.
