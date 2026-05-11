@@ -2,6 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+
+    <!-- Dark-mode bootstrap. Runs synchronously in <head> so <html class="dark">
+         is set before first paint, avoiding the light→dark flash for dark-mode
+         users. The React hook (useDarkMode) reads back this class on mount. -->
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem('theme');
+          var d = s === 'dark' || (s === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (d) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Preload the primary body font (Share Tech Mono). Served from /fonts
+         rather than the bundled @fontsource path so the URL is static and
+         discoverable by the browser's preload scanner before CSS parses. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/share-tech-mono-latin-400-normal.woff2"
+      crossorigin
+    />
+
     <link
       rel="icon"
       type="image/png"
@@ -37,6 +62,9 @@
     <link rel="manifest" href="/manifest.json" />
 
     <link rel="canonical" href="https://prakharsingh.github.io/" />
+    <!-- rel="me" verifies identity across platforms (IndieAuth, Mastodon, some AI agents). -->
+    <link rel="me" href="https://github.com/prakharsingh" />
+    <link rel="me" href="https://linkedin.com/in/singh-prakhar" />
     <meta name="author" content="Prakhar Singh" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta
@@ -44,7 +72,7 @@
       content="euxbKdQDv3cMNeWLcoNSc6KPfYcj2dNT47_fQDegnbQ"
     />
 
-    <title>Prakhar Singh — Founding Engineer @ Devzy AI · ex-VP Engineering @ Deutsche Bank</title>
+    <title>Prakhar Singh — Founding Engineer @ Devzy AI</title>
     <meta
       name="description"
       content="Engineering Leader with 11+ years across FinTech, EdTech, and E-commerce. Founding Engineer at Devzy AI; previously VP Engineering at Deutsche Bank (DWS) leading a 30+ global team delivering €35M+ revenue uplift through AI-driven trading automation."
@@ -94,14 +122,121 @@
             "@id": "https://prakharsingh.github.io/#person",
             "name": "Prakhar Singh",
             "url": "https://prakharsingh.github.io/",
-            "image": "https://prakharsingh.github.io/og-image.png",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://prakharsingh.github.io/portrait.jpg",
+              "width": 460,
+              "height": 460
+            },
             "jobTitle": "Founding Engineer",
             "description": "Engineering Leader with 11+ years across FinTech, EdTech, and E-commerce. Founding Engineer at Devzy AI; previously VP Engineering at Deutsche Bank (DWS) leading a 30+ global team delivering €35M+ revenue uplift through AI-driven trading automation.",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Devzy AI",
-              "url": "https://devzy.ai"
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Pune",
+              "addressRegion": "Maharashtra",
+              "addressCountry": "IN"
             },
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Founding Engineer",
+              "occupationLocation": {
+                "@type": "Place",
+                "name": "Remote"
+              },
+              "skills": [
+                "Engineering leadership",
+                "Distributed systems",
+                "AI/ML",
+                "Large language models",
+                "Retrieval-augmented generation",
+                "TypeScript",
+                "Node.js",
+                "React",
+                "Python",
+                "Go",
+                "AWS",
+                "GCP",
+                "Kubernetes"
+              ]
+            },
+            "worksFor": [
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Founding Engineer",
+                "startDate": "2025-08-01",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Devzy AI",
+                  "url": "https://devzy.ai"
+                }
+              },
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Vice President, Engineering",
+                "startDate": "2023-04-01",
+                "endDate": "2025-07-31",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Deutsche Bank (DWS)",
+                  "url": "https://www.db.com"
+                }
+              },
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Principal Engineer",
+                "startDate": "2021-09-01",
+                "endDate": "2023-02-28",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Noon Academy",
+                  "url": "https://www.noonacademy.com"
+                }
+              },
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Assistant Vice President",
+                "startDate": "2018-06-26",
+                "endDate": "2021-09-30",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Deutsche Bank (DWS)",
+                  "url": "https://www.db.com"
+                }
+              },
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Senior Software Engineer",
+                "startDate": "2017-08-14",
+                "endDate": "2018-06-11",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Noon E-Commerce",
+                  "url": "https://www.noon.com"
+                }
+              },
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Senior JavaScript Engineer",
+                "startDate": "2016-07-15",
+                "endDate": "2017-08-08",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "TalkValley LLC",
+                  "url": "https://mentorstudents.org"
+                }
+              },
+              {
+                "@type": "OrganizationRole",
+                "roleName": "Web Developer",
+                "startDate": "2014-07-01",
+                "endDate": "2016-07-14",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Simsaw Software Pvt. Ltd.",
+                  "url": "https://www.simsaw.com/"
+                }
+              }
+            ],
             "alumniOf": [
               {
                 "@type": "CollegeOrUniversity",
@@ -157,12 +292,67 @@
             "name": "Prakhar Singh — Founding Engineer @ Devzy AI",
             "mainEntity": { "@id": "https://prakharsingh.github.io/#person" },
             "inLanguage": "en"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://prakharsingh.github.io/#faq",
+            "inLanguage": "en",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Who is Prakhar Singh?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Prakhar Singh is a software engineering leader with 11+ years of experience across FinTech, EdTech, and E-commerce. He is currently Founding Engineer at Devzy AI and was previously Vice President of Engineering at Deutsche Bank (DWS)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does Prakhar Singh do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "As Founding Engineer at Devzy AI, he builds agentic AI systems for automated code review and developer workflow integrations, combining LLM-based reasoning with static analysis, test execution, and security checks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Prakhar Singh based?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pune, Maharashtra, India. He works remotely with global teams."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are Prakhar Singh's areas of expertise?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Engineering leadership, distributed systems, AI/ML, large language models, retrieval-augmented generation, TypeScript, Node.js, React, Python, Go, cloud infrastructure (AWS, GCP), and Kubernetes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Devzy AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Devzy AI is a pre-seed AI DevTools company building an agentic AI system for automated code review and developer workflow integrations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I contact Prakhar Singh?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Via LinkedIn (https://linkedin.com/in/singh-prakhar) or GitHub (https://github.com/prakharsingh)."
+                }
+              }
+            ]
           }
         ]
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-C5vWVL9C.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BxGdHniW.css">
+    <script type="module" crossorigin src="/assets/index-BXKAWRVo.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CkFkzIMZ.css">
   </head>
   <body>
     <div id="root">
@@ -172,35 +362,111 @@
           <a href="/cv_singh_prakhar.pdf">PDF download</a>.
         </p>
       </noscript>
-      <main hidden aria-hidden="true">
+      <!-- Crawler-only fallback. Uses <div> (not <main>) so the rendered React
+           tree retains the single canonical <main> landmark. `hidden` keeps
+           it out of paint and the a11y tree for assistive tech, while
+           crawlers and AI fetchers still parse the content. -->
+      <div hidden>
         <h1>Prakhar Singh</h1>
         <p>
           <strong>Founding Engineer @ Devzy AI · ex-VP Engineering @ Deutsche Bank</strong>
         </p>
         <p>
-          Engineering Leader with 11+ years of experience driving large-scale digital
-          transformation across FinTech, EdTech, and E-commerce. At Deutsche Bank (DWS), built
-          and led a 30+ global engineering team delivering €35M+ annual revenue uplift through
-          an AI-driven trading automation platform. Currently Founding Engineer at Devzy AI,
-          building agentic AI systems for automated code review and developer workflow
-          integrations.
+          Prakhar Singh is a software engineering leader and Founding Engineer at Devzy AI,
+          based in Pune, Maharashtra, India. He has 11+ years of experience driving large-scale
+          digital transformation across FinTech, EdTech, and E-commerce. At Deutsche Bank (DWS)
+          he built and led a 30+ global engineering team delivering €35M+ annual revenue uplift
+          through an AI-driven trading automation platform. At Devzy AI he is building agentic
+          AI systems for automated code review and developer workflow integrations.
         </p>
         <h2>Experience</h2>
         <ul>
-          <li><strong>Devzy AI</strong> — Founding Engineer (2025–present)</li>
-          <li><strong>Deutsche Bank (DWS)</strong> — Vice President, Engineering (2023–2025)</li>
-          <li><strong>Noon Academy</strong> — Principal Engineer (2021–2023)</li>
-          <li><strong>Deutsche Bank (DWS)</strong> — Assistant Vice President (2018–2021)</li>
-          <li><strong>Noon E-Commerce</strong> — Senior Software Engineer (2017–2018)</li>
-          <li><strong>TalkValley LLC</strong> — Senior JavaScript Engineer (2016–2017)</li>
-          <li><strong>Simsaw Software</strong> — Web Developer (2014–2016)</li>
+          <li>
+            <strong>Devzy AI</strong> — Founding Engineer
+            (<time datetime="2025-08-01">Aug 2025</time>–present).
+            Building agentic AI for automated code review, with multi-model orchestration,
+            validation pipelines, and CLI/PR/IDE integrations across the SDLC.
+          </li>
+          <li>
+            <strong>Deutsche Bank (DWS)</strong> — Vice President, Engineering
+            (<time datetime="2023-04-01">Apr 2023</time>–<time datetime="2025-07-31">Jul 2025</time>).
+            Led 30+ engineers across India, UK, and Spain. Delivered €35M annual revenue uplift
+            via an AI/ML trading automation platform. Boosted developer productivity ~25% with
+            LLM copilots; reduced MTTR by 40% via a Sentry/Datadog observability stack.
+          </li>
+          <li>
+            <strong>Noon Academy</strong> — Principal Engineer
+            (<time datetime="2021-09-01">Sep 2021</time>–<time datetime="2023-02-28">Feb 2023</time>).
+            Reduced app load time by 50% via React Native + Web optimizations. Delivered exam
+            modules serving 2M+ concurrent students across 8 countries at 99.9% uptime.
+          </li>
+          <li>
+            <strong>Deutsche Bank (DWS)</strong> — Assistant Vice President
+            (<time datetime="2018-06-26">Jun 2018</time>–<time datetime="2021-09-30">Sep 2021</time>).
+            Led 10+ engineers building multi-channel UIs for Funds Treasury and Regulatory
+            Reporting; architected the bank's Core Platform UI Libraries.
+          </li>
+          <li>
+            <strong>Noon E-Commerce</strong> — Senior Software Engineer
+            (<time datetime="2017-08-14">Aug 2017</time>–<time datetime="2018-06-11">Jun 2018</time>).
+            Owned front-end for logistics and supply chain systems across UAE, Saudi Arabia,
+            and Egypt.
+          </li>
+          <li>
+            <strong>TalkValley LLC</strong> — Senior JavaScript Engineer
+            (<time datetime="2016-07-15">Jul 2016</time>–<time datetime="2017-08-08">Aug 2017</time>).
+            Built a WebRTC-based video interview platform; managed a 5-engineer remote team.
+          </li>
+          <li>
+            <strong>Simsaw Software</strong> — Web Developer
+            (<time datetime="2014-07-01">Jul 2014</time>–<time datetime="2016-07-14">Jul 2016</time>).
+            Full-stack JavaScript for US-based clients (Node.js, AngularJS, React).
+          </li>
         </ul>
+        <h2>Skills</h2>
+        <p>
+          Engineering leadership, distributed systems, AI/ML, large language models,
+          retrieval-augmented generation, TypeScript, Node.js, React, React Native, Python,
+          Go, AWS, GCP, Kubernetes, Docker, Terraform, GraphQL, PostgreSQL, MongoDB, Redis.
+        </p>
+        <h2>Frequently Asked Questions</h2>
+        <dl>
+          <dt>Who is Prakhar Singh?</dt>
+          <dd>
+            Prakhar Singh is a software engineering leader with 11+ years of experience across
+            FinTech, EdTech, and E-commerce. He is currently Founding Engineer at Devzy AI and
+            was previously Vice President of Engineering at Deutsche Bank (DWS).
+          </dd>
+          <dt>What does Prakhar Singh do?</dt>
+          <dd>
+            As Founding Engineer at Devzy AI, he builds agentic AI systems for automated code
+            review and developer workflow integrations, combining LLM-based reasoning with
+            static analysis, test execution, and security checks.
+          </dd>
+          <dt>Where is Prakhar Singh based?</dt>
+          <dd>Pune, Maharashtra, India. He works remotely with global teams.</dd>
+          <dt>What are Prakhar Singh's areas of expertise?</dt>
+          <dd>
+            Engineering leadership, distributed systems, AI/ML, large language models,
+            retrieval-augmented generation, TypeScript, Node.js, React, Python, Go, cloud
+            infrastructure (AWS, GCP), and Kubernetes.
+          </dd>
+          <dt>What is Devzy AI?</dt>
+          <dd>
+            Devzy AI is a pre-seed AI DevTools company building an agentic AI system for
+            automated code review and developer workflow integrations.
+          </dd>
+          <dt>How can I contact Prakhar Singh?</dt>
+          <dd>
+            Via <a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> or
+            <a href="https://github.com/prakharsingh">GitHub</a>.
+          </dd>
+        </dl>
         <p>
           <a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> ·
-          <a href="https://github.com/prakharsingh">GitHub</a> ·
-          <a href="/cv_singh_prakhar.pdf">Download CV (PDF)</a>
+          <a href="https://github.com/prakharsingh">GitHub</a>
         </p>
-      </main>
+      </div>
     </div>
   </body>
 </html>
