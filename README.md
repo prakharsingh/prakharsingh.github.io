@@ -1,6 +1,6 @@
   # Prakhar Singh                                                                                                                                                                                                                                           
                                                               
-  **Founding Engineer @ [Devzy AI](https://devzy.ai)** · ex-VP Engineering @ Deutsche Bank (DWS)                                                                                                                                                            
+  **Founding Engineer @ [Devzy AI](https://devzy.ai)** · ex-VP Engineering @ [Deutsche Bank (DWS)](https://www.dws.com)                                                                                                                                                            
    
   I lead engineering on agentic AI systems for automated code review at Devzy AI. Previously, as Vice President of Engineering at Deutsche Bank (DWS), I built and led a 30+ person global team across India, UK, and Spain that delivered €35M+ annual     
   revenue uplift through an AI-driven trading automation platform.
@@ -38,4 +38,4 @@
   | 2016 – 2017 | Senior JavaScript Engineer | TalkValley LLC |
   | 2014 – 2016 | Web Developer | Simsaw Software |                                                                                                                                                                                                         
                                                                                                                                                                                                                                                             
-  Full résumé: <https://prakharsingh.github.io/> · [PDF](https://prakharsingh.github.io/cv_singh_prakhar.pdf) · [JSON Resume](https://prakharsingh.github.io/resume.json) · [Markdown for AI assistants](https://prakharsingh.github.io/llms.txt)
+  Full resume: <https://prakharsingh.github.io/> · [PDF](https://prakharsingh.github.io/cv_singh_prakhar.pdf) · [JSON Resume](https://prakharsingh.github.io/resume.json) · [Markdown for AI assistants](https://prakharsingh.github.io/llms.txt)
