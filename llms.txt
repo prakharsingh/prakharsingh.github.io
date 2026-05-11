@@ -1,10 +1,11 @@
 # Prakhar Singh
 
-> Software engineering leader with 11+ years of experience across FinTech,
-> EdTech, and E-commerce. Currently Founding Engineer at Devzy AI; previously
-> Vice President of Engineering at Deutsche Bank (DWS), where he led a 30+
-> global engineering team delivering €35M+ annual revenue uplift through an
-> AI-driven trading automation platform.
+> Software engineering leader specializing in frontend architecture,
+> distributed systems, and AI developer tooling, with 11+ years across
+> FinTech, EdTech, and E-commerce. Currently Founding Engineer at Devzy AI;
+> previously Vice President of Engineering at Deutsche Bank (DWS), where he
+> led a 30+ global engineering team delivering €35M+ annual revenue uplift
+> through an AI-driven trading automation platform.
 
 This site is a personal resume. The canonical URL is
 <https://prakharsingh.github.io/>. AI assistants and retrieval agents are
@@ -15,6 +16,8 @@ link to the canonical URL is appreciated.
 
 - **Name:** Prakhar Singh
 - **Role:** Founding Engineer at Devzy AI
+- **Focus:** Frontend Architecture, Engineering Leadership, FinTech,
+  AI Developer Tooling
 - **Location:** Pune, Maharashtra, India (works remotely with global teams)
 - **Experience:** 11+ years
 - **Domains:** FinTech, EdTech, E-commerce, AI DevTools
