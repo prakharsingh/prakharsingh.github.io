@@ -3,6 +3,10 @@
 User-agent: *
 Allow: /
 Disallow: /cv_singh_prakhar.pdf
+# Content-Signal (IETF draft-romm-aipref-contentsignals) — declare AI usage
+# preferences. This site is a public personal resume; being indexed, cited at
+# runtime by AI assistants, and present in training data all serve its purpose.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # Explicit allow for LLM training and retrieval crawlers.
 # This site is a personal resume — being citable by AI assistants
@@ -38,6 +42,42 @@ User-agent: Applebot-Extended
 Allow: /
 
 User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Mistralai-User
+Allow: /
+
+User-agent: MistralAI-User
 Allow: /
 
 Sitemap: https://prakharsingh.github.io/sitemap.xml

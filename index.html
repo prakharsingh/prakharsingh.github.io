@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8" />
 
-    <!-- Dark-mode bootstrap. Runs synchronously in <head> so <html class="dark">
-         is set before first paint, avoiding the light→dark flash for dark-mode
-         users. The React hook (useDarkMode) reads back this class on mount. -->
+    <!-- Dark-mode bootstrap. Light is the default; only an explicit
+         user preference (set via the navbar toggle) opts in to dark.
+         Runs synchronously in <head> so <html class="dark"> is set
+         before first paint, avoiding a light→dark flash for users who
+         have already chosen dark. The React hook (useDarkMode) reads
+         back this class on mount. -->
     <script>
       (function () {
         try {
-          var s = localStorage.getItem('theme');
-          var d = s === 'dark' || (s === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
-          if (d) document.documentElement.classList.add('dark');
+          if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
         } catch (e) {}
       })();
     </script>
@@ -89,6 +92,7 @@
     />
     <meta property="og:url" content="https://prakharsingh.github.io/" />
     <meta property="og:image" content="https://prakharsingh.github.io/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -121,7 +125,10 @@
             "@type": "Person",
             "@id": "https://prakharsingh.github.io/#person",
             "name": "Prakhar Singh",
+            "givenName": "Prakhar",
+            "familyName": "Singh",
             "url": "https://prakharsingh.github.io/",
+            "mainEntityOfPage": "https://prakharsingh.github.io/",
             "image": {
               "@type": "ImageObject",
               "url": "https://prakharsingh.github.io/portrait.jpg",
@@ -130,12 +137,56 @@
             },
             "jobTitle": "Founding Engineer",
             "description": "Engineering Leader with 11+ years across FinTech, EdTech, and E-commerce. Founding Engineer at Devzy AI; previously VP Engineering at Deutsche Bank (DWS) leading a 30+ global team delivering €35M+ revenue uplift through AI-driven trading automation.",
+            "email": "mailto:prakharsingh007@gmail.com",
+            "knowsLanguage": [
+              { "@type": "Language", "name": "English", "alternateName": "en" },
+              { "@type": "Language", "name": "Hindi", "alternateName": "hi" }
+            ],
+            "nationality": {
+              "@type": "Country",
+              "name": "India"
+            },
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Pune",
               "addressRegion": "Maharashtra",
               "addressCountry": "IN"
             },
+            "homeLocation": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              }
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "educationalLevel": "Master",
+                "name": "Master of Computer Applications",
+                "recognizedBy": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Maharishi Markandeshwar University",
+                  "url": "https://www.mmumullana.org"
+                },
+                "dateCreated": "2014-06-30"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "educationalLevel": "Bachelor",
+                "name": "Bachelor of Computer Applications",
+                "recognizedBy": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Chhatrapati Shahu Ji Maharaj University",
+                  "url": "https://csjmu.ac.in"
+                },
+                "dateCreated": "2011-06-30"
+              }
+            ],
             "hasOccupation": {
               "@type": "Occupation",
               "name": "Founding Engineer",
@@ -340,10 +391,34 @@
               },
               {
                 "@type": "Question",
+                "name": "Which companies has Prakhar Singh worked at?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Devzy AI (Founding Engineer, 2025–present), Deutsche Bank (DWS) (Vice President of Engineering, 2023–2025; Assistant Vice President, 2018–2021), Noon Academy (Principal Engineer, 2021–2023), Noon E-Commerce (Senior Software Engineer, 2017–2018), TalkValley LLC (Senior JavaScript Engineer, 2016–2017), and Simsaw Software (Web Developer, 2014–2016)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many years of experience does Prakhar Singh have?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "11+ years of professional software engineering experience since 2014, spanning FinTech, EdTech, E-commerce, and AI DevTools."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where did Prakhar Singh study?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Master of Computer Applications from Maharishi Markandeshwar University (2011–2014) and Bachelor of Computer Applications from Chhatrapati Shahu Ji Maharaj University (2008–2011), both in Computer Science."
+                }
+              },
+              {
+                "@type": "Question",
                 "name": "How can I contact Prakhar Singh?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Via LinkedIn (https://linkedin.com/in/singh-prakhar) or GitHub (https://github.com/prakharsingh)."
+                  "text": "Email: prakharsingh007@gmail.com. Also available via LinkedIn (https://linkedin.com/in/singh-prakhar) and GitHub (https://github.com/prakharsingh)."
                 }
               }
             ]
@@ -351,8 +426,8 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-BXKAWRVo.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CkFkzIMZ.css">
+    <script type="module" crossorigin src="/assets/index-qAPctiKl.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cf3zVO5r.css">
   </head>
   <body>
     <div id="root">
@@ -445,6 +520,24 @@
           </dd>
           <dt>Where is Prakhar Singh based?</dt>
           <dd>Pune, Maharashtra, India. He works remotely with global teams.</dd>
+          <dt>Which companies has Prakhar Singh worked at?</dt>
+          <dd>
+            Devzy AI (Founding Engineer, 2025–present), Deutsche Bank (DWS)
+            (Vice President of Engineering 2023–2025; Assistant Vice President 2018–2021),
+            Noon Academy (Principal Engineer, 2021–2023), Noon E-Commerce (Senior Software
+            Engineer, 2017–2018), TalkValley LLC (Senior JavaScript Engineer, 2016–2017),
+            and Simsaw Software (Web Developer, 2014–2016).
+          </dd>
+          <dt>How many years of experience does Prakhar Singh have?</dt>
+          <dd>11+ years of professional software engineering experience since 2014.</dd>
+          <dt>Where did Prakhar Singh study?</dt>
+          <dd>
+            Master of Computer Applications from Maharishi Markandeshwar University
+            (2011–2014) and Bachelor of Computer Applications from Chhatrapati Shahu Ji
+            Maharaj University (2008–2011), both in Computer Science.
+          </dd>
+          <dt>What languages does Prakhar Singh speak?</dt>
+          <dd>English and Hindi.</dd>
           <dt>What are Prakhar Singh's areas of expertise?</dt>
           <dd>
             Engineering leadership, distributed systems, AI/ML, large language models,
@@ -458,7 +551,10 @@
           </dd>
           <dt>How can I contact Prakhar Singh?</dt>
           <dd>
-            Via <a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> or
+            Email
+            <a href="mailto:prakharsingh007@gmail.com">prakharsingh007@gmail.com</a>,
+            or reach out via
+            <a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> or
             <a href="https://github.com/prakharsingh">GitHub</a>.
           </dd>
         </dl>

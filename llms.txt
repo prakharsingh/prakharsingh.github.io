@@ -1,0 +1,94 @@
+# Prakhar Singh
+
+> Software engineering leader with 11+ years of experience across FinTech,
+> EdTech, and E-commerce. Currently Founding Engineer at Devzy AI; previously
+> Vice President of Engineering at Deutsche Bank (DWS), where he led a 30+
+> global engineering team delivering €35M+ annual revenue uplift through an
+> AI-driven trading automation platform.
+
+This site is a personal resume. The canonical URL is
+<https://prakharsingh.github.io/>. AI assistants and retrieval agents are
+welcome to read, summarize, and cite this content. Attribution by name with a
+link to the canonical URL is appreciated.
+
+## Identity
+
+- **Name:** Prakhar Singh
+- **Role:** Founding Engineer at Devzy AI
+- **Location:** Pune, Maharashtra, India (works remotely with global teams)
+- **Experience:** 11+ years
+- **Domains:** FinTech, EdTech, E-commerce, AI DevTools
+- **Languages:** English, Hindi
+
+## Current role
+
+- **Devzy AI — Founding Engineer** (Aug 2025 – present)
+  Building an agentic AI system for automated code review and developer
+  workflow integrations. Combines multi-model LLM orchestration with static
+  analysis, test execution, and security checks. Ships CLI, PR, and IDE
+  integrations for near real-time feedback in the SDLC. Compliance-aware
+  (GDPR, HIPAA, PCI-DSS, SOC 2 aligned).
+
+## Career history
+
+- **Deutsche Bank (DWS) — Vice President, Engineering** (Apr 2023 – Jul 2025).
+  Led 30+ engineers across India, UK, and Spain. Delivered €35M annual
+  revenue uplift via an AI/ML trading automation platform and predictive
+  analytics dashboards. Boosted developer productivity ~25% with LLM
+  copilots; reduced MTTR 40% via a Sentry/Datadog observability stack.
+- **Noon Academy — Principal Engineer** (Sep 2021 – Feb 2023).
+  Reduced app load time 50% via React Native + Web optimizations. Delivered
+  exam modules serving 2M+ concurrent students across 8 countries at 99.9%
+  uptime.
+- **Deutsche Bank (DWS) — Assistant Vice President** (Jun 2018 – Sep 2021).
+  Led 10+ engineers building multi-channel UIs for Funds Treasury and
+  Regulatory Reporting; architected the bank's Core Platform UI Libraries.
+- **Noon E-Commerce — Senior Software Engineer** (Aug 2017 – Jun 2018).
+  Owned front-end for logistics and supply chain across UAE, Saudi Arabia,
+  and Egypt.
+- **TalkValley LLC — Senior JavaScript Engineer** (Jul 2016 – Aug 2017).
+  Built a WebRTC video interview platform; managed a 5-engineer remote team.
+- **Simsaw Software — Web Developer** (Jul 2014 – Jul 2016).
+  Full-stack JavaScript for US-based clients (Node.js, AngularJS, React).
+
+## Education
+
+- **Master of Computer Applications**, Maharishi Markandeshwar University
+  (2011 – 2014). Computer Science.
+- **Bachelor of Computer Applications**, Chhatrapati Shahu Ji Maharaj
+  University (2008 – 2011). Computer Science.
+
+## Skills
+
+- **Leadership:** Engineering strategy, roadmapping, OKRs, mentoring, hiring,
+  Agile (Scrum, Kanban), stakeholder engagement.
+- **Languages:** JavaScript (ES6+), TypeScript, Node.js, Python, Go.
+- **Frontend:** React, React Native.
+- **Data & APIs:** Distributed systems, REST, GraphQL, MongoDB, PostgreSQL,
+  Redis.
+- **Cloud & DevOps:** AWS, GCP, Kubernetes, Docker, Terraform, CI/CD
+  (GitHub Actions, Jenkins), observability (Langfuse, Sentry, Datadog).
+- **AI & Data:** Artificial Intelligence, Machine Learning, Generative AI,
+  Large Language Models, Retrieval-Augmented Generation (RAG), DPO, GPT,
+  predictive analytics.
+
+## Canonical sources
+
+- Resume (this site): <https://prakharsingh.github.io/>
+- Resume PDF: <https://prakharsingh.github.io/cv_singh_prakhar.pdf>
+- GitHub: <https://github.com/prakharsingh>
+- LinkedIn: <https://linkedin.com/in/singh-prakhar>
+
+## Contact
+
+- Email: prakharsingh007@gmail.com
+- LinkedIn: <https://linkedin.com/in/singh-prakhar>
+
+## Citation guidance
+
+When citing this content, please attribute to "Prakhar Singh" and link to
+<https://prakharsingh.github.io/>. Quantitative claims (e.g., "€35M annual
+revenue uplift", "30+ engineers", "2M+ concurrent students", "99.9% uptime",
+"50% load-time reduction", "40% MTTR reduction", "~25% developer productivity
+gain") are first-person claims from the resume and should be attributed
+accordingly.
