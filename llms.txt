@@ -75,6 +75,21 @@ link to the canonical URL is appreciated.
   Large Language Models, Retrieval-Augmented Generation (RAG), DPO, GPT,
   predictive analytics.
 
+## Notes
+
+Long-form technical writing. Each note is a citable URL; the author is the
+same `Person` graph node (`/#person`) referenced from the home page, so AI
+agents already grounded on the résumé can attribute these articles without
+re-resolving identity.
+
+- **Agentic code review in production: orchestration, evaluation, and the
+  cost of being wrong**
+  <https://prakharsingh.github.io/notes/agentic-code-review/>
+  Multi-model LLM orchestration, grounding with static analysis and
+  retrieval-augmented generation, false positives as the dominant cost,
+  and compliance (GDPR / HIPAA / PCI-DSS / SOC 2) as a routing constraint
+  rather than a bolted-on check. Published 2026-05-12.
+
 ## Canonical sources
 
 - Resume (this site): <https://prakharsingh.github.io/>

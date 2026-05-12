@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Agentic code review in production — orchestration, evaluation, and the cost of being wrong ·
+      Prakhar Singh
+    </title>
+    <meta
+      name="description"
+      content="How production agentic code review systems combine multi-model LLM orchestration, static analysis, retrieval-augmented generation, and compliance-aware routing — and why false positives are the dominant cost."
+    />
+
+    <link rel="canonical" href="https://prakharsingh.github.io/notes/agentic-code-review/" />
+    <link rel="author" href="https://prakharsingh.github.io/" />
+    <meta name="author" content="Prakhar Singh" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)" />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prakhar Singh" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Agentic code review in production" />
+    <meta
+      property="og:description"
+      content="How production agentic code review systems combine multi-model LLM orchestration, static analysis, retrieval-augmented generation, and compliance-aware routing — and why false positives are the dominant cost."
+    />
+    <meta
+      property="og:url"
+      content="https://prakharsingh.github.io/notes/agentic-code-review/"
+    />
+    <meta property="og:image" content="https://prakharsingh.github.io/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Prakhar Singh" />
+    <meta property="article:published_time" content="2026-05-12" />
+    <meta property="article:modified_time" content="2026-05-12" />
+    <meta property="article:section" content="AI Developer Tooling" />
+    <meta
+      property="article:tag"
+      content="agentic code review, multi-model LLM orchestration, retrieval-augmented generation, static analysis, AI developer tooling"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agentic code review in production" />
+    <meta
+      name="twitter:description"
+      content="How production agentic code review systems combine multi-model LLM orchestration, static analysis, retrieval-augmented generation, and compliance-aware routing — and why false positives are the dominant cost."
+    />
+    <meta name="twitter:image" content="https://prakharsingh.github.io/og-image.png" />
+
+    <!-- Preload Share Tech Mono to match the home page's typography without
+         pulling in the full app bundle. Self-hosted under /fonts so the URL
+         stays static and discoverable before CSS parses. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/share-tech-mono-latin-400-normal.woff2"
+      crossorigin
+    />
+
+    <!-- TechArticle JSON-LD. author/publisher back-ref to the Person graph
+         node published on the canonical home page (/#person), so AI agents
+         that have already grounded on the résumé bind this article to the
+         same identity. Wikidata-linked DefinedTerms in about/mentions
+         provide the topical anchors the audit called for. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "@id": "https://prakharsingh.github.io/notes/agentic-code-review/#article",
+        "mainEntityOfPage": "https://prakharsingh.github.io/notes/agentic-code-review/",
+        "url": "https://prakharsingh.github.io/notes/agentic-code-review/",
+        "headline": "Agentic code review in production: orchestration, evaluation, and the cost of being wrong",
+        "name": "Agentic code review in production",
+        "description": "How production agentic code review systems combine multi-model LLM orchestration, static analysis, retrieval-augmented generation, and compliance-aware routing — and why false positives are the dominant cost.",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "datePublished": "2026-05-12",
+        "dateModified": "2026-05-12",
+        "wordCount": 995,
+        "articleSection": "AI Developer Tooling",
+        "keywords": "agentic code review, multi-model LLM orchestration, retrieval-augmented generation, static analysis, AI developer tooling, compliance-aware code review, false positive rate, evaluation-driven routing",
+        "proficiencyLevel": "Expert",
+        "author": {
+          "@id": "https://prakharsingh.github.io/#person"
+        },
+        "publisher": {
+          "@id": "https://prakharsingh.github.io/#person"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://prakharsingh.github.io/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "about": [
+          {
+            "@type": "DefinedTerm",
+            "name": "Code review"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Large Language Models",
+            "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "AI developer tooling"
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "DefinedTerm",
+            "name": "Retrieval-Augmented Generation",
+            "sameAs": "https://www.wikidata.org/wiki/Q121362277"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Large Language Models",
+            "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Artificial Intelligence",
+            "sameAs": "https://www.wikidata.org/wiki/Q11660"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Machine Learning",
+            "sameAs": "https://www.wikidata.org/wiki/Q2539"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Distributed Systems",
+            "sameAs": "https://www.wikidata.org/wiki/Q3962217"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Static program analysis"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Software Development Life Cycle"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "GDPR"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "HIPAA"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "PCI-DSS"
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "SOC 2"
+          }
+        ]
+      }
+    </script>
+
+    <!-- BreadcrumbList JSON-LD so AI engines render the article inside the
+         site hierarchy rather than as an orphan URL. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Prakhar Singh",
+            "item": "https://prakharsingh.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Notes",
+            "item": "https://prakharsingh.github.io/notes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Agentic code review in production"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* Self-hosted Share Tech Mono — same files the main app uses. */
+      @font-face {
+        font-family: 'Share Tech Mono';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src:
+          url('/fonts/share-tech-mono-latin-400-normal.woff2') format('woff2'),
+          url('/fonts/share-tech-mono-latin-400-normal.woff') format('woff');
+      }
+
+      /* Light is the default. Dark is applied either explicitly via the
+         home page's persisted toggle (`html.dark`) or, when no choice
+         has been made, by the OS preference. The bootstrap script in
+         <head> mirrors what the React app's useDarkMode does, so a
+         visitor who chose light on the home page does not get flipped
+         to dark just because their OS is dark. */
+      :root {
+        --bg: #fafafa;
+        --fg: #212121;
+        --fg-muted: #616161;
+        --rule: #e0e0e0;
+        --nav-bg: #212121;
+        --nav-fg: #fafafa;
+        --nav-border: transparent;
+      }
+
+      :root.dark {
+        --bg: #212121;
+        --fg: #eeeeee;
+        --fg-muted: #bdbdbd;
+        --rule: #616161;
+        --nav-bg: #212121;
+        --nav-fg: #eeeeee;
+        --nav-border: rgba(255, 255, 255, 0.1);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not(.light):not(.dark) {
+          --bg: #212121;
+          --fg: #eeeeee;
+          --fg-muted: #bdbdbd;
+          --rule: #616161;
+          --nav-bg: #212121;
+          --nav-fg: #eeeeee;
+          --nav-border: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--fg);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Viewport-width filled bar, matching the home page's <NavBar /> —
+         bg-gray-900 + text-gray-50 + min-h-12 + shadow-md, with the same
+         hairline white-10 border in dark mode. */
+      .site-nav {
+        background: var(--nav-bg);
+        color: var(--nav-fg);
+        min-height: 3rem;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid var(--nav-border);
+        font-size: 0.875rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .site-nav-inner {
+        width: 100%;
+        max-width: 46rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .site-nav a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .site-nav a:hover {
+        text-decoration: underline;
+      }
+      .site-nav a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      .site-nav .crumb {
+        opacity: 0.7;
+      }
+
+      .page {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        text-decoration-color: currentColor;
+      }
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      article header {
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        margin: 0 0 1rem;
+      }
+
+      @media (min-width: 48rem) {
+        h1 {
+          font-size: 2.05rem;
+        }
+      }
+
+      .byline {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--fg-muted);
+      }
+
+      .byline a {
+        color: var(--fg);
+      }
+
+      .dek {
+        margin: 1.5rem 0 0;
+        padding-left: 0.85rem;
+        border-left: 2px solid var(--rule);
+        font-size: 1rem;
+        color: var(--fg-muted);
+      }
+
+      h2 {
+        font-size: 1.45rem;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        margin: 2.75rem 0 0.7rem;
+      }
+
+      article p,
+      article ul,
+      article ol {
+        margin: 0 0 1rem;
+        text-align: left;
+      }
+
+      /* Justify body prose on screens wide enough that monospaced
+         word-spacing rivers don't dominate. Same threshold logic as the
+         home page's skills list. */
+      @media (min-width: 56rem) {
+        article p {
+          text-align: justify;
+        }
+      }
+
+      article ul {
+        padding-left: 1.25rem;
+      }
+
+      article li {
+        margin-bottom: 0.4rem;
+      }
+
+      article li::marker {
+        color: var(--fg-muted);
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      .about {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--rule);
+        font-size: 0.95rem;
+        color: var(--fg-muted);
+      }
+
+      .about h2 {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        margin: 0 0 0.5rem;
+        color: var(--fg-muted);
+      }
+
+      .about p {
+        margin: 0;
+      }
+
+      .about a {
+        color: var(--fg);
+      }
+
+      .skip {
+        position: absolute;
+        left: 0.75rem;
+        top: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        background: var(--fg);
+        color: var(--bg);
+        transform: translateY(-150%);
+        transition: transform 120ms ease-out;
+        text-decoration: none;
+      }
+
+      .skip:focus {
+        transform: translateY(0);
+        outline: none;
+      }
+    </style>
+
+    <!-- Theme bootstrap. Mirrors the home page's behavior: an explicit
+         choice persisted under the 'theme' localStorage key wins over
+         prefers-color-scheme. Without this, a visitor who chose light
+         on the home page would get flipped to dark on the article just
+         because their OS is dark. Runs synchronously so the class is
+         set before first paint, avoiding a flash. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+          else if (t === 'light') document.documentElement.classList.add('light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#article">Skip to article</a>
+
+    <header class="site-nav" role="banner">
+      <div class="site-nav-inner">
+        <a class="home" href="/" rel="home">← Prakhar Singh</a>
+        <span class="crumb" aria-current="page">Notes</span>
+      </div>
+    </header>
+
+    <div class="page">
+      <article id="article">
+        <header>
+          <h1>
+            Agentic code review in production: orchestration, evaluation, and the cost of being
+            wrong
+          </h1>
+          <p class="byline">
+            by <a href="/" rel="author">Prakhar Singh</a> ·
+            <time datetime="2026-05-12">12 May 2026</time>
+          </p>
+          <p class="dek">
+            What "agentic" actually buys you over a linter, why single-model approaches stall,
+            and why false positives — not raw model capability — determine whether the system
+            stays in the loop.
+          </p>
+        </header>
+
+        <p>
+          <em>Agentic</em> has become a marketing flag, but in code review it carries a precise
+          technical meaning: the system, not the user, decides which tools to invoke against a
+          change, in what order, and how to weight their findings. A linter runs a fixed
+          pipeline. A single-pass language-model reviewer reads the diff and emits comments
+          end-to-end. An agentic reviewer chooses between a compiler, a type checker, a test
+          runner, a secret scanner, a static analyzer, and one or more language-model calls —
+          then arbitrates their disagreements before surfacing a review comment.
+        </p>
+        <p>
+          The model is one tool among several. The system's value is in the arbitration policy
+          that decides which findings reach the developer.
+        </p>
+
+        <h2>The orchestration problem</h2>
+        <p>
+          Single-model approaches stall on three axes that pull in different directions:
+          accuracy, latency, and cost. A frontier model gives the strongest multi-step
+          reasoning on a non-trivial change but typically adds several seconds of latency and
+          an order-of-magnitude cost premium per call; a small open-weights model returns in
+          under a second but misses subtle invariants. Three routing strategies cover most of
+          the production space:
+        </p>
+        <ul>
+          <li>
+            <strong>Task-classification routing.</strong> A lightweight classifier (a smaller
+            model or a rules layer) decides which downstream model handles a request. Style
+            nits, dead-code removal, and import-order checks go to a fast cheap model; logic
+            changes and concurrency reasoning go to a stronger one. This works as long as the
+            classifier is calibrated; misclassification lands hard-reasoning prompts on
+            under-powered models and produces confident-sounding nonsense.
+          </li>
+          <li>
+            <strong>Fallback chains.</strong> Try the cheap model first; if self-consistency
+            across N samples is low — or a cheap verifier disagrees — escalate. This is robust
+            against classifier drift but doubles cost on the long tail.
+          </li>
+          <li>
+            <strong>Evaluation-driven A/B routing.</strong> Maintain an offline evaluation set
+            of past pull requests with human accept/reject outcomes; score model variants on
+            precision and recall against that ground truth and route traffic to whichever
+            variant scores highest on the relevant slice. This is the only strategy that
+            adapts when a model is updated.
+          </li>
+        </ul>
+        <p>
+          In practice production systems combine all three: classify, fall back on low
+          confidence, and let offline evaluations reshape weights every release cycle.
+        </p>
+
+        <h2>Grounding with static analysis and retrieval</h2>
+        <p>
+          A pure language-model review hallucinates fixes — proposing API calls that do not
+          exist, citing version-specific behavior incorrectly, suggesting refactors that break
+          other call sites the model never saw. Two anchors push the hallucination rate down.
+        </p>
+        <p>
+          First, deterministic static analyzers run in parallel with the language model. Type
+          errors, null dereferences, missing <code>await</code>, unused imports — these are
+          cheap, deterministic, and not worth a model call. The agent uses their output as
+          ground truth and frames its review around facts the static analyzer surfaced, not
+          facts the model invented.
+        </p>
+        <p>
+          Second, retrieval-augmented generation over the repository itself: prior review
+          threads, commit messages, and the project's design documents. Most code review
+          observations are not novel. The same patterns get flagged across files — null-safety
+          regressions, missing index migrations, inconsistent error wrapping. Retrieving prior
+          review comments scoped to the touched files, modules, or owners shifts the model
+          from generic best-practice advice to comments that match the codebase's established
+          conventions.
+        </p>
+
+        <h2>False positives as the dominant cost</h2>
+        <p>
+          Developer trust in an automated reviewer collapses non-linearly: a handful of bad
+          comments is usually enough for the team to start dismissing the bot reflexively.
+          The arithmetic is unforgiving: a 5% false-positive rate at twenty review comments
+          per pull request is one bogus flag per PR. Within a sprint, the team stops reading
+          the bot's output.
+        </p>
+        <p>Three controls keep the rate manageable:</p>
+        <ul>
+          <li>
+            <strong>Confidence thresholding</strong> — never surface a comment below a
+            calibrated threshold, even if the model is willing to speak.
+          </li>
+          <li>
+            <strong>Dedup against historical dismissals</strong> — if a reviewer dismissed an
+            analogous comment six months ago, the same shape of comment on the same file is
+            suspect this time.
+          </li>
+          <li>
+            <strong>A closed feedback loop</strong> — every dismissed or accepted comment
+            becomes training signal for the next routing decision and threshold update.
+          </li>
+        </ul>
+        <p>
+          The third is where most teams underinvest. Without the loop the false-positive rate
+          is whatever the underlying model happens to produce. With it, the rate trends down
+          per release.
+        </p>
+
+        <h2>Compliance as a routing constraint</h2>
+        <p>
+          Compliance is not a bolt-on check. It belongs at the same layer as task
+          classification — a first-class routing input, not a separate stage tacked on at the
+          end.
+        </p>
+        <p>
+          Code touching regulated data — protected health information, payment card numbers, EU
+          resident identifiers — has to route differently. GDPR shapes both transfer (no diffs
+          leaving the controller's processors without a Data Processing Agreement) and
+          retention (logged prompts and completions are themselves processing activity).
+          HIPAA obligations — Business Associate Agreements and minimum-necessary access —
+          determine which model endpoints are eligible to process diffs containing PHI.
+          PCI-DSS controls dictate cardholder-data redaction before model invocation. SOC 2
+          controls dictate operational guarantees on the reviewer service itself. Bolting any
+          of this on after the fact produces gaps that surface during the first audit, not
+          during development.
+        </p>
+
+        <h2>Closing</h2>
+        <p>
+          Agentic code review is a coordination system with a language model embedded in it,
+          not a language model with tools attached. The hard problems are not in the model —
+          they are in the routing, the grounding, the evaluation, and the feedback loops that
+          decide what the system does next time. Teams that treat the model as the product
+          underinvest in everything that actually determines whether the product stays in use.
+        </p>
+
+        <footer class="about">
+          <h2>About the author</h2>
+          <p>
+            <a href="/" rel="author">Prakhar Singh</a> is Founding Engineer at Devzy AI, where
+            he is building an agentic AI system for automated code review across CLI, PR, and
+            IDE surfaces. Previously Vice President of Engineering at Deutsche Bank (DWS),
+            leading a 30+ global engineering team that delivered €35M+ annual revenue uplift
+            through an AI-driven trading automation platform. Based in Pune, India.
+          </p>
+        </footer>
+      </article>
+    </div>
+  </body>
+</html>
