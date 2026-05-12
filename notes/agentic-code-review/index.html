@@ -82,111 +82,118 @@
       crossorigin
     />
 
-    <!-- TechArticle JSON-LD. author/publisher back-ref to the Person graph
-         node published on the canonical home page (/#person), so AI agents
-         that have already grounded on the résumé bind this article to the
-         same identity. Wikidata-linked DefinedTerms in about/mentions
-         provide the topical anchors the audit called for. -->
+    <!-- TechArticle JSON-LD with an inline Person stub so author/publisher
+         @id refs resolve within this document (strict parsers don't deref
+         @id across pages). The Person node on the canonical home page
+         carries the full identity graph; this stub only carries the
+         retrieval-stable subset (name, url, sameAs) needed for in-document
+         resolution. Wikidata-linked DefinedTerms in about/mentions provide
+         the topical anchors the audit called for. -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "@id": "https://prakharsingh.github.io/notes/agentic-code-review/#article",
-        "mainEntityOfPage": "https://prakharsingh.github.io/notes/agentic-code-review/",
-        "url": "https://prakharsingh.github.io/notes/agentic-code-review/",
-        "headline": "Agentic code review in production: orchestration, evaluation, and the cost of being wrong",
-        "name": "Agentic code review in production",
-        "description": "How production agentic code review systems combine multi-model LLM orchestration, static analysis, retrieval-augmented generation, and compliance-aware routing — and why false positives are the dominant cost.",
-        "inLanguage": "en",
-        "isAccessibleForFree": true,
-        "datePublished": "2026-05-12T00:00:00+05:30",
-        "dateModified": "2026-05-12T00:00:00+05:30",
-        "wordCount": 995,
-        "articleSection": "AI Developer Tooling",
-        "keywords": "agentic code review, multi-model LLM orchestration, retrieval-augmented generation, static analysis, AI developer tooling, compliance-aware code review, false positive rate, evaluation-driven routing",
-        "proficiencyLevel": "Expert",
-        "author": {
-          "@type": "Person",
-          "@id": "https://prakharsingh.github.io/#person",
-          "name": "Prakhar Singh",
-          "url": "https://prakharsingh.github.io/"
-        },
-        "publisher": {
-          "@type": "Person",
-          "@id": "https://prakharsingh.github.io/#person",
-          "name": "Prakhar Singh",
-          "url": "https://prakharsingh.github.io/"
-        },
-        "image": {
-          "@type": "ImageObject",
-          "url": "https://prakharsingh.github.io/og-image.png",
-          "width": 1200,
-          "height": 630
-        },
-        "about": [
+        "@graph": [
           {
-            "@type": "DefinedTerm",
-            "name": "Code review"
+            "@type": "Person",
+            "@id": "https://prakharsingh.github.io/#person",
+            "name": "Prakhar Singh",
+            "url": "https://prakharsingh.github.io/",
+            "sameAs": [
+              "https://linkedin.com/in/singh-prakhar",
+              "https://github.com/prakharsingh",
+              "https://orcid.org/0009-0004-0049-4060"
+            ]
           },
           {
-            "@type": "DefinedTerm",
-            "name": "Large Language Models",
-            "sameAs": "https://www.wikidata.org/wiki/Q115305900"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "AI developer tooling"
-          }
-        ],
-        "mentions": [
-          {
-            "@type": "DefinedTerm",
-            "name": "Retrieval-Augmented Generation",
-            "sameAs": "https://www.wikidata.org/wiki/Q121362277"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Large Language Models",
-            "sameAs": "https://www.wikidata.org/wiki/Q115305900"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Artificial Intelligence",
-            "sameAs": "https://www.wikidata.org/wiki/Q11660"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Machine Learning",
-            "sameAs": "https://www.wikidata.org/wiki/Q2539"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Distributed Systems",
-            "sameAs": "https://www.wikidata.org/wiki/Q3962217"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Static program analysis"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "Software Development Life Cycle"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "GDPR"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "HIPAA"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "PCI-DSS"
-          },
-          {
-            "@type": "DefinedTerm",
-            "name": "SOC 2"
+            "@type": "TechArticle",
+            "@id": "https://prakharsingh.github.io/notes/agentic-code-review/#article",
+            "mainEntityOfPage": "https://prakharsingh.github.io/notes/agentic-code-review/",
+            "url": "https://prakharsingh.github.io/notes/agentic-code-review/",
+            "headline": "Agentic code review in production: orchestration, evaluation, and the cost of being wrong",
+            "name": "Agentic code review in production",
+            "description": "How production agentic code review systems combine multi-model LLM orchestration, static analysis, retrieval-augmented generation, and compliance-aware routing — and why false positives are the dominant cost.",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "datePublished": "2026-05-12T00:00:00+05:30",
+            "dateModified": "2026-05-12T00:00:00+05:30",
+            "wordCount": 995,
+            "articleSection": "AI Developer Tooling",
+            "keywords": "agentic code review, multi-model LLM orchestration, retrieval-augmented generation, static analysis, AI developer tooling, compliance-aware code review, false positive rate, evaluation-driven routing",
+            "proficiencyLevel": "Expert",
+            "author": { "@id": "https://prakharsingh.github.io/#person" },
+            "publisher": { "@id": "https://prakharsingh.github.io/#person" },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://prakharsingh.github.io/og-image.png",
+              "width": 1200,
+              "height": 630
+            },
+            "about": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Code review"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Large Language Models",
+                "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "AI developer tooling"
+              }
+            ],
+            "mentions": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Retrieval-Augmented Generation",
+                "sameAs": "https://www.wikidata.org/wiki/Q121362277"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Large Language Models",
+                "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Artificial Intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q11660"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Machine Learning",
+                "sameAs": "https://www.wikidata.org/wiki/Q2539"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Distributed Systems",
+                "sameAs": "https://www.wikidata.org/wiki/Q3962217"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Static program analysis"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Software Development Life Cycle"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "GDPR"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "HIPAA"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "PCI-DSS"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "SOC 2"
+              }
+            ]
           }
         ]
       }

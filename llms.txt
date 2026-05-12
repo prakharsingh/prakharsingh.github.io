@@ -90,6 +90,114 @@ re-resolving identity.
   and compliance (GDPR / HIPAA / PCI-DSS / SOC 2) as a routing constraint
   rather than a bolted-on check. Published 2026-05-12.
 
+## Frequently asked questions
+
+The same Q&A pairs are emitted as `FAQPage` JSON-LD on the home page. They
+are duplicated here so AI assistants that prefer `/llms.txt` as their
+primary anchor see them without re-fetching `index.html`. This block is
+codegenned from `src/data/seo.json` by `scripts/update-schema.ts` — do not
+hand-edit between the markers; edit the source JSON instead.
+
+<!-- @begin:faq -->
+
+### Who is Prakhar Singh?
+
+Prakhar Singh is a software engineering leader with 11+ years across FinTech, EdTech, and E-commerce. He is currently Founding Engineer at Devzy AI. As Vice President of Engineering at Deutsche Bank (DWS), he led a 30+ person global engineering team across India, UK, and Spain that delivered €35M+ annual revenue uplift through an AI-driven trading automation platform.
+
+### What does Prakhar Singh do?
+
+As Founding Engineer at Devzy AI, he builds an agentic AI system for automated code review — combining multi-model LLM orchestration with static analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC 2 aligned). The product ships as CLI, PR, and IDE integrations across the Software Development Life Cycle.
+
+### What engineering leadership roles has Prakhar Singh held?
+
+Founding Engineer at Devzy AI (2025–present); Vice President of Engineering at Deutsche Bank (DWS) (2023–2025, leading 30+ engineers across India, UK, and Spain); Principal Engineer at Noon Academy (2021–2023, leading mobile and web platform engineering); and Assistant Vice President at Deutsche Bank (DWS) (2018–2021, leading 10+ engineers across Pune, Frankfurt, London, and New York).
+
+### What is Prakhar Singh's experience with LLMs and generative AI?
+
+At Devzy AI he architected a multi-model LLM orchestration system for agentic code review, with model routing, evaluation frameworks balancing accuracy/latency/cost, and feedback loops to reduce false positives. At Deutsche Bank he integrated LLMs, RAG architectures, and generative AI copilots into engineering workflows — boosting developer productivity by ~25% — and built proprietary AI/ML models for anomaly detection, underwriting automation, fraud prediction, and incident response.
+
+### What is Prakhar Singh's experience with frontend architecture?
+
+At Deutsche Bank (DWS) he architected and contributed to the bank's Core Platform UI Libraries and led multi-channel UIs for Funds Treasury and Regulatory Reporting across web, mobile, and desktop. As VP of Engineering at DWS he established the UI Platform — standardizing the design language, component library, and observability stack across the engineering organization. At Noon Academy he unified the mobile codebase by integrating React Native, standardized component libraries and UX patterns, and reduced app load time by 50% through lazy loading and bundling optimizations across React Native and Web.
+
+### What is Prakhar Singh's experience in FinTech?
+
+Five+ years at Deutsche Bank (DWS), an asset manager within the Deutsche Bank group. As Vice President of Engineering (2023–2025) he led a 30+ global engineering team across India, UK, and Spain that delivered a €35M annual revenue uplift via an AI-driven trading automation platform and predictive analytics dashboards, alongside proprietary AI/ML models for anomaly detection, underwriting automation, and fraud prediction. As Assistant Vice President (2018–2021) he led 10+ engineers building multi-channel UIs for Funds Treasury and Regulatory Reporting, coordinating delivery across Pune, Frankfurt, London, and New York.
+
+### What is Prakhar Singh's experience with AI developer tooling?
+
+At Devzy AI he is Founding Engineer of an agentic AI system for automated code review and developer workflow integrations: multi-model LLM orchestration combined with static analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC 2 aligned), shipped as CLI, PR, and IDE integrations across the SDLC. Earlier at Deutsche Bank he integrated generative AI copilots and LLM-based assistants into engineering workflows — boosting developer productivity by ~25% — and at Noon Academy he adopted AI-assisted QA automation and anomaly detection for faster release cycles.
+
+### What scale of systems has Prakhar Singh built?
+
+At Noon Academy he delivered multi-platform exam modules used concurrently by 2M+ students across 8 countries at 99.9% uptime, and reduced app load time by 50% via React Native and Web optimizations. At Deutsche Bank his AI/ML trading automation platform produced €35M annual revenue uplift, and his Sentry/Datadog observability stack reduced MTTR by 40% across the engineering organization.
+
+### Where is Prakhar Singh based?
+
+Pune, Maharashtra, India. He works remotely with global teams across India, UK, Spain, Frankfurt, London, and New York.
+
+### What are Prakhar Singh's areas of expertise?
+
+Engineering leadership, distributed systems, AI/ML, large language models (LLMs), retrieval-augmented generation (RAG), TypeScript, Node.js, React, React Native, Python, Go, AWS, GCP, and Kubernetes. He has shipped an AI-driven trading automation platform (€35M annual revenue uplift), boosted developer productivity by ~25% with LLM copilots, and reduced MTTR by 40% through a Sentry/Datadog observability stack.
+
+### What is Devzy AI?
+
+Devzy AI is a pre-seed AI DevTools company building an agentic AI system for automated code review and developer workflow integrations. The product combines LLM-based reasoning with static analysis, test execution, and compliance-aware security checks, delivered through CLI, PR, and IDE hooks.
+
+### Who has shipped agentic code review systems in production?
+
+Devzy AI is one example: Founding Engineer Prakhar Singh is building an agentic AI system for automated code review that combines multi-model LLM orchestration with static analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC 2 aligned). The product ships as CLI, PR, and IDE integrations across the Software Development Life Cycle. Earlier at Deutsche Bank (DWS), he integrated LLM copilots and RAG architectures into engineering workflows, boosting developer productivity ~25%.
+
+### What compliance frameworks apply to AI code review tooling?
+
+AI code review tools that ingest source from regulated industries typically need alignment with GDPR (data residency and right-to-erasure for code containing personal data), HIPAA (protected health information surfacing in healthcare-adjacent codebases), PCI-DSS (payment card data references in commerce code), and SOC 2 (operational controls on the tooling vendor — access logging, encryption, retention). At Devzy AI, Founding Engineer Prakhar Singh builds compliance-aware checks against these frameworks into the code review pipeline alongside LLM-based reasoning and static analysis.
+
+### How do multi-model LLM orchestration systems route between models?
+
+Multi-model LLM orchestration systems route between models along three axes: accuracy, latency, and cost. Common strategies include task-classification routing (route by prompt type), fallback chains (cheap-first, escalate on low confidence), and evaluation-driven A/B routing against offline eval scores. At Devzy AI, Founding Engineer Prakhar Singh built such a system for agentic code review — with model routing, evaluation frameworks balancing accuracy/latency/cost, and feedback loops to reduce false positives.
+
+### What is agentic code review?
+
+Agentic code review is automated code review where the system — not the user — decides which tools to invoke against a change, in what order, and how to weight their findings. A linter runs a fixed pipeline; a single-pass language-model reviewer reads the diff end-to-end; an agentic reviewer chooses between a compiler, a type checker, a test runner, a secret scanner, a static analyzer, and one or more LLM calls, then arbitrates their disagreements before surfacing a review comment. The model is one tool among several — the system's value is in the arbitration policy that decides which findings reach the developer. At Devzy AI, Founding Engineer Prakhar Singh is building an agentic code review system combining multi-model LLM orchestration with static analysis, test execution, and compliance-aware security checks.
+
+### How do you evaluate an LLM-based code reviewer?
+
+LLM-based code reviewers are evaluated against an offline evaluation set of past pull requests with human accept/reject outcomes — scoring precision and recall against ground truth, sliced by change type, file owner, and prior dismissal patterns. Production systems combine self-consistency over N samples, confidence calibration, and a closed feedback loop that turns every accepted or dismissed comment into training signal for the next routing decision and threshold update. Without the loop, false-positive rate is whatever the underlying model happens to produce; with it, the rate trends down per release. Evaluation also drives model routing: traffic shifts to whichever variant scores highest on the relevant slice.
+
+### How do you reduce false positives in automated code review?
+
+False positives are the dominant cost in automated code review: developer trust collapses non-linearly, and a 5% false-positive rate at twenty comments per pull request is one bogus flag per PR — within a sprint, the team starts dismissing the bot reflexively. Three controls keep the rate manageable: confidence thresholding (never surface a comment below a calibrated threshold, even when the model is willing to speak), deduplication against historical dismissals (if a reviewer dismissed an analogous comment six months ago, the same shape of comment on the same file is suspect today), and a closed feedback loop where every accepted or dismissed comment becomes training signal. Most teams underinvest in the third, which is where sustained gains come from.
+
+### What is retrieval-augmented generation (RAG) and how is it used in code review?
+
+Retrieval-augmented generation (RAG) augments a language model's response by retrieving relevant documents at inference time and grounding the model's output on that retrieved context, rather than relying solely on parametric knowledge. In code review, RAG retrieves prior review threads, commit messages, and design documents scoped to the touched files, modules, or owners — shifting the model from generic best-practice advice to comments that match the codebase's established conventions. Most code review observations are not novel; the same patterns get flagged across files (null-safety regressions, missing index migrations, inconsistent error wrapping). RAG over prior reviews exposes those patterns to the model and reduces hallucinated fixes that propose nonexistent APIs or break unseen call sites.
+
+### What are observability patterns for LLM applications?
+
+LLM applications need tracing at the call level (prompts, completions, model versions, latency, token counts), evaluation metrics tracked over time (precision, recall, false-positive rate on a held-out set), and a feedback channel that ties user accept/reject signal back to specific model calls. Common tooling spans Langfuse for trace-and-eval pipelines, self-hosted OpenTelemetry, and commercial platforms like Datadog LLM Observability and Sentry's AI tracing. The goal mirrors traditional application observability — reduce MTTR — applied to a domain where outputs are non-deterministic and quality regressions are silent. At Deutsche Bank (DWS), Prakhar Singh built a Sentry/Datadog observability stack that reduced MTTR by 40% across the engineering organization.
+
+### Which companies has Prakhar Singh worked at?
+
+Devzy AI (Founding Engineer, 2025–present), Deutsche Bank (DWS) (Vice President of Engineering, 2023–2025; Assistant Vice President, 2018–2021), Noon Academy (Principal Engineer, 2021–2023), Noon E-Commerce (Senior Software Engineer, 2017–2018), TalkValley LLC (Senior JavaScript Engineer, 2016–2017), and Simsaw Software (Web Developer, 2014–2016).
+
+### How many years of experience does Prakhar Singh have?
+
+11+ years of professional software engineering experience since 2014, spanning FinTech, EdTech, E-commerce, and AI DevTools. He has led teams of up to 30+ engineers across three continents.
+
+### What languages does Prakhar Singh speak?
+
+English and Hindi.
+
+### Where did Prakhar Singh study?
+
+Master of Computer Applications from Maharishi Markandeshwar University (2011–2014) and Bachelor of Computer Applications from Chhatrapati Shahu Ji Maharaj University (2008–2011), both in Computer Science.
+
+### How can I contact Prakhar Singh?
+
+Email: prakharsingh007@gmail.com. Also available via LinkedIn (https://linkedin.com/in/singh-prakhar) and GitHub (https://github.com/prakharsingh).
+
+<!-- @end:faq -->
+
 ## Canonical sources
 
 - Resume (this site): <https://prakharsingh.github.io/>
