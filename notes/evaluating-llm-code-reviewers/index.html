@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Evaluating LLM Code Reviewers: Precision, Recall, and Routing
+      &middot; Prakhar Singh
+    </title>
+    <meta
+      name="description"
+      content="How to evaluate LLM code reviewers offline: precision, recall, self-consistency, and why a closed feedback loop separates improvement from plateau."
+    />
+
+    <link rel="canonical" href="https://prakharsingh.github.io/notes/evaluating-llm-code-reviewers/" />
+    <link rel="author" href="https://prakharsingh.github.io/" />
+    <meta name="author" content="Prakhar Singh" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)" />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prakhar Singh" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Evaluating LLM code reviewers" />
+    <meta
+      property="og:description"
+      content="How to evaluate LLM code reviewers offline: precision, recall, self-consistency, and why a closed feedback loop separates improvement from plateau."
+    />
+    <meta
+      property="og:url"
+      content="https://prakharsingh.github.io/notes/evaluating-llm-code-reviewers/"
+    />
+    <meta property="og:image" content="https://prakharsingh.github.io/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:author" content="Prakhar Singh" />
+    <meta property="article:published_time" content="2026-05-14" />
+    <meta property="article:modified_time" content="2026-05-14" />
+    <meta property="article:section" content="AI Developer Tooling" />
+    <meta
+      property="article:tag"
+      content="LLM evaluation, code review, offline evaluation harness, precision and recall, model routing, AI developer tooling"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Evaluating LLM code reviewers" />
+    <meta
+      name="twitter:description"
+      content="How to build an offline evaluation harness for LLM-based code review: precision vs recall, self-consistency, confidence calibration, and why a closed feedback loop makes the difference."
+    />
+    <meta name="twitter:image" content="https://prakharsingh.github.io/og-image.png" />
+
+    <!-- Preload Share Tech Mono -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/share-tech-mono-latin-400-normal.woff2"
+      crossorigin
+    />
+
+    <!-- TechArticle JSON-LD with inline Person stub -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://prakharsingh.github.io/#person",
+            "name": "Prakhar Singh",
+            "url": "https://prakharsingh.github.io/",
+            "sameAs": [
+              "https://linkedin.com/in/singh-prakhar",
+              "https://github.com/prakharsingh",
+              "https://orcid.org/0009-0004-0049-4060"
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://prakharsingh.github.io/notes/evaluating-llm-code-reviewers/#article",
+            "mainEntityOfPage": "https://prakharsingh.github.io/notes/evaluating-llm-code-reviewers/",
+            "url": "https://prakharsingh.github.io/notes/evaluating-llm-code-reviewers/",
+            "headline": "Evaluating LLM code reviewers: an offline harness for precision, recall, and routing",
+            "name": "Evaluating LLM code reviewers",
+            "description": "How to build an offline evaluation harness for LLM-based code review: precision vs recall, self-consistency, confidence calibration, and why a closed feedback loop is the difference between improvement and plateau.",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "datePublished": "2026-05-14T00:00:00+05:30",
+            "dateModified": "2026-05-14T00:00:00+05:30",
+            "wordCount": 1213,
+            "articleSection": "AI Developer Tooling",
+            "keywords": "LLM evaluation, code review, offline evaluation harness, precision and recall, model routing, self-consistency, confidence calibration, AI developer tooling",
+            "proficiencyLevel": "Expert",
+            "author": { "@id": "https://prakharsingh.github.io/#person" },
+            "publisher": { "@id": "https://prakharsingh.github.io/#person" },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://prakharsingh.github.io/og-image.png",
+              "width": 1200,
+              "height": 630
+            },
+            "about": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Code review",
+                "sameAs": "https://www.wikidata.org/wiki/Q1342704"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Ground truth",
+                "sameAs": "https://www.wikidata.org/wiki/Q370766"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Precision and recall",
+                "sameAs": "https://www.wikidata.org/wiki/Q2359161"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "AI developer tooling"
+              }
+            ],
+            "mentions": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Large Language Models",
+                "sameAs": "https://www.wikidata.org/wiki/Q115305900"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Precision and recall",
+                "sameAs": "https://www.wikidata.org/wiki/Q2359161"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "False positive",
+                "sameAs": "https://www.wikidata.org/wiki/Q1369227"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Inter-annotator agreement",
+                "sameAs": "https://www.wikidata.org/wiki/Q470749"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Self-consistency"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Confidence calibration"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Model evaluation"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Retrieval-Augmented Generation",
+                "sameAs": "https://www.wikidata.org/wiki/Q121362277"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- BreadcrumbList JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Prakhar Singh",
+            "item": "https://prakharsingh.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Notes",
+            "item": "https://prakharsingh.github.io/notes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Evaluating LLM code reviewers"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      @font-face {
+        font-family: 'Share Tech Mono';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src:
+          url('/fonts/share-tech-mono-latin-400-normal.woff2') format('woff2'),
+          url('/fonts/share-tech-mono-latin-400-normal.woff') format('woff');
+      }
+
+      :root {
+        --bg: #fafafa;
+        --fg: #212121;
+        --fg-muted: #616161;
+        --rule: #e0e0e0;
+        --nav-bg: #212121;
+        --nav-fg: #fafafa;
+        --nav-border: transparent;
+      }
+
+      :root.dark {
+        --bg: #212121;
+        --fg: #eeeeee;
+        --fg-muted: #bdbdbd;
+        --rule: #616161;
+        --nav-bg: #212121;
+        --nav-fg: #eeeeee;
+        --nav-border: rgba(255, 255, 255, 0.1);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not(.light):not(.dark) {
+          --bg: #212121;
+          --fg: #eeeeee;
+          --fg-muted: #bdbdbd;
+          --rule: #616161;
+          --nav-bg: #212121;
+          --nav-fg: #eeeeee;
+          --nav-border: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--fg);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .site-nav {
+        background: var(--nav-bg);
+        color: var(--nav-fg);
+        min-height: 3rem;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid var(--nav-border);
+        font-size: 0.875rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .site-nav-inner {
+        width: 100%;
+        max-width: 46rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .site-nav a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .site-nav a:hover {
+        text-decoration: underline;
+      }
+      .site-nav a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      .site-nav .crumb {
+        opacity: 0.7;
+      }
+
+      .page {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        text-decoration-color: currentColor;
+      }
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      article header {
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        margin: 0 0 1rem;
+      }
+
+      @media (min-width: 48rem) {
+        h1 {
+          font-size: 2.05rem;
+        }
+      }
+
+      .byline {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--fg-muted);
+      }
+
+      .byline a {
+        color: var(--fg);
+      }
+
+      .dek {
+        margin: 1.5rem 0 0;
+        padding-left: 0.85rem;
+        border-left: 2px solid var(--rule);
+        font-size: 1rem;
+        color: var(--fg-muted);
+      }
+
+      h2 {
+        font-size: 1.45rem;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        margin: 2.75rem 0 0.7rem;
+      }
+
+      article p,
+      article ul,
+      article ol {
+        margin: 0 0 1rem;
+        text-align: left;
+      }
+
+      @media (min-width: 56rem) {
+        article p {
+          text-align: justify;
+        }
+      }
+
+      article ul {
+        padding-left: 1.25rem;
+      }
+
+      article li {
+        margin-bottom: 0.4rem;
+      }
+
+      article li::marker {
+        color: var(--fg-muted);
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      .about {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--rule);
+        font-size: 0.95rem;
+        color: var(--fg-muted);
+      }
+
+      .about h2 {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        margin: 0 0 0.5rem;
+        color: var(--fg-muted);
+      }
+
+      .about p {
+        margin: 0;
+      }
+
+      .about a {
+        color: var(--fg);
+      }
+
+      .skip {
+        position: absolute;
+        left: 0.75rem;
+        top: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        background: var(--fg);
+        color: var(--bg);
+        transform: translateY(-150%);
+        transition: transform 120ms ease-out;
+        text-decoration: none;
+      }
+
+      .skip:focus {
+        transform: translateY(0);
+        outline: none;
+      }
+    </style>
+
+    <!-- Theme bootstrap -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+          else if (t === 'light') document.documentElement.classList.add('light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#article">Skip to article</a>
+
+    <header class="site-nav" role="banner">
+      <div class="site-nav-inner">
+        <a class="home" href="/" rel="home">&larr; Prakhar Singh</a>
+        <span class="crumb" aria-current="page">Notes</span>
+      </div>
+    </header>
+
+    <div class="page">
+      <article id="article">
+        <header>
+          <h1>
+            Evaluating LLM code reviewers: an offline harness for precision, recall, and routing
+          </h1>
+          <p class="byline">
+            by <a href="/" rel="author">Prakhar Singh</a> &middot;
+            <time datetime="2026-05-14">14 May 2026</time>
+          </p>
+          <p class="dek">
+            If you cannot measure it, you cannot route it. Why offline evaluation is the difference
+            between a code reviewer that improves over time and one the team dismisses within a
+            sprint.
+          </p>
+        </header>
+
+        <p>
+          Chat evaluations are vibes-based: thumbs-up on "was this helpful?" measured against no
+          particular ground truth. Code review needs something stricter. A reviewer that flags five
+          real bugs and one bogus warning is useful; one that flags one real bug and five bogus
+          warnings is dismissed within a sprint. Offline evaluation answers the question before the
+          reviewer ships. It tells you which model to route a given change to, when to escalate, and
+          whether the system is getting better or worse over time. Without it, every routing decision
+          is a guess.
+        </p>
+
+        <h2>Building the evaluation set</h2>
+        <p>
+          Start with past pull requests that carry human accept/reject outcomes. This is your ground
+          truth. Filter aggressively: comments the author dismissed within seconds, comments where
+          the reviewer later admitted they were wrong, comments on code that has since been deleted.
+          What remains is a set of (diff, finding, accept/reject) triples where the human label is
+          trustworthy enough to score against.
+        </p>
+        <p>
+          Three slices determine whether the set is useful. <strong>Change type</strong>: a model
+          that catches null-safety regressions perfectly may miss concurrency bugs entirely, and
+          vice versa. If your eval set is 90% style nits, the score tells you nothing about
+          correctness. <strong>File ownership</strong>: different teams write different code, and an
+          evaluator that scores well on backend services may crater on frontend components.
+          <strong>Language</strong>: a Python reviewer handles types as optional annotations; a
+          TypeScript reviewer treats them as structural contracts. A single aggregate score hides
+          per-slice failures. Slice and score separately.
+        </p>
+
+        <h2>Scoring: precision, recall, and the dimensions that matter</h2>
+        <p>
+          Precision and recall trade off against each other. In code review, precision matters more
+          than recall. A missed real bug is an opportunity cost. A bogus flag is a trust cost, and
+          trust collapses non-linearly: two or three bad comments in a single pull request are enough
+          for a developer to start dismissing the bot reflexively, and once that habit forms, the
+          reviewer's signal-to-noise ratio becomes irrelevant because nobody is reading it. Target
+          recall above 0.7 and precision above 0.85 before any output reaches a developer.
+        </p>
+        <p>
+          <strong>Multi-tier labeling.</strong> Not all findings are created equal, and collapsing
+          everything into accept/reject loses signal. A three-tier scheme works better in practice:
+          <strong>Hard Reject</strong> for factually wrong or harmful findings,
+          <strong>Soft Reject</strong> for valid-but-low-value suggestions (style nits, marginal
+          improvements, technically-correct-but-low-priority), and <strong>Accept</strong> for good
+          catches. Three tiers let you compute precision at different strictness levels: Hard-Reject-only
+          precision captures the rate of genuinely harmful false positives, while Soft+Hard Reject
+          precision captures developer tolerance more broadly. The two numbers tell different stories,
+          and both matter for calibration.
+        </p>
+        <p>
+          <strong>Self-consistency over N samples.</strong> Run the same diff through the reviewer
+          multiple times. If it produces different findings each time, the model is underspecified
+          for the task. Low self-consistency correlates with high false-positive rate in production,
+          and it is a cheaper signal to measure than full precision/recall against ground truth.
+          Track it per model version and per slice.
+        </p>
+        <p>
+          <strong>Severity-aware precision.</strong> A bogus "use const instead of let" suggestion is
+          an eye-roll. A bogus security or null-dereference claim is a trust-destroyer. Weighted
+          precision, where false positives are scored by their potential impact rather than counted
+          equally, tracks closer to actual developer tolerance than raw precision. Label severity on
+          the evaluation set (critical, medium, low) and weight false positives accordingly: a
+          false-critical costs 10x a false-low in the weighted score. The number that predicts whether
+          your reviewer stays in the loop is almost never raw precision.
+        </p>
+        <p>
+          <strong>Confidence calibration.</strong> The reviewer should know when it does not know.
+          A comment emitted with low confidence should be suppressed by the routing layer rather than
+          surfaced with a disclaimer. Surfacing it anyway is tempting (more coverage) but the
+          disclaimer carries no weight with a developer who already distrusts the tool. Calibrate a
+          threshold on the offline eval set: what is the lowest confidence score at which precision
+          stays above 0.85? Discard everything below it.
+        </p>
+
+        <h2>From evaluation to routing</h2>
+        <p>
+          Offline evaluation is not a one-time gate. It is the mechanism that drives routing
+          decisions in production. A classification router sends simple changes to a cheap fast
+          model and complex changes to a frontier model, but the classification policy itself needs
+          evaluation: what threshold defines "complex"? A fallback chain escalates from cheap to
+          expensive when self-consistency drops, but the escalation threshold needs evaluation too.
+          Both thresholds are hyperparameters, and offline eval is how you tune them.
+        </p>
+        <p>
+          Evaluation-driven A/B routing ties this together. Maintain an offline evaluation set,
+          score every model variant against it on the relevant slices, and route production traffic
+          to whichever variant scores highest per slice. When a new model ships, the evaluation set
+          tells you whether it is an upgrade or a regression before any user sees it. When a slice
+          degrades, traffic shifts back automatically. This is the only routing strategy that adapts
+          to model updates without manual intervention.
+        </p>
+
+<p>
+  Ensemble disagreement is itself a routing signal. When a cheap model signs off on a change
+  but a frontier model flags something, the disagreement is worth surfacing regardless of
+  which model is "correct." Disagreement rate between model pairs, tracked over time on the
+  eval set, often catches regressions faster than raw precision shifts: if two models that
+  agreed 95% of the time last week now agree 80%, something changed, and the eval set alone
+  may not tell you what.
+</p>
+
+<p>
+  This evaluation harness feeds the routing decisions described in the companion article on
+  <a href="/notes/agentic-code-review/">agentic code review in production</a>:
+  offline evaluation scores drive the model router and fallback chain thresholds
+  directly.
+</p>
+
+        <h2>The closed feedback loop</h2>
+        <p>
+          The offline evaluation set decays. The codebase evolves, old patterns become obsolete, new
+          patterns emerge. Every accepted or dismissed comment in production must feed back into the
+          ground truth set. A dismissed comment becomes a negative example: same diff, same finding,
+          but ground truth equals reject. Next time the model proposes something similar, the offline
+          eval catches it before a developer sees it. An accepted comment becomes a positive example
+          and reinforces the pattern.
+        </p>
+        <p>
+          Retrieval-augmented generation over the repository's past review threads can surface similar past comments, making it easier to spot when the model is proposing a finding that a human reviewer already dismissed under slightly different wording.
+        </p>
+        <p>
+          This feedback loop is where most teams underinvest. They build the eval set once, ship the
+          reviewer, and treat the eval as a static artifact. The reviewer plateaus, the team stops
+          trusting it, and the project is shelved. The loop is what separates a reviewer that
+          improves release over release from one that is disabled within a quarter. Without it, the
+          false-positive rate is whatever the underlying model happens to produce. With it, the rate
+          trends down per release.
+        </p>
+
+        <h2>Open challenges</h2>
+        <p>
+          <strong>Ground truth drift.</strong> An evaluation set built from last year's pull requests
+          scores last year's patterns. As the codebase adds new modules, changes languages, or
+          adopts new frameworks, the ground truth ages out. Periodic re-labeling, sampled from recent
+          production dismissals and accepts, keeps the set relevant. Freshness weighting (recent
+          examples count more than stale ones) is a lighter-weight alternative.
+        </p>
+
+        <footer class="about">
+          <h2>About the author</h2>
+          <p>
+            <a href="/" rel="author">Prakhar Singh</a> is Founding Engineer at Devzy AI, where
+            he is building an agentic AI system for automated code review that combines multi-model
+            LLM orchestration with static analysis, test execution, and compliance-aware security
+            checks. Previously Vice President of Engineering at Deutsche Bank (DWS), leading a
+            30+ global engineering team that delivered &euro;35M+ annual revenue uplift through an
+            AI-driven trading automation platform. Based in Pune, India.
+          </p>
+        </footer>
+      </article>
+    </div>
+  </body>
+</html>

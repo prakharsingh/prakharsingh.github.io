@@ -82,6 +82,13 @@ same `Person` graph node (`/#person`) referenced from the home page, so AI
 agents already grounded on the résumé can attribute these articles without
 re-resolving identity.
 
+- **Evaluating LLM code reviewers: an offline harness for precision, recall,
+  and routing**
+  <https://prakharsingh.github.io/notes/evaluating-llm-code-reviewers/>
+  Building evaluation sets from past PRs, scoring precision vs recall,
+  calibrating confidence thresholds, and wiring offline eval into production
+  routing decisions. Published 2026-05-14.
+
 - **Agentic code review in production: orchestration, evaluation, and the
   cost of being wrong**
   <https://prakharsingh.github.io/notes/agentic-code-review/>
