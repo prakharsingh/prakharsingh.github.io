@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.host +
+        '/?p=' + encodeURIComponent(l.pathname + l.search) + l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -19,6 +19,23 @@
       })();
     </script>
 
+    <!-- GitHub Pages SPA redirect restore. When GitHub serves 404.html for
+         an unknown path (e.g. /projects), that page encodes the intended path
+         into a ?p= query string and redirects to /. This script reads it back
+         and calls history.replaceState so BrowserRouter sees the correct path
+         before React mounts. -->
+    <script>
+      (function () {
+        try {
+          var params = new URLSearchParams(location.search);
+          var p = params.get('p');
+          if (p) {
+            history.replaceState(null, null, p + location.hash);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Preload the primary body font (Share Tech Mono). Served from /fonts
          rather than the bundled @fontsource path so the URL is static and
          discoverable by the browser's preload scanner before CSS parses. -->
@@ -550,6 +567,26 @@
               "@type": "DefinedTerm",
               "name": "EdTech",
               "sameAs": "https://www.wikidata.org/wiki/Q1068473"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "GitHub Actions",
+              "sameAs": "https://www.wikidata.org/wiki/Q107057111"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "VS Code Extension API",
+              "sameAs": "https://www.wikidata.org/wiki/Q28954927"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Cloudflare Workers",
+              "sameAs": "https://www.wikidata.org/wiki/Q64737161"
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "Static Site Generation",
+              "sameAs": "https://www.wikidata.org/wiki/Q2881868"
             }
           ],
           "sameAs": [
@@ -792,15 +829,83 @@
                 "@type": "Answer",
                 "text": "Email: prakharsingh007@gmail.com. Also available via LinkedIn (https://linkedin.com/in/singh-prakhar) and GitHub (https://github.com/prakharsingh)."
               }
+            },
+            {
+              "@type": "Question",
+              "name": "What projects has Prakhar Singh built?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Prakhar Singh has built several open-source tools and web applications. audit-packs is a GitHub Action that maps IaC security findings from Checkov and Semgrep to NIST 800-53 and SOC2 compliance controls and posts inline PR review comments with audit-grade evidence. Yggdrasil is a VS Code sidebar extension for exploring and switching git worktrees, published on the VS Code Marketplace and Open VSX. DubaiDeals.live is a restaurant deal aggregator across UAE bank dining programmes and delivery platforms (The Entertainer, Zomato, Careem, Talabat, Deliveroo), built on Astro and Cloudflare Workers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is audit-packs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "audit-packs is a GitHub Action that wraps IaC security tools (Checkov, Semgrep, optionally CodeQL) in a compliance control-mapping layer. Where a raw scanner reports 'S3 bucket unencrypted', audit-packs posts an inline PR review comment identifying the NIST 800-53 or SOC2 control affected, the confidence score, the evidence from the finding, and the engine that flagged it. The action writes an OSCAL assessment-results JSON, a control coverage matrix, and an aggregate SARIF file, and exits non-zero when any finding meets or exceeds a configurable fail-on severity threshold. Built by Prakhar Singh; available at https://github.com/prakharsingh/audit-packs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Yggdrasil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yggdrasil (published as LogKat/git-yggdrasil) is a VS Code extension that adds a dedicated Activity Bar sidebar panel for git worktrees. It lists all worktrees for the current project root, stays in sync with local git state automatically, and provides a Branch Diff Explorer where each worktree can be expanded to browse committed, staged, and untracked changes with side-by-side diff views. The Smart Switch dialog supports opening a worktree in a new window, replacing the current window, or adding it to a multi-root workspace. Published on the VS Code Marketplace and Open VSX Registry, making it available to VS Code, Cursor, and other Open VSX clients. Built by Prakhar Singh; available at https://yggdrasil.logkat.dev/."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is DubaiDeals.live?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "DubaiDeals.live is a web app that aggregates restaurant deals across Dubai on a single map. It pulls from The Entertainer, Zomato, Careem, Talabat, Deliveroo, and UAE bank dining programmes (ADCB, Emirates NBD, HSBC, DIB, RAKBANK) and answers the question 'what discounts can I get tonight, near me?' Built on Astro v6 deployed to Cloudflare Workers, with a Supabase-backed hourly scraper that refreshes a Cloudflare KV cache so the web app never hits the database at request time. Bun monorepo with separate web and scraper packages. Built by Prakhar Singh; live at https://dubaideals.live/."
+              }
             }
           ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://prakharsingh.github.io/projects#audit-packs",
+          "name": "audit-packs",
+          "description": "IaC security findings mapped to compliance framework controls with inline PR evidence — NIST 800-53, SOC2.",
+          "url": "https://github.com/prakharsingh/audit-packs",
+          "keywords": "Open Source, Python, GitHub Actions, Checkov, Semgrep, SARIF, OSCAL, NIST 800-53, SOC2",
+          "applicationCategory": "DeveloperApplication",
+          "author": {
+            "@id": "https://prakharsingh.github.io/#person"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://prakharsingh.github.io/projects#yggdrasil",
+          "name": "Yggdrasil",
+          "description": "VS Code sidebar extension for exploring and switching git worktrees.",
+          "url": "https://yggdrasil.logkat.dev/",
+          "keywords": "Open Source, TypeScript, VS Code Extension API, git",
+          "applicationCategory": "DeveloperApplication",
+          "author": {
+            "@id": "https://prakharsingh.github.io/#person"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://prakharsingh.github.io/projects#dubaideals-live",
+          "name": "DubaiDeals.live",
+          "description": "Every restaurant deal in Dubai — The Entertainer, Zomato, Careem, UAE bank programmes — on one map.",
+          "url": "https://dubaideals.live/",
+          "keywords": "Astro, Cloudflare Workers, Supabase, Bun, TypeScript",
+          "applicationCategory": "DeveloperApplication",
+          "author": {
+            "@id": "https://prakharsingh.github.io/#person"
+          }
         }
       ]
     }
     </script>
     <!-- @end:structured-data -->
-    <script type="module" crossorigin src="/assets/index-BiDvlgAB.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BEpfjJxR.css">
+    <script type="module" crossorigin src="/assets/index-ChW1B00y.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BazE1ePX.css">
   </head>
   <body>
     <div id="root">
@@ -884,6 +989,14 @@
           <dd>Master of Computer Applications from Maharishi Markandeshwar University (2011–2014) and Bachelor of Computer Applications from Chhatrapati Shahu Ji Maharaj University (2008–2011), both in Computer Science.</dd>
           <dt>How can I contact Prakhar Singh?</dt>
           <dd>Email: <a href="mailto:prakharsingh007@gmail.com">prakharsingh007@gmail.com</a>. Also available via LinkedIn (<a href="https://linkedin.com/in/singh-prakhar">https://linkedin.com/in/singh-prakhar</a>) and GitHub (<a href="https://github.com/prakharsingh">https://github.com/prakharsingh</a>).</dd>
+          <dt>What projects has Prakhar Singh built?</dt>
+          <dd>Prakhar Singh has built several open-source tools and web applications. audit-packs is a GitHub Action that maps IaC security findings from Checkov and Semgrep to NIST 800-53 and SOC2 compliance controls and posts inline PR review comments with audit-grade evidence. Yggdrasil is a VS Code sidebar extension for exploring and switching git worktrees, published on the VS Code Marketplace and Open VSX. DubaiDeals.live is a restaurant deal aggregator across UAE bank dining programmes and delivery platforms (The Entertainer, Zomato, Careem, Talabat, Deliveroo), built on Astro and Cloudflare Workers.</dd>
+          <dt>What is audit-packs?</dt>
+          <dd>audit-packs is a GitHub Action that wraps IaC security tools (Checkov, Semgrep, optionally CodeQL) in a compliance control-mapping layer. Where a raw scanner reports 'S3 bucket unencrypted', audit-packs posts an inline PR review comment identifying the NIST 800-53 or SOC2 control affected, the confidence score, the evidence from the finding, and the engine that flagged it. The action writes an OSCAL assessment-results JSON, a control coverage matrix, and an aggregate SARIF file, and exits non-zero when any finding meets or exceeds a configurable fail-on severity threshold. Built by Prakhar Singh; available at <a href="https://github.com/prakharsingh/audit-packs.">https://github.com/prakharsingh/audit-packs.</a></dd>
+          <dt>What is Yggdrasil?</dt>
+          <dd>Yggdrasil (published as LogKat/git-yggdrasil) is a VS Code extension that adds a dedicated Activity Bar sidebar panel for git worktrees. It lists all worktrees for the current project root, stays in sync with local git state automatically, and provides a Branch Diff Explorer where each worktree can be expanded to browse committed, staged, and untracked changes with side-by-side diff views. The Smart Switch dialog supports opening a worktree in a new window, replacing the current window, or adding it to a multi-root workspace. Published on the VS Code Marketplace and Open VSX Registry, making it available to VS Code, Cursor, and other Open VSX clients. Built by Prakhar Singh; available at <a href="https://yggdrasil.logkat.dev/.">https://yggdrasil.logkat.dev/.</a></dd>
+          <dt>What is DubaiDeals.live?</dt>
+          <dd>DubaiDeals.live is a web app that aggregates restaurant deals across Dubai on a single map. It pulls from The Entertainer, Zomato, Careem, Talabat, Deliveroo, and UAE bank dining programmes (ADCB, Emirates NBD, HSBC, DIB, RAKBANK) and answers the question 'what discounts can I get tonight, near me?' Built on Astro v6 deployed to Cloudflare Workers, with a Supabase-backed hourly scraper that refreshes a Cloudflare KV cache so the web app never hits the database at request time. Bun monorepo with separate web and scraper packages. Built by Prakhar Singh; live at <a href="https://dubaideals.live/.">https://dubaideals.live/.</a></dd>
         </dl>
         <p><a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> · <a href="https://github.com/prakharsingh">GitHub</a></p>
       </div>

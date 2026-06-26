@@ -520,7 +520,7 @@
           </p>
           <p class="dek">
             What "agentic" actually buys you over a linter, why single-model approaches stall,
-            and why false positives — not raw model capability — determine whether the system
+            and why false positives, not raw model capability, determine whether the system
             stays in the loop.
           </p>
         </header>
@@ -531,7 +531,7 @@
           change, in what order, and how to weight their findings. A linter runs a fixed
           pipeline. A single-pass language-model reviewer reads the diff and emits comments
           end-to-end. An agentic reviewer chooses between a compiler, a type checker, a test
-          runner, a secret scanner, a static analyzer, and one or more language-model calls —
+          runner, a secret scanner, a static analyzer, and one or more language-model calls,
           then arbitrates their disagreements before surfacing a review comment.
         </p>
         <p>
@@ -559,7 +559,7 @@
           </li>
           <li>
             <strong>Fallback chains.</strong> Try the cheap model first; if self-consistency
-            across N samples is low — or a cheap verifier disagrees — escalate. This is robust
+            across N samples is low, or a cheap verifier disagrees, escalate. This is robust
             against classifier drift but doubles cost on the long tail.
           </li>
           <li>
@@ -577,13 +577,13 @@
 
         <h2>Grounding with static analysis and retrieval</h2>
         <p>
-          A pure language-model review hallucinates fixes — proposing API calls that do not
+          A pure language-model review hallucinates fixes: proposing API calls that do not
           exist, citing version-specific behavior incorrectly, suggesting refactors that break
           other call sites the model never saw. Two anchors push the hallucination rate down.
         </p>
         <p>
           First, deterministic static analyzers run in parallel with the language model. Type
-          errors, null dereferences, missing <code>await</code>, unused imports — these are
+          errors, null dereferences, missing <code>await</code>, unused imports. These are
           cheap, deterministic, and not worth a model call. The agent uses their output as
           ground truth and frames its review around facts the static analyzer surfaced, not
           facts the model invented.
@@ -591,7 +591,7 @@
         <p>
           Second, retrieval-augmented generation over the repository itself: prior review
           threads, commit messages, and the project's design documents. Most code review
-          observations are not novel. The same patterns get flagged across files — null-safety
+          observations are not novel. The same patterns get flagged across files: null-safety
           regressions, missing index migrations, inconsistent error wrapping. Retrieving prior
           review comments scoped to the touched files, modules, or owners shifts the model
           from generic best-practice advice to comments that match the codebase's established
@@ -609,16 +609,16 @@
         <p>Three controls keep the rate manageable:</p>
         <ul>
           <li>
-            <strong>Confidence thresholding</strong> — never surface a comment below a
+              <strong>Confidence thresholding</strong>: never surface a comment below a
             calibrated threshold, even if the model is willing to speak.
           </li>
           <li>
-            <strong>Dedup against historical dismissals</strong> — if a reviewer dismissed an
+              <strong>Dedup against historical dismissals</strong>: if a reviewer dismissed an
             analogous comment six months ago, the same shape of comment on the same file is
             suspect this time.
           </li>
           <li>
-            <strong>A closed feedback loop</strong> — every dismissed or accepted comment
+              <strong>A closed feedback loop</strong>: every dismissed or accepted comment
             becomes training signal for the next routing decision and threshold update.
           </li>
         </ul>
@@ -631,15 +631,15 @@
         <h2>Compliance as a routing constraint</h2>
         <p>
           Compliance is not a bolt-on check. It belongs at the same layer as task
-          classification — a first-class routing input, not a separate stage tacked on at the
+          classification: a first-class routing input, not a separate stage tacked on at the
           end.
         </p>
         <p>
-          Code touching regulated data — protected health information, payment card numbers, EU
-          resident identifiers — has to route differently. GDPR shapes both transfer (no diffs
+          Code touching regulated data (protected health information, payment card numbers, EU
+          resident identifiers) has to route differently. GDPR shapes both transfer (no diffs
           leaving the controller's processors without a Data Processing Agreement) and
           retention (logged prompts and completions are themselves processing activity).
-          HIPAA obligations — Business Associate Agreements and minimum-necessary access —
+          HIPAA obligations (Business Associate Agreements and minimum-necessary access)
           determine which model endpoints are eligible to process diffs containing PHI.
           PCI-DSS controls dictate cardholder-data redaction before model invocation. SOC 2
           controls dictate operational guarantees on the reviewer service itself. Bolting any
@@ -650,8 +650,8 @@
         <h2>Closing</h2>
         <p>
           Agentic code review is a coordination system with a language model embedded in it,
-          not a language model with tools attached. The hard problems are not in the model —
-          they are in the routing, the grounding, the evaluation, and the feedback loops that
+           not a language model with tools attached. The hard problems are not in the model:
+           they are in the routing, the grounding, the evaluation, and the feedback loops that
           decide what the system does next time. Teams that treat the model as the product
           underinvest in everything that actually determines whether the product stays in use.
         </p>
