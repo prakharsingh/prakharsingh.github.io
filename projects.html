@@ -41,7 +41,8 @@
     <!-- Machine-readable alternates. Markdown for AI assistants; JSON
          Resume schema for recruiting/sourcing tooling. RFC 8288 link
          relations, static-site equivalent of the HTTP Link header. -->
-    <link rel="alternate" type="text/markdown" href="/llms.txt" title="Resume in Markdown (llms.txt)">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Resume in Markdown (llms.txt)">
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Resume in Markdown — full content (llms-full.txt)">
     <link rel="alternate" type="application/json" href="/resume.json" title="Resume in JSON Resume schema">
 
     <meta name="author" content="Prakhar Singh">
@@ -523,9 +524,15 @@
             "subjectOf": [
               {
                 "@type": "DataDownload",
-                "encodingFormat": "text/markdown",
+                "encodingFormat": "text/plain",
                 "contentUrl": "https://prakharsingh.github.io/llms.txt",
-                "name": "Resume in Markdown"
+                "name": "Resume in Markdown (llms.txt)"
+              },
+              {
+                "@type": "DataDownload",
+                "encodingFormat": "text/plain",
+                "contentUrl": "https://prakharsingh.github.io/llms-full.txt",
+                "name": "Resume in Markdown — full content (llms-full.txt)"
               },
               {
                 "@type": "DataDownload",
@@ -761,7 +768,7 @@
                 "name": "What projects has Prakhar Singh built?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Prakhar Singh has built several open-source tools and web applications. audit-packs is a GitHub Action that maps IaC security findings from Checkov and Semgrep to NIST 800-53 and SOC2 compliance controls and posts inline PR review comments with audit-grade evidence. Yggdrasil is a VS Code sidebar extension for exploring and switching git worktrees, published on the VS Code Marketplace and Open VSX. DubaiDeals.live is a restaurant deal aggregator across UAE bank dining programmes and delivery platforms (The Entertainer, Zomato, Careem, Talabat, Deliveroo), built on Astro and Cloudflare Workers."
+                  "text": "Prakhar Singh has built several open-source tools and web applications. audit-packs is a scanner-agnostic Compliance Intelligence Engine that normalizes SARIF from six OSS scanners (Checkov, Semgrep, CodeQL, Trivy, tfsec, gitleaks), maps findings to eight compliance frameworks (NIST 800-53, SOC2, ISO 27001, PCI-DSS, FedRAMP, HIPAA, GDPR, org-policy), and optionally adjudicates via a four-role LLM ensemble before posting inline PR evidence. Yggdrasil is a VS Code sidebar extension for exploring and switching git worktrees, published on the VS Code Marketplace and Open VSX. DubaiDeals.live is a restaurant deal aggregator across UAE bank dining programmes and delivery platforms (The Entertainer, Zomato, Careem, Talabat, Deliveroo), built on Astro and Cloudflare Workers."
                 }
               },
               {
@@ -769,7 +776,7 @@
                 "name": "What is audit-packs?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "audit-packs is a GitHub Action that wraps IaC security tools (Checkov, Semgrep, optionally CodeQL) in a compliance control-mapping layer. Where a raw scanner reports 'S3 bucket unencrypted', audit-packs posts an inline PR review comment identifying the NIST 800-53 or SOC2 control affected, the confidence score, the evidence from the finding, and the engine that flagged it. The action writes an OSCAL assessment-results JSON, a control coverage matrix, and an aggregate SARIF file, and exits non-zero when any finding meets or exceeds a configurable fail-on severity threshold. Built by Prakhar Singh; available at https://github.com/prakharsingh/audit-packs."
+                  "text": "audit-packs is a scanner-agnostic Compliance Intelligence Engine that transforms security scanner findings into standardized, evidence-backed compliance artifacts. Detection is delegated to six best-in-class OSS engines — Checkov, Semgrep, CodeQL, Trivy, tfsec, and gitleaks — any tool that emits SARIF can feed it. The engine normalizes all SARIF to a common Finding model, maps findings to eight compliance frameworks (NIST 800-53, SOC2, ISO 27001, PCI-DSS, FedRAMP, HIPAA, GDPR, and configurable org-policy), and optionally adjudicates each finding through a four-role LLM ensemble (Detector, Verifier, Adversarial, Judge) with composite confidence scoring across six weighted signals. Framework-specific detection agents (GDPR, HIPAA, SOC2, FedRAMP, OrgPolicy, DataFlow) cover controls static engines cannot observe. Outputs include diff-filtered inline PR comments tagged by control and severity, OSCAL assessment-results JSON, SEO-ready coverage HTML, aggregate SARIF, and a configurable severity gate. Built by Prakhar Singh; available at https://github.com/prakharsingh/audit-packs."
                 }
               },
               {
@@ -794,9 +801,9 @@
             "@type": "SoftwareApplication",
             "@id": "https://prakharsingh.github.io/projects#audit-packs",
             "name": "audit-packs",
-            "description": "IaC security findings mapped to compliance framework controls with inline PR evidence — NIST 800-53, SOC2.",
+            "description": "Scanner-agnostic Compliance Intelligence Engine — normalizes SARIF from six OSS scanners, maps findings to eight compliance frameworks, and optionally adjudicates via a four-role LLM ensemble before posting inline PR evidence.",
             "url": "https://github.com/prakharsingh/audit-packs",
-            "keywords": "Open Source, Python, GitHub Actions, Checkov, Semgrep, SARIF, OSCAL, NIST 800-53, SOC2",
+            "keywords": "Open Source, Python, GitHub Actions, Checkov, Semgrep, Trivy, CodeQL, SARIF, OSCAL, NIST 800-53, SOC2, ISO 27001, LLM",
             "applicationCategory": "DeveloperApplication",
             "author": {
               "@id": "https://prakharsingh.github.io/#person"
@@ -835,7 +842,7 @@
   <link rel="modulepreload" crossorigin="" href="/assets/index-BNTsrOQm.js"></head>
   <body>
     <div id="root" data-server-rendered="true"><div class="min-h-screen bg-gray-50 font-mono text-gray-900 dark:bg-gray-900 dark:text-gray-400 print:bg-white print:text-black"><a href="#main" class="fixed top-2 left-2 z-50 -translate-y-20 rounded bg-gray-50 px-3 py-2 text-sm text-gray-900 transition-transform focus:translate-y-0 focus:outline-none motion-reduce:transition-none print:hidden">Skip to main content</a><header role="banner" class="flex min-h-12 items-center bg-gray-900 px-6 text-gray-50 shadow-md dark:border-b dark:border-white/10 print:hidden"><nav aria-label="Main navigation" class="flex flex-1"><a class="inline-flex min-h-11 items-center px-4 py-1.5 text-sm tracking-wider uppercase transition hover:text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current text-gray-400" href="/" data-discover="true">Resume</a><a aria-current="page" class="inline-flex min-h-11 items-center px-4 py-1.5 text-sm tracking-wider uppercase transition hover:text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current font-medium text-white" href="/projects" data-discover="true">Projects</a><a class="inline-flex min-h-11 items-center px-4 py-1.5 text-sm tracking-wider uppercase transition hover:text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current text-gray-400" href="/faq" data-discover="true">FAQ</a></nav><button type="button" aria-label="Download resume PDF" class="inline-flex min-h-11 items-center px-4 py-1.5 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button><button type="button" aria-pressed="false" aria-label="Switch to dark mode" class="inline-flex min-h-11 items-center px-4 py-1.5 transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></header><main id="main" class="mx-auto max-w-screen-xl px-6 py-4 print:max-w-none print:px-0 print:py-0"><section class="py-2"><h1 class="mb-6 font-mono text-2xl tracking-wide dark:text-gray-200">Projects</h1><div class="mt-6 flex flex-col gap-6"><article class="flex flex-col gap-3 rounded border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"><div class="flex items-start justify-between gap-4"><h2 class="font-mono text-lg font-bold dark:text-gray-200">audit-packs</h2><div class="flex shrink-0 items-center gap-3"><a href="https://github.com/prakharsingh/audit-packs" target="_blank" rel="noopener noreferrer" aria-label="audit-packs on GitHub" class="transition hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:hover:text-gray-200"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div></div><p class="text-xs text-gray-500 dark:text-gray-500">prakharsingh · github-action · 2026-06</p><p class="text-justify text-sm">Scanner-agnostic Compliance Intelligence Engine — normalizes SARIF from six OSS scanners, maps findings to eight compliance frameworks, and optionally adjudicates via a four-role LLM ensemble before posting inline PR evidence.</p><ul class="list-disc space-y-1 pl-4 text-sm"><li class="text-justify">Ingests SARIF from Checkov, Semgrep, CodeQL, Trivy, tfsec, and gitleaks; any tool that emits SARIF can feed it — detection is never re-implemented</li><li class="text-justify">Maps findings to eight frameworks (NIST 800-53, SOC2, ISO 27001, PCI-DSS, FedRAMP, HIPAA, GDPR, org-policy) via crosswalk packs; adding a framework is a YAML file, no detection code</li><li class="text-justify">Optional four-role LLM adjudication ensemble (Detector → Verifier → Adversarial → Judge) with composite confidence scoring across six weighted signals; configurable model routing per role</li><li class="text-justify">Framework-specific detection agents (GDPR, HIPAA, SOC2, FedRAMP, OrgPolicy, DataFlow) cover controls static engines cannot observe; ships seven authored Semgrep rules for gap coverage</li><li class="text-justify">Outputs inline PR comments (diff-filtered, control-tagged), OSCAL assessment-results JSON, SEO-ready coverage HTML, aggregate SARIF, and a configurable severity gate</li></ul><div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Open Source</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Python</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">GitHub Actions</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Checkov</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Semgrep</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Trivy</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">CodeQL</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">SARIF</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">OSCAL</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">NIST 800-53</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">SOC2</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">ISO 27001</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">LLM</span></div></article><article class="flex flex-col gap-3 rounded border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"><div class="flex items-start justify-between gap-4"><h2 class="font-mono text-lg font-bold dark:text-gray-200">Yggdrasil</h2><div class="flex shrink-0 items-center gap-3"><a href="https://github.com/logkat/vscode-yggdrasil" target="_blank" rel="noopener noreferrer" aria-label="Yggdrasil on GitHub" class="transition hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:hover:text-gray-200"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://yggdrasil.logkat.dev/" target="_blank" rel="noopener noreferrer" aria-label="Yggdrasil live site" class="transition hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:hover:text-gray-200"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></div></div><p class="text-xs text-gray-500 dark:text-gray-500">LogKat · vscode-extension · 2026-05</p><p class="text-justify text-sm">VS Code sidebar extension for exploring and switching git worktrees.</p><ul class="list-disc space-y-1 pl-4 text-sm"><li class="text-justify">Activity Bar panel that stays in sync with local git state automatically — lists all worktrees for the current project root</li><li class="text-justify">Branch Diff Explorer: expand any worktree to browse committed, staged, and untracked changes; double-click any file for a native side-by-side diff view</li><li class="text-justify">Smart Switch dialog with New Window, Replace Current, and Add to Workspace modes; optional 'remember my choice' preference</li><li class="text-justify">Published on VS Code Marketplace and Open VSX — available to VS Code, Cursor, and other Open VSX clients</li></ul><div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Open Source</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">TypeScript</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">VS Code Extension API</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">git</span></div></article><article class="flex flex-col gap-3 rounded border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"><div class="flex items-start justify-between gap-4"><h2 class="font-mono text-lg font-bold dark:text-gray-200">DubaiDeals.live</h2><div class="flex shrink-0 items-center gap-3"><a href="https://dubaideals.live/" target="_blank" rel="noopener noreferrer" aria-label="DubaiDeals.live live site" class="transition hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:hover:text-gray-200"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></div></div><p class="text-xs text-gray-500 dark:text-gray-500">rush-skills · web-app · 2026-05</p><p class="text-justify text-sm">Every restaurant deal in Dubai — The Entertainer, Zomato, Careem, UAE bank programmes — on one map.</p><ul class="list-disc space-y-1 pl-4 text-sm"><li class="text-justify">Aggregates deals from The Entertainer, Zomato, Careem, Talabat, Deliveroo, and UAE bank dining programmes (ADCB, Emirates NBD, HSBC, DIB, RAKBANK)</li><li class="text-justify">Answers 'what discounts can I get tonight, near me?' via a live map interface</li><li class="text-justify">Edge-first: Cloudflare Workers serve from KV cache refreshed by an hourly scraper cron — zero Supabase calls at request time</li><li class="text-justify">Bun monorepo with separate web (Astro v6 on Cloudflare Workers) and scraper packages</li></ul><div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Astro</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Cloudflare Workers</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Supabase</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">Bun</span><span class="rounded border border-gray-300 px-2 py-0.5 font-mono text-xs dark:border-gray-600">TypeScript</span></div></article></div></section></main></div><script>window.__staticRouterHydrationData = JSON.parse("{\"loaderData\":{},\"actionData\":null,\"errors\":null}");</script></div>
-<script>window.__VITE_REACT_SSG_HASH__ = 'i5lc341c9y'</script>
+<script>window.__VITE_REACT_SSG_HASH__ = 'q1bcsvdvzo'</script>
     <!-- Crawler-only fallback. Uses <div> (not <main>) so the rendered React
          tree retains the single canonical <main> landmark. `hidden` keeps
          it out of paint and the a11y tree for assistive tech, while
@@ -844,378 +851,383 @@
          src/data/seo.json by scripts/update-schema.ts. -->
     <!-- @begin:crawler-fallback -->
     <div hidden="">
-        <h1>Prakhar Singh</h1>
-        <p>Frontend Architecture · Engineering Leadership · FinTech · AI Developer Tooling</p>
-        <p><strong>Founding Engineer @ Devzy AI · ex-VP Engineering @ Deutsche Bank</strong></p>
-        <p>
-          Prakhar Singh is a software engineering leader specializing in frontend architecture,
-          distributed systems, and AI developer tooling. He is Founding Engineer at Devzy AI, based
-          in Pune, Maharashtra, India, with 11+ years of experience driving large-scale digital
-          transformation across FinTech, EdTech, and E-commerce. At Deutsche Bank (DWS) he built and
-          led a 30+ global engineering team delivering €35M+ annual revenue uplift through an
-          AI-driven trading automation platform. At Devzy AI he is building agentic AI systems for
-          automated code review and developer workflow integrations.
-        </p>
-        <h2>Experience</h2>
-        <ul>
-          <li>
-            <strong>Devzy AI</strong> — Founding Engineer (<time datetime="2025-08-01">Aug 2025</time>–present). Building agentic AI for automated code review, with multi-model
-            orchestration, validation pipelines, and CLI/PR/IDE integrations across the SDLC.
-          </li>
-          <li>
-            <strong>Deutsche Bank (DWS)</strong> — Vice President, Engineering (<time datetime="2023-04-01">Apr 2023</time>–<time datetime="2025-07-31">Jul 2025</time>). Led 30+ engineers across India, UK, and
-            Spain. Delivered €35M annual revenue uplift via an AI/ML trading automation platform.
-            Boosted developer productivity ~25% with LLM copilots; reduced MTTR by 40% via a
-            Sentry/Datadog observability stack.
-          </li>
-          <li>
-            <strong>Noon Academy</strong> — Principal Engineer (<time datetime="2021-09-01">Sep 2021</time>–<time datetime="2023-02-28">Feb 2023</time>). Reduced app load time by 50% via React
-            Native + Web optimizations. Delivered exam modules serving 2M+ concurrent students
-            across 8 countries at 99.9% uptime.
-          </li>
-          <li>
-            <strong>Deutsche Bank (DWS)</strong> — Assistant Vice President (<time datetime="2018-06-26">Jun 2018</time>–<time datetime="2021-09-30">Sep 2021</time>). Led 10+ engineers building multi-channel
-            UIs for Funds Treasury and Regulatory Reporting; architected the bank's Core Platform UI
-            Libraries.
-          </li>
-          <li>
-            <strong>Noon E-Commerce</strong> — Senior Software Engineer (<time datetime="2017-08-14">Aug 2017</time>–<time datetime="2018-06-11">Jun 2018</time>). Owned front-end for logistics and supply
-            chain systems across UAE, Saudi Arabia, and Egypt.
-          </li>
-          <li>
-            <strong>TalkValley LLC</strong> — Senior JavaScript Engineer (<time datetime="2016-07-15">Jul 2016</time>–<time datetime="2017-08-08">Aug 2017</time>). Built a WebRTC-based video interview
-            platform; managed a 5-engineer remote team.
-          </li>
-          <li>
-            <strong>Simsaw Software Pvt. Ltd.</strong> — Web Developer (<time datetime="2014-07-01">Jul 2014</time>–<time datetime="2016-07-14">Jul 2016</time>). Full-stack JavaScript for US-based
-            clients (Node.js, AngularJS, React).
-          </li>
-        </ul>
-        <h2>Skills</h2>
-        <p>
-          Engineering leadership, distributed systems, AI/ML, large language models,
-          retrieval-augmented generation, TypeScript, Node.js, React, React Native, Python, Go, AWS,
-          GCP, Kubernetes, Docker, Terraform, GraphQL, PostgreSQL, MongoDB, Redis.
-        </p>
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>Who is Prakhar Singh?</summary>
-          <div>
-            Prakhar Singh is a software engineering leader with 11+ years across FinTech, EdTech,
-            and E-commerce. He is currently Founding Engineer at Devzy AI. As Vice President of
-            Engineering at Deutsche Bank (DWS), he led a 30+ person global engineering team across
-            India, UK, and Spain that delivered €35M+ annual revenue uplift through an AI-driven
-            trading automation platform.
-          </div>
-        </details>
-        <details>
-          <summary>What does Prakhar Singh do?</summary>
-          <div>
-            As Founding Engineer at Devzy AI, he builds an agentic AI system for automated code
-            review — combining multi-model LLM orchestration with static analysis, test execution,
-            and compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC 2 aligned). The product
-            ships as CLI, PR, and IDE integrations across the Software Development Life Cycle.
-          </div>
-        </details>
-        <details>
-          <summary>What engineering leadership roles has Prakhar Singh held?</summary>
-          <div>
-            Founding Engineer at Devzy AI (2025–present); Vice President of Engineering at Deutsche
-            Bank (DWS) (2023–2025, leading 30+ engineers across India, UK, and Spain); Principal
-            Engineer at Noon Academy (2021–2023, leading mobile and web platform engineering); and
-            Assistant Vice President at Deutsche Bank (DWS) (2018–2021, leading 10+ engineers across
-            Pune, Frankfurt, London, and New York).
-          </div>
-        </details>
-        <details>
-          <summary>What is Prakhar Singh's experience with LLMs and generative AI?</summary>
-          <div>
-            At Devzy AI he architected a multi-model LLM orchestration system for agentic code
-            review, with model routing, evaluation frameworks balancing accuracy/latency/cost, and
-            feedback loops to reduce false positives. At Deutsche Bank he integrated LLMs, RAG
-            architectures, and generative AI copilots into engineering workflows — boosting
-            developer productivity by ~25% — and built proprietary AI/ML models for anomaly
-            detection, underwriting automation, fraud prediction, and incident response.
-          </div>
-        </details>
-        <details>
-          <summary>What is Prakhar Singh's experience with frontend architecture?</summary>
-          <div>
-            At Deutsche Bank (DWS) he architected and contributed to the bank's Core Platform UI
-            Libraries and led multi-channel UIs for Funds Treasury and Regulatory Reporting across
-            web, mobile, and desktop. As VP of Engineering at DWS he established the UI Platform —
-            standardizing the design language, component library, and observability stack across the
-            engineering organization. At Noon Academy he unified the mobile codebase by integrating
-            React Native, standardized component libraries and UX patterns, and reduced app load
-            time by 50% through lazy loading and bundling optimizations across React Native and Web.
-          </div>
-        </details>
-        <details>
-          <summary>What is Prakhar Singh's experience in FinTech?</summary>
-          <div>
-            Five+ years at Deutsche Bank (DWS), an asset manager within the Deutsche Bank group. As
-            Vice President of Engineering (2023–2025) he led a 30+ global engineering team across
-            India, UK, and Spain that delivered a €35M annual revenue uplift via an AI-driven
-            trading automation platform and predictive analytics dashboards, alongside proprietary
-            AI/ML models for anomaly detection, underwriting automation, and fraud prediction. As
-            Assistant Vice President (2018–2021) he led 10+ engineers building multi-channel UIs for
-            Funds Treasury and Regulatory Reporting, coordinating delivery across Pune, Frankfurt,
-            London, and New York.
-          </div>
-        </details>
-        <details>
-          <summary>What is Prakhar Singh's experience with AI developer tooling?</summary>
-          <div>
-            At Devzy AI he is Founding Engineer of an agentic AI system for automated code review
-            and developer workflow integrations: multi-model LLM orchestration combined with static
-            analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS,
-            SOC 2 aligned), shipped as CLI, PR, and IDE integrations across the SDLC. Earlier at
-            Deutsche Bank he integrated generative AI copilots and LLM-based assistants into
-            engineering workflows — boosting developer productivity by ~25% — and at Noon Academy he
-            adopted AI-assisted QA automation and anomaly detection for faster release cycles.
-          </div>
-        </details>
-        <details>
-          <summary>What scale of systems has Prakhar Singh built?</summary>
-          <div>
-            At Noon Academy he delivered multi-platform exam modules used concurrently by 2M+
-            students across 8 countries at 99.9% uptime, and reduced app load time by 50% via React
-            Native and Web optimizations. At Deutsche Bank his AI/ML trading automation platform
-            produced €35M annual revenue uplift, and his Sentry/Datadog observability stack reduced
-            MTTR by 40% across the engineering organization.
-          </div>
-        </details>
-        <details>
-          <summary>Where is Prakhar Singh based?</summary>
-          <div>
-            Pune, Maharashtra, India. He works remotely with global teams across India, UK, Spain,
-            Frankfurt, London, and New York.
-          </div>
-        </details>
-        <details>
-          <summary>What are Prakhar Singh's areas of expertise?</summary>
-          <div>
-            Engineering leadership, distributed systems, AI/ML, large language models (LLMs),
-            retrieval-augmented generation (RAG), TypeScript, Node.js, React, React Native, Python,
-            Go, AWS, GCP, and Kubernetes. He has shipped an AI-driven trading automation platform
-            (€35M annual revenue uplift), boosted developer productivity by ~25% with LLM copilots,
-            and reduced MTTR by 40% through a Sentry/Datadog observability stack.
-          </div>
-        </details>
-        <details>
-          <summary>What is Devzy AI?</summary>
-          <div>
-            Devzy AI is a pre-seed AI DevTools company building an agentic AI system for automated
-            code review and developer workflow integrations. The product combines LLM-based
-            reasoning with static analysis, test execution, and compliance-aware security checks,
-            delivered through CLI, PR, and IDE hooks.
-          </div>
-        </details>
-        <details>
-          <summary>Who has shipped agentic code review systems in production?</summary>
-          <div>
-            Devzy AI is one example: Founding Engineer Prakhar Singh is building an agentic AI
-            system for automated code review that combines multi-model LLM orchestration with static
-            analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS,
-            SOC 2 aligned). The product ships as CLI, PR, and IDE integrations across the Software
-            Development Life Cycle. Earlier at Deutsche Bank (DWS), he integrated LLM copilots and
-            RAG architectures into engineering workflows, boosting developer productivity ~25%.
-          </div>
-        </details>
-        <details>
-          <summary>What compliance frameworks apply to AI code review tooling?</summary>
-          <div>
-            AI code review tools that ingest source from regulated industries typically need
-            alignment with GDPR (data residency and right-to-erasure for code containing personal
-            data), HIPAA (protected health information surfacing in healthcare-adjacent codebases),
-            PCI-DSS (payment card data references in commerce code), and SOC 2 (operational controls
-            on the tooling vendor — access logging, encryption, retention). At Devzy AI, Founding
-            Engineer Prakhar Singh builds compliance-aware checks against these frameworks into the
-            code review pipeline alongside LLM-based reasoning and static analysis.
-          </div>
-        </details>
-        <details>
-          <summary>How do multi-model LLM orchestration systems route between models?</summary>
-          <div>
-            Multi-model LLM orchestration systems route between models along three axes: accuracy,
-            latency, and cost. Common strategies include task-classification routing (route by
-            prompt type), fallback chains (cheap-first, escalate on low confidence), and
-            evaluation-driven A/B routing against offline eval scores. At Devzy AI, Founding
-            Engineer Prakhar Singh built such a system for agentic code review — with model routing,
-            evaluation frameworks balancing accuracy/latency/cost, and feedback loops to reduce
-            false positives.
-          </div>
-        </details>
-        <details>
-          <summary>What is agentic code review?</summary>
-          <div>
-            Agentic code review is automated code review where the system — not the user — decides
-            which tools to invoke against a change, in what order, and how to weight their findings.
-            A linter runs a fixed pipeline; a single-pass language-model reviewer reads the diff
-            end-to-end; an agentic reviewer chooses between a compiler, a type checker, a test
-            runner, a secret scanner, a static analyzer, and one or more LLM calls, then arbitrates
-            their disagreements before surfacing a review comment. The model is one tool among
-            several — the system's value is in the arbitration policy that decides which findings
-            reach the developer. At Devzy AI, Founding Engineer Prakhar Singh is building an agentic
-            code review system combining multi-model LLM orchestration with static analysis, test
-            execution, and compliance-aware security checks.
-          </div>
-        </details>
-        <details>
-          <summary>How do you evaluate an LLM-based code reviewer?</summary>
-          <div>
-            LLM-based code reviewers are evaluated against an offline evaluation set of past pull
-            requests with human accept/reject outcomes — scoring precision and recall against ground
-            truth, sliced by change type, file owner, and prior dismissal patterns. Production
-            systems combine self-consistency over N samples, confidence calibration, and a closed
-            feedback loop that turns every accepted or dismissed comment into training signal for
-            the next routing decision and threshold update. Without the loop, false-positive rate is
-            whatever the underlying model happens to produce; with it, the rate trends down per
-            release. Evaluation also drives model routing: traffic shifts to whichever variant
-            scores highest on the relevant slice.
-          </div>
-        </details>
-        <details>
-          <summary>How do you reduce false positives in automated code review?</summary>
-          <div>
-            False positives are the dominant cost in automated code review: developer trust
-            collapses non-linearly, and a 5% false-positive rate at twenty comments per pull request
-            is one bogus flag per PR — within a sprint, the team starts dismissing the bot
-            reflexively. Three controls keep the rate manageable: confidence thresholding (never
-            surface a comment below a calibrated threshold, even when the model is willing to
-            speak), deduplication against historical dismissals (if a reviewer dismissed an
-            analogous comment six months ago, the same shape of comment on the same file is suspect
-            today), and a closed feedback loop where every accepted or dismissed comment becomes
-            training signal. Most teams underinvest in the third, which is where sustained gains
-            come from.
-          </div>
-        </details>
-        <details>
-          <summary>
-            What is retrieval-augmented generation (RAG) and how is it used in code review?
-          </summary>
-          <div>
-            Retrieval-augmented generation (RAG) augments a language model's response by retrieving
-            relevant documents at inference time and grounding the model's output on that retrieved
-            context, rather than relying solely on parametric knowledge. In code review, RAG
-            retrieves prior review threads, commit messages, and design documents scoped to the
-            touched files, modules, or owners — shifting the model from generic best-practice advice
-            to comments that match the codebase's established conventions. Most code review
-            observations are not novel; the same patterns get flagged across files (null-safety
-            regressions, missing index migrations, inconsistent error wrapping). RAG over prior
-            reviews exposes those patterns to the model and reduces hallucinated fixes that propose
-            nonexistent APIs or break unseen call sites.
-          </div>
-        </details>
-        <details>
-          <summary>What are observability patterns for LLM applications?</summary>
-          <div>
-            LLM applications need tracing at the call level (prompts, completions, model versions,
-            latency, token counts), evaluation metrics tracked over time (precision, recall,
-            false-positive rate on a held-out set), and a feedback channel that ties user
-            accept/reject signal back to specific model calls. Common tooling spans Langfuse for
-            trace-and-eval pipelines, self-hosted OpenTelemetry, and commercial platforms like
-            Datadog LLM Observability and Sentry's AI tracing. The goal mirrors traditional
-            application observability — reduce MTTR — applied to a domain where outputs are
-            non-deterministic and quality regressions are silent. At Deutsche Bank (DWS), Prakhar
-            Singh built a Sentry/Datadog observability stack that reduced MTTR by 40% across the
-            engineering organization.
-          </div>
-        </details>
-        <details>
-          <summary>Which companies has Prakhar Singh worked at?</summary>
-          <div>
-            Devzy AI (Founding Engineer, 2025–present), Deutsche Bank (DWS) (Vice President of
-            Engineering, 2023–2025; Assistant Vice President, 2018–2021), Noon Academy (Principal
-            Engineer, 2021–2023), Noon E-Commerce (Senior Software Engineer, 2017–2018), TalkValley
-            LLC (Senior JavaScript Engineer, 2016–2017), and Simsaw Software (Web Developer,
-            2014–2016).
-          </div>
-        </details>
-        <details>
-          <summary>How many years of experience does Prakhar Singh have?</summary>
-          <div>
-            11+ years of professional software engineering experience since 2014, spanning FinTech,
-            EdTech, E-commerce, and AI DevTools. He has led teams of up to 30+ engineers across
-            three continents.
-          </div>
-        </details>
-        <details>
-          <summary>What languages does Prakhar Singh speak?</summary>
-          <div>English and Hindi.</div>
-        </details>
-        <details>
-          <summary>Where did Prakhar Singh study?</summary>
-          <div>
-            Master of Computer Applications from Maharishi Markandeshwar University (2011–2014) and
-            Bachelor of Computer Applications from Chhatrapati Shahu Ji Maharaj University
-            (2008–2011), both in Computer Science.
-          </div>
-        </details>
-        <details>
-          <summary>How can I contact Prakhar Singh?</summary>
-          <div>
-            Email: <a href="mailto:prakharsingh007@gmail.com">prakharsingh007@gmail.com</a>. Also
-            available via LinkedIn (<a href="https://linkedin.com/in/singh-prakhar">https://linkedin.com/in/singh-prakhar</a>) and GitHub (<a href="https://github.com/prakharsingh">https://github.com/prakharsingh</a>).
-          </div>
-        </details>
-        <details>
-          <summary>What projects has Prakhar Singh built?</summary>
-          <div>
-            Prakhar Singh has built several open-source tools and web applications. audit-packs is a
-            GitHub Action that maps IaC security findings from Checkov and Semgrep to NIST 800-53
-            and SOC2 compliance controls and posts inline PR review comments with audit-grade
-            evidence. Yggdrasil is a VS Code sidebar extension for exploring and switching git
-            worktrees, published on the VS Code Marketplace and Open VSX. DubaiDeals.live is a
-            restaurant deal aggregator across UAE bank dining programmes and delivery platforms (The
-            Entertainer, Zomato, Careem, Talabat, Deliveroo), built on Astro and Cloudflare Workers.
-          </div>
-        </details>
-        <details>
-          <summary>What is audit-packs?</summary>
-          <div>
-            audit-packs is a GitHub Action that wraps IaC security tools (Checkov, Semgrep,
-            optionally CodeQL) in a compliance control-mapping layer. Where a raw scanner reports
-            'S3 bucket unencrypted', audit-packs posts an inline PR review comment identifying the
-            NIST 800-53 or SOC2 control affected, the confidence score, the evidence from the
-            finding, and the engine that flagged it. The action writes an OSCAL assessment-results
-            JSON, a control coverage matrix, and an aggregate SARIF file, and exits non-zero when
-            any finding meets or exceeds a configurable fail-on severity threshold. Built by Prakhar
-            Singh; available at
-            <a href="https://github.com/prakharsingh/audit-packs.">https://github.com/prakharsingh/audit-packs.</a>
-          </div>
-        </details>
-        <details>
-          <summary>What is Yggdrasil?</summary>
-          <div>
-            Yggdrasil (published as LogKat/git-yggdrasil) is a VS Code extension that adds a
-            dedicated Activity Bar sidebar panel for git worktrees. It lists all worktrees for the
-            current project root, stays in sync with local git state automatically, and provides a
-            Branch Diff Explorer where each worktree can be expanded to browse committed, staged,
-            and untracked changes with side-by-side diff views. The Smart Switch dialog supports
-            opening a worktree in a new window, replacing the current window, or adding it to a
-            multi-root workspace. Published on the VS Code Marketplace and Open VSX Registry, making
-            it available to VS Code, Cursor, and other Open VSX clients. Built by Prakhar Singh;
-            available at <a href="https://yggdrasil.logkat.dev/.">https://yggdrasil.logkat.dev/.</a>
-          </div>
-        </details>
-        <details>
-          <summary>What is DubaiDeals.live?</summary>
-          <div>
-            DubaiDeals.live is a web app that aggregates restaurant deals across Dubai on a single
-            map. It pulls from The Entertainer, Zomato, Careem, Talabat, Deliveroo, and UAE bank
-            dining programmes (ADCB, Emirates NBD, HSBC, DIB, RAKBANK) and answers the question
-            'what discounts can I get tonight, near me?' Built on Astro v6 deployed to Cloudflare
-            Workers, with a Supabase-backed hourly scraper that refreshes a Cloudflare KV cache so
-            the web app never hits the database at request time. Bun monorepo with separate web and
-            scraper packages. Built by Prakhar Singh; live at
-            <a href="https://dubaideals.live/.">https://dubaideals.live/.</a>
-          </div>
-        </details>
-        <p>
-          <a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> ·
-          <a href="https://github.com/prakharsingh">GitHub</a>
-        </p>
+      <h1>Prakhar Singh</h1>
+      <p>Frontend Architecture · Engineering Leadership · FinTech · AI Developer Tooling</p>
+      <p><strong>Founding Engineer @ Devzy AI · ex-VP Engineering @ Deutsche Bank</strong></p>
+      <p>
+        Prakhar Singh is a software engineering leader specializing in frontend architecture,
+        distributed systems, and AI developer tooling. He is Founding Engineer at Devzy AI, based in
+        Pune, Maharashtra, India, with 11+ years of experience driving large-scale digital
+        transformation across FinTech, EdTech, and E-commerce. At Deutsche Bank (DWS) he built and
+        led a 30+ global engineering team delivering €35M+ annual revenue uplift through an
+        AI-driven trading automation platform. At Devzy AI he is building agentic AI systems for
+        automated code review and developer workflow integrations.
+      </p>
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <strong>Devzy AI</strong> — Founding Engineer (<time datetime="2025-08-01">Aug 2025</time>–present). Building agentic AI for automated code review, with multi-model orchestration,
+          validation pipelines, and CLI/PR/IDE integrations across the SDLC.
+        </li>
+        <li>
+          <strong>Deutsche Bank (DWS)</strong> — Vice President, Engineering (<time datetime="2023-04-01">Apr 2023</time>–<time datetime="2025-07-31">Jul 2025</time>). Led 30+ engineers across India, UK, and
+          Spain. Delivered €35M annual revenue uplift via an AI/ML trading automation platform.
+          Boosted developer productivity ~25% with LLM copilots; reduced MTTR by 40% via a
+          Sentry/Datadog observability stack.
+        </li>
+        <li>
+          <strong>Noon Academy</strong> — Principal Engineer (<time datetime="2021-09-01">Sep 2021</time>–<time datetime="2023-02-28">Feb 2023</time>). Reduced app load time by 50% via React
+          Native + Web optimizations. Delivered exam modules serving 2M+ concurrent students across
+          8 countries at 99.9% uptime.
+        </li>
+        <li>
+          <strong>Deutsche Bank (DWS)</strong> — Assistant Vice President (<time datetime="2018-06-26">Jun 2018</time>–<time datetime="2021-09-30">Sep 2021</time>). Led 10+ engineers building multi-channel
+          UIs for Funds Treasury and Regulatory Reporting; architected the bank's Core Platform UI
+          Libraries.
+        </li>
+        <li>
+          <strong>Noon E-Commerce</strong> — Senior Software Engineer (<time datetime="2017-08-14">Aug 2017</time>–<time datetime="2018-06-11">Jun 2018</time>). Owned front-end for logistics and supply
+          chain systems across UAE, Saudi Arabia, and Egypt.
+        </li>
+        <li>
+          <strong>TalkValley LLC</strong> — Senior JavaScript Engineer (<time datetime="2016-07-15">Jul 2016</time>–<time datetime="2017-08-08">Aug 2017</time>). Built a WebRTC-based video interview
+          platform; managed a 5-engineer remote team.
+        </li>
+        <li>
+          <strong>Simsaw Software Pvt. Ltd.</strong> — Web Developer (<time datetime="2014-07-01">Jul 2014</time>–<time datetime="2016-07-14">Jul 2016</time>). Full-stack JavaScript for US-based clients
+          (Node.js, AngularJS, React).
+        </li>
+      </ul>
+      <h2>Skills</h2>
+      <p>
+        Engineering leadership, distributed systems, AI/ML, large language models,
+        retrieval-augmented generation, TypeScript, Node.js, React, React Native, Python, Go, AWS,
+        GCP, Kubernetes, Docker, Terraform, GraphQL, PostgreSQL, MongoDB, Redis.
+      </p>
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Who is Prakhar Singh?</summary>
+        <div>
+          Prakhar Singh is a software engineering leader with 11+ years across FinTech, EdTech, and
+          E-commerce. He is currently Founding Engineer at Devzy AI. As Vice President of
+          Engineering at Deutsche Bank (DWS), he led a 30+ person global engineering team across
+          India, UK, and Spain that delivered €35M+ annual revenue uplift through an AI-driven
+          trading automation platform.
+        </div>
+      </details>
+      <details>
+        <summary>What does Prakhar Singh do?</summary>
+        <div>
+          As Founding Engineer at Devzy AI, he builds an agentic AI system for automated code review
+          — combining multi-model LLM orchestration with static analysis, test execution, and
+          compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC 2 aligned). The product ships
+          as CLI, PR, and IDE integrations across the Software Development Life Cycle.
+        </div>
+      </details>
+      <details>
+        <summary>What engineering leadership roles has Prakhar Singh held?</summary>
+        <div>
+          Founding Engineer at Devzy AI (2025–present); Vice President of Engineering at Deutsche
+          Bank (DWS) (2023–2025, leading 30+ engineers across India, UK, and Spain); Principal
+          Engineer at Noon Academy (2021–2023, leading mobile and web platform engineering); and
+          Assistant Vice President at Deutsche Bank (DWS) (2018–2021, leading 10+ engineers across
+          Pune, Frankfurt, London, and New York).
+        </div>
+      </details>
+      <details>
+        <summary>What is Prakhar Singh's experience with LLMs and generative AI?</summary>
+        <div>
+          At Devzy AI he architected a multi-model LLM orchestration system for agentic code review,
+          with model routing, evaluation frameworks balancing accuracy/latency/cost, and feedback
+          loops to reduce false positives. At Deutsche Bank he integrated LLMs, RAG architectures,
+          and generative AI copilots into engineering workflows — boosting developer productivity by
+          ~25% — and built proprietary AI/ML models for anomaly detection, underwriting automation,
+          fraud prediction, and incident response.
+        </div>
+      </details>
+      <details>
+        <summary>What is Prakhar Singh's experience with frontend architecture?</summary>
+        <div>
+          At Deutsche Bank (DWS) he architected and contributed to the bank's Core Platform UI
+          Libraries and led multi-channel UIs for Funds Treasury and Regulatory Reporting across
+          web, mobile, and desktop. As VP of Engineering at DWS he established the UI Platform —
+          standardizing the design language, component library, and observability stack across the
+          engineering organization. At Noon Academy he unified the mobile codebase by integrating
+          React Native, standardized component libraries and UX patterns, and reduced app load time
+          by 50% through lazy loading and bundling optimizations across React Native and Web.
+        </div>
+      </details>
+      <details>
+        <summary>What is Prakhar Singh's experience in FinTech?</summary>
+        <div>
+          Five+ years at Deutsche Bank (DWS), an asset manager within the Deutsche Bank group. As
+          Vice President of Engineering (2023–2025) he led a 30+ global engineering team across
+          India, UK, and Spain that delivered a €35M annual revenue uplift via an AI-driven trading
+          automation platform and predictive analytics dashboards, alongside proprietary AI/ML
+          models for anomaly detection, underwriting automation, and fraud prediction. As Assistant
+          Vice President (2018–2021) he led 10+ engineers building multi-channel UIs for Funds
+          Treasury and Regulatory Reporting, coordinating delivery across Pune, Frankfurt, London,
+          and New York.
+        </div>
+      </details>
+      <details>
+        <summary>What is Prakhar Singh's experience with AI developer tooling?</summary>
+        <div>
+          At Devzy AI he is Founding Engineer of an agentic AI system for automated code review and
+          developer workflow integrations: multi-model LLM orchestration combined with static
+          analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC
+          2 aligned), shipped as CLI, PR, and IDE integrations across the SDLC. Earlier at Deutsche
+          Bank he integrated generative AI copilots and LLM-based assistants into engineering
+          workflows — boosting developer productivity by ~25% — and at Noon Academy he adopted
+          AI-assisted QA automation and anomaly detection for faster release cycles.
+        </div>
+      </details>
+      <details>
+        <summary>What scale of systems has Prakhar Singh built?</summary>
+        <div>
+          At Noon Academy he delivered multi-platform exam modules used concurrently by 2M+ students
+          across 8 countries at 99.9% uptime, and reduced app load time by 50% via React Native and
+          Web optimizations. At Deutsche Bank his AI/ML trading automation platform produced €35M
+          annual revenue uplift, and his Sentry/Datadog observability stack reduced MTTR by 40%
+          across the engineering organization.
+        </div>
+      </details>
+      <details>
+        <summary>Where is Prakhar Singh based?</summary>
+        <div>
+          Pune, Maharashtra, India. He works remotely with global teams across India, UK, Spain,
+          Frankfurt, London, and New York.
+        </div>
+      </details>
+      <details>
+        <summary>What are Prakhar Singh's areas of expertise?</summary>
+        <div>
+          Engineering leadership, distributed systems, AI/ML, large language models (LLMs),
+          retrieval-augmented generation (RAG), TypeScript, Node.js, React, React Native, Python,
+          Go, AWS, GCP, and Kubernetes. He has shipped an AI-driven trading automation platform
+          (€35M annual revenue uplift), boosted developer productivity by ~25% with LLM copilots,
+          and reduced MTTR by 40% through a Sentry/Datadog observability stack.
+        </div>
+      </details>
+      <details>
+        <summary>What is Devzy AI?</summary>
+        <div>
+          Devzy AI is a pre-seed AI DevTools company building an agentic AI system for automated
+          code review and developer workflow integrations. The product combines LLM-based reasoning
+          with static analysis, test execution, and compliance-aware security checks, delivered
+          through CLI, PR, and IDE hooks.
+        </div>
+      </details>
+      <details>
+        <summary>Who has shipped agentic code review systems in production?</summary>
+        <div>
+          Devzy AI is one example: Founding Engineer Prakhar Singh is building an agentic AI system
+          for automated code review that combines multi-model LLM orchestration with static
+          analysis, test execution, and compliance-aware security checks (GDPR, HIPAA, PCI-DSS, SOC
+          2 aligned). The product ships as CLI, PR, and IDE integrations across the Software
+          Development Life Cycle. Earlier at Deutsche Bank (DWS), he integrated LLM copilots and RAG
+          architectures into engineering workflows, boosting developer productivity ~25%.
+        </div>
+      </details>
+      <details>
+        <summary>What compliance frameworks apply to AI code review tooling?</summary>
+        <div>
+          AI code review tools that ingest source from regulated industries typically need alignment
+          with GDPR (data residency and right-to-erasure for code containing personal data), HIPAA
+          (protected health information surfacing in healthcare-adjacent codebases), PCI-DSS
+          (payment card data references in commerce code), and SOC 2 (operational controls on the
+          tooling vendor — access logging, encryption, retention). At Devzy AI, Founding Engineer
+          Prakhar Singh builds compliance-aware checks against these frameworks into the code review
+          pipeline alongside LLM-based reasoning and static analysis.
+        </div>
+      </details>
+      <details>
+        <summary>How do multi-model LLM orchestration systems route between models?</summary>
+        <div>
+          Multi-model LLM orchestration systems route between models along three axes: accuracy,
+          latency, and cost. Common strategies include task-classification routing (route by prompt
+          type), fallback chains (cheap-first, escalate on low confidence), and evaluation-driven
+          A/B routing against offline eval scores. At Devzy AI, Founding Engineer Prakhar Singh
+          built such a system for agentic code review — with model routing, evaluation frameworks
+          balancing accuracy/latency/cost, and feedback loops to reduce false positives.
+        </div>
+      </details>
+      <details>
+        <summary>What is agentic code review?</summary>
+        <div>
+          Agentic code review is automated code review where the system — not the user — decides
+          which tools to invoke against a change, in what order, and how to weight their findings. A
+          linter runs a fixed pipeline; a single-pass language-model reviewer reads the diff
+          end-to-end; an agentic reviewer chooses between a compiler, a type checker, a test runner,
+          a secret scanner, a static analyzer, and one or more LLM calls, then arbitrates their
+          disagreements before surfacing a review comment. The model is one tool among several — the
+          system's value is in the arbitration policy that decides which findings reach the
+          developer. At Devzy AI, Founding Engineer Prakhar Singh is building an agentic code review
+          system combining multi-model LLM orchestration with static analysis, test execution, and
+          compliance-aware security checks.
+        </div>
+      </details>
+      <details>
+        <summary>How do you evaluate an LLM-based code reviewer?</summary>
+        <div>
+          LLM-based code reviewers are evaluated against an offline evaluation set of past pull
+          requests with human accept/reject outcomes — scoring precision and recall against ground
+          truth, sliced by change type, file owner, and prior dismissal patterns. Production systems
+          combine self-consistency over N samples, confidence calibration, and a closed feedback
+          loop that turns every accepted or dismissed comment into training signal for the next
+          routing decision and threshold update. Without the loop, false-positive rate is whatever
+          the underlying model happens to produce; with it, the rate trends down per release.
+          Evaluation also drives model routing: traffic shifts to whichever variant scores highest
+          on the relevant slice.
+        </div>
+      </details>
+      <details>
+        <summary>How do you reduce false positives in automated code review?</summary>
+        <div>
+          False positives are the dominant cost in automated code review: developer trust collapses
+          non-linearly, and a 5% false-positive rate at twenty comments per pull request is one
+          bogus flag per PR — within a sprint, the team starts dismissing the bot reflexively. Three
+          controls keep the rate manageable: confidence thresholding (never surface a comment below
+          a calibrated threshold, even when the model is willing to speak), deduplication against
+          historical dismissals (if a reviewer dismissed an analogous comment six months ago, the
+          same shape of comment on the same file is suspect today), and a closed feedback loop where
+          every accepted or dismissed comment becomes training signal. Most teams underinvest in the
+          third, which is where sustained gains come from.
+        </div>
+      </details>
+      <details>
+        <summary>
+          What is retrieval-augmented generation (RAG) and how is it used in code review?
+        </summary>
+        <div>
+          Retrieval-augmented generation (RAG) augments a language model's response by retrieving
+          relevant documents at inference time and grounding the model's output on that retrieved
+          context, rather than relying solely on parametric knowledge. In code review, RAG retrieves
+          prior review threads, commit messages, and design documents scoped to the touched files,
+          modules, or owners — shifting the model from generic best-practice advice to comments that
+          match the codebase's established conventions. Most code review observations are not novel;
+          the same patterns get flagged across files (null-safety regressions, missing index
+          migrations, inconsistent error wrapping). RAG over prior reviews exposes those patterns to
+          the model and reduces hallucinated fixes that propose nonexistent APIs or break unseen
+          call sites.
+        </div>
+      </details>
+      <details>
+        <summary>What are observability patterns for LLM applications?</summary>
+        <div>
+          LLM applications need tracing at the call level (prompts, completions, model versions,
+          latency, token counts), evaluation metrics tracked over time (precision, recall,
+          false-positive rate on a held-out set), and a feedback channel that ties user
+          accept/reject signal back to specific model calls. Common tooling spans Langfuse for
+          trace-and-eval pipelines, self-hosted OpenTelemetry, and commercial platforms like Datadog
+          LLM Observability and Sentry's AI tracing. The goal mirrors traditional application
+          observability — reduce MTTR — applied to a domain where outputs are non-deterministic and
+          quality regressions are silent. At Deutsche Bank (DWS), Prakhar Singh built a
+          Sentry/Datadog observability stack that reduced MTTR by 40% across the engineering
+          organization.
+        </div>
+      </details>
+      <details>
+        <summary>Which companies has Prakhar Singh worked at?</summary>
+        <div>
+          Devzy AI (Founding Engineer, 2025–present), Deutsche Bank (DWS) (Vice President of
+          Engineering, 2023–2025; Assistant Vice President, 2018–2021), Noon Academy (Principal
+          Engineer, 2021–2023), Noon E-Commerce (Senior Software Engineer, 2017–2018), TalkValley
+          LLC (Senior JavaScript Engineer, 2016–2017), and Simsaw Software (Web Developer,
+          2014–2016).
+        </div>
+      </details>
+      <details>
+        <summary>How many years of experience does Prakhar Singh have?</summary>
+        <div>
+          11+ years of professional software engineering experience since 2014, spanning FinTech,
+          EdTech, E-commerce, and AI DevTools. He has led teams of up to 30+ engineers across three
+          continents.
+        </div>
+      </details>
+      <details>
+        <summary>What languages does Prakhar Singh speak?</summary>
+        <div>English and Hindi.</div>
+      </details>
+      <details>
+        <summary>Where did Prakhar Singh study?</summary>
+        <div>
+          Master of Computer Applications from Maharishi Markandeshwar University (2011–2014) and
+          Bachelor of Computer Applications from Chhatrapati Shahu Ji Maharaj University
+          (2008–2011), both in Computer Science.
+        </div>
+      </details>
+      <details>
+        <summary>How can I contact Prakhar Singh?</summary>
+        <div>
+          Email: <a href="mailto:prakharsingh007@gmail.com">prakharsingh007@gmail.com</a>. Also
+          available via LinkedIn (<a href="https://linkedin.com/in/singh-prakhar">https://linkedin.com/in/singh-prakhar</a>) and GitHub (<a href="https://github.com/prakharsingh">https://github.com/prakharsingh</a>).
+        </div>
+      </details>
+      <details>
+        <summary>What projects has Prakhar Singh built?</summary>
+        <div>
+          Prakhar Singh has built several open-source tools and web applications. audit-packs is a
+          scanner-agnostic Compliance Intelligence Engine that normalizes SARIF from six OSS
+          scanners (Checkov, Semgrep, CodeQL, Trivy, tfsec, gitleaks), maps findings to eight
+          compliance frameworks (NIST 800-53, SOC2, ISO 27001, PCI-DSS, FedRAMP, HIPAA, GDPR,
+          org-policy), and optionally adjudicates via a four-role LLM ensemble before posting inline
+          PR evidence. Yggdrasil is a VS Code sidebar extension for exploring and switching git
+          worktrees, published on the VS Code Marketplace and Open VSX. DubaiDeals.live is a
+          restaurant deal aggregator across UAE bank dining programmes and delivery platforms (The
+          Entertainer, Zomato, Careem, Talabat, Deliveroo), built on Astro and Cloudflare Workers.
+        </div>
+      </details>
+      <details>
+        <summary>What is audit-packs?</summary>
+        <div>
+          audit-packs is a scanner-agnostic Compliance Intelligence Engine that transforms security
+          scanner findings into standardized, evidence-backed compliance artifacts. Detection is
+          delegated to six best-in-class OSS engines — Checkov, Semgrep, CodeQL, Trivy, tfsec, and
+          gitleaks — any tool that emits SARIF can feed it. The engine normalizes all SARIF to a
+          common Finding model, maps findings to eight compliance frameworks (NIST 800-53, SOC2, ISO
+          27001, PCI-DSS, FedRAMP, HIPAA, GDPR, and configurable org-policy), and optionally
+          adjudicates each finding through a four-role LLM ensemble (Detector, Verifier,
+          Adversarial, Judge) with composite confidence scoring across six weighted signals.
+          Framework-specific detection agents (GDPR, HIPAA, SOC2, FedRAMP, OrgPolicy, DataFlow)
+          cover controls static engines cannot observe. Outputs include diff-filtered inline PR
+          comments tagged by control and severity, OSCAL assessment-results JSON, SEO-ready coverage
+          HTML, aggregate SARIF, and a configurable severity gate. Built by Prakhar Singh; available
+          at
+          <a href="https://github.com/prakharsingh/audit-packs.">https://github.com/prakharsingh/audit-packs.</a>
+        </div>
+      </details>
+      <details>
+        <summary>What is Yggdrasil?</summary>
+        <div>
+          Yggdrasil (published as LogKat/git-yggdrasil) is a VS Code extension that adds a dedicated
+          Activity Bar sidebar panel for git worktrees. It lists all worktrees for the current
+          project root, stays in sync with local git state automatically, and provides a Branch Diff
+          Explorer where each worktree can be expanded to browse committed, staged, and untracked
+          changes with side-by-side diff views. The Smart Switch dialog supports opening a worktree
+          in a new window, replacing the current window, or adding it to a multi-root workspace.
+          Published on the VS Code Marketplace and Open VSX Registry, making it available to VS
+          Code, Cursor, and other Open VSX clients. Built by Prakhar Singh; available at
+          <a href="https://yggdrasil.logkat.dev/.">https://yggdrasil.logkat.dev/.</a>
+        </div>
+      </details>
+      <details>
+        <summary>What is DubaiDeals.live?</summary>
+        <div>
+          DubaiDeals.live is a web app that aggregates restaurant deals across Dubai on a single
+          map. It pulls from The Entertainer, Zomato, Careem, Talabat, Deliveroo, and UAE bank
+          dining programmes (ADCB, Emirates NBD, HSBC, DIB, RAKBANK) and answers the question 'what
+          discounts can I get tonight, near me?' Built on Astro v6 deployed to Cloudflare Workers,
+          with a Supabase-backed hourly scraper that refreshes a Cloudflare KV cache so the web app
+          never hits the database at request time. Bun monorepo with separate web and scraper
+          packages. Built by Prakhar Singh; live at
+          <a href="https://dubaideals.live/.">https://dubaideals.live/.</a>
+        </div>
+      </details>
+      <p>
+        <a href="https://linkedin.com/in/singh-prakhar">LinkedIn</a> ·
+        <a href="https://github.com/prakharsingh">GitHub</a>
+      </p>
     </div>
     <!-- @end:crawler-fallback -->
   
