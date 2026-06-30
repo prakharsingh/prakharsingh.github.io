@@ -30,6 +30,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://prakharsingh.github.io/notes</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://prakharsingh.github.io/notes/agentic-code-review/</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>yearly</changefreq>
