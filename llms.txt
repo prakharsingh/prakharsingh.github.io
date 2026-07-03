@@ -1,6 +1,6 @@
 # Prakhar Singh
 
-> Engineering Leader with 11+ years across frontend architecture,
+> Engineering Leader with 12+ years across frontend architecture,
 > distributed systems, and AI developer tooling — driving large-scale
 > digital transformation in FinTech, EdTech, and E-commerce. At Deutsche
 > Bank, built and led a 30+ global engineering team delivering €35M+
@@ -58,7 +58,7 @@ link to the canonical URL is appreciated.
 - **Languages & Frontend:** JavaScript (ES6+), TypeScript, Node.js, Python, GoLang, React.js, ReactNative.
 - **Data & APIs:** Distributed Systems, REST, GraphQL, APIs, MongoDB, PostgreSQL, Redis.
 - **Cloud & DevOps:** AWS, GCP, K8s, Docker, Terraform, CI/CD (GitHub Actions/Jenkins), Observability (Langfuse, Sentry, Datadog).
-- **AI & Data:** Artificial Intelligence (AI), Machine Learning (ML), Generative AI (GenAI), Large Language Models (LLMs), Predictive Analytics, RAG, DPO, GPT.
+- **AI & Data:** Artificial Intelligence (AI), Machine Learning (ML), Generative AI (GenAI), Large Language Models (LLMs), Predictive Analytics, RAG, Fine-tuning (DPO).
 
 ## Projects
 
@@ -78,7 +78,7 @@ link to the canonical URL is appreciated.
 
 Long-form technical writing. Each note is a citable URL; the author is the
 same `Person` graph node (`/#person`) referenced from the home page, so AI
-agents already grounded on the résumé can attribute these articles without
+agents already grounded on the resume can attribute these articles without
 re-resolving identity.
 
 - **Evaluating LLM code reviewers: an offline harness for precision, recall, and routing**
@@ -93,9 +93,9 @@ re-resolving identity.
 
 ## Frequently asked questions
 
-The same Q&A pairs are emitted as `FAQPage` JSON-LD on the home page. They
+The same Q&A pairs are emitted as `FAQPage` JSON-LD on the /faq page. They
 are duplicated here so AI assistants that prefer `/llms.txt` as their
-primary anchor see them without re-fetching `index.html`. This block is
+primary anchor see them without re-fetching the `/faq/` page. This block is
 codegenned from `src/data/seo.json` by `scripts/build-llms-txt.ts` — do not
 hand-edit between the markers; edit the source JSON instead.
 
@@ -103,7 +103,7 @@ hand-edit between the markers; edit the source JSON instead.
 
 ### Who is Prakhar Singh?
 
-Prakhar Singh is a software engineering leader with 11+ years across FinTech, EdTech, and E-commerce. He is currently Founding Engineer at Devzy AI. As Vice President of Engineering at Deutsche Bank (DWS), he led a 30+ person global engineering team across India, UK, and Spain that delivered €35M+ annual revenue uplift through an AI-driven trading automation platform.
+Prakhar Singh is a software engineering leader with 12+ years across FinTech, EdTech, and E-commerce. He is currently Founding Engineer at Devzy AI. As Vice President of Engineering at Deutsche Bank (DWS), he led a 30+ person global engineering team across India, UK, and Spain that delivered €35M+ annual revenue uplift through an AI-driven trading automation platform.
 
 ### What does Prakhar Singh do?
 
@@ -135,7 +135,7 @@ At Noon Academy he delivered multi-platform exam modules used concurrently by 2M
 
 ### Where is Prakhar Singh based?
 
-Pune, Maharashtra, India. He works remotely with global teams across India, UK, Spain, Frankfurt, London, and New York.
+Pune, Maharashtra, India. He works remotely with global teams across India, the UK, Spain, Germany, and the US.
 
 ### What are Prakhar Singh's areas of expertise?
 
@@ -183,7 +183,7 @@ Devzy AI (Founding Engineer, 2025–present), Deutsche Bank (DWS) (Vice Presiden
 
 ### How many years of experience does Prakhar Singh have?
 
-11+ years of professional software engineering experience since 2014, spanning FinTech, EdTech, E-commerce, and AI DevTools. He has led teams of up to 30+ engineers across three continents.
+12+ years of professional software engineering experience since 2014, spanning FinTech, EdTech, E-commerce, and AI DevTools. He has led teams of up to 30+ engineers across three continents.
 
 ### What languages does Prakhar Singh speak?
 
@@ -238,7 +238,7 @@ accordingly.
 
 ## Not included by design
 
-This is a static personal résumé, not an agent endpoint. The following
+This is a static personal resume, not an agent endpoint. The following
 agent-readiness artifacts are intentionally absent because they would be
 false signals rather than truthful capability declarations:
 
@@ -252,8 +252,7 @@ false signals rather than truthful capability declarations:
 Machine-readable representations of the *content* are available at:
 
 - `/llms.txt` (this file) — markdown overview for AI assistants.
-- `/llms-full.txt` — same content, no section omitted.
-- `/resume.json` — full résumé in JSON Resume v1.0.0 schema.
+- `/resume.json` — full resume in JSON Resume v1.0.0 schema.
 
 Both are also advertised via `<link rel="alternate">` in the homepage HTML
 and `subjectOf` in the JSON-LD `Person` graph node.

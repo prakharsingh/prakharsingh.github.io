@@ -41,4 +41,4 @@ revenue uplift through an AI-driven trading automation platform.
 | 2016 – 2017 | Senior JavaScript Engineer | TalkValley LLC |
 | 2014 – 2016 | Web Developer | Simsaw Software |
 
-Full résumé: <https://prakharsingh.github.io/> · [PDF](https://prakharsingh.github.io/cv_singh_prakhar.pdf) · [JSON Resume](https://prakharsingh.github.io/resume.json) · [Markdown for AI assistants](https://prakharsingh.github.io/llms.txt)
+Full resume: <https://prakharsingh.github.io/> · [PDF](https://prakharsingh.github.io/cv_singh_prakhar.pdf) · [JSON Resume](https://prakharsingh.github.io/resume.json) · [Markdown for AI assistants](https://prakharsingh.github.io/llms.txt)

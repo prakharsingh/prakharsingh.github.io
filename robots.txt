@@ -10,7 +10,7 @@ Disallow: /cv_singh_prakhar.pdf
 # part of RFC 9309, so strict robots.txt validators (Vercel, etc.) report
 # it as "Unknown directive". Conforming crawlers that don't recognize it
 # skip the line per RFC 9309's unknown-token rule; no operational impact.
-Content-Signal: search=yes, ai-input=yes, ai-train=no
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # Explicit allow for LLM training and retrieval crawlers.
 # This site is a personal resume — being citable by AI assistants
