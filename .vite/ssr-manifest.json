@@ -60,7 +60,7 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -93,10 +93,10 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js?commonjs-es-import": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js?commonjs-module": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/index.js?commonjs-es-import": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -339,10 +339,10 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js?commonjs-module": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "\u0000commonjsHelpers.js": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -615,7 +615,7 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.production.js": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom.production.js": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -648,7 +648,7 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/index.js": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1011,10 +1011,10 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js": [
-    "/assets/client-CS6gItkl.js"
+    "/assets/client-CYl43KwR.js"
   ],
   "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._ebaxdlzgdskouwne7lruwx3jga/node_modules/vite-react-ssg/dist/index.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1257,7 +1257,7 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "src/data/notes.json": [
-    "/assets/index-DM74BYu8.js"
+    "/assets/index-CbX19-H4.js"
   ],
   "src/data/resume.json": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1290,7 +1290,7 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "src/data/seo.json": [
-    "/assets/index-BLiC0vYr.js"
+    "/assets/index-CZ1XeVsD.js"
   ],
   "src/index.css": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1353,10 +1353,10 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "src/pages/faq/faq.tsx": [
-    "/assets/index-BLiC0vYr.js"
+    "/assets/index-CZ1XeVsD.js"
   ],
   "src/pages/faq/index.ts": [
-    "/assets/index-BLiC0vYr.js"
+    "/assets/index-CZ1XeVsD.js"
   ],
   "src/pages/home/fragments/basic-details.tsx": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1569,22 +1569,22 @@
     "/assets/roboto-slab-latin-400-normal-wzK1bUc4.woff"
   ],
   "src/pages/notes/index.ts": [
-    "/assets/index-DM74BYu8.js"
+    "/assets/index-CbX19-H4.js"
   ],
   "src/pages/notes/note-card.tsx": [
-    "/assets/index-DM74BYu8.js"
+    "/assets/index-CbX19-H4.js"
   ],
   "src/pages/notes/notes.tsx": [
-    "/assets/index-DM74BYu8.js"
+    "/assets/index-CbX19-H4.js"
   ],
   "src/pages/projects/index.ts": [
-    "/assets/index-CXd9BoJa.js"
+    "/assets/index-DOKAP6gG.js"
   ],
   "src/pages/projects/project-card.tsx": [
-    "/assets/index-CXd9BoJa.js"
+    "/assets/index-DOKAP6gG.js"
   ],
   "src/pages/projects/projects.tsx": [
-    "/assets/index-CXd9BoJa.js"
+    "/assets/index-DOKAP6gG.js"
   ],
   "src/routes.tsx": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
