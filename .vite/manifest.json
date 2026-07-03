@@ -1,6 +1,6 @@
 {
-  "_client-CYl43KwR.js": {
-    "file": "assets/client-CYl43KwR.js",
+  "_client-C9qjX6Sk.js": {
+    "file": "assets/client-C9qjX6Sk.js",
     "name": "client",
     "isDynamicEntry": true,
     "imports": [
@@ -8,12 +8,12 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-sWyidUJz.js",
+    "file": "assets/app-Cd6e84ae.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
-      "_client-CYl43KwR.js",
+      "_client-C9qjX6Sk.js",
       "src/pages/projects/index.ts",
       "src/pages/faq/index.ts",
       "src/pages/notes/index.ts"
@@ -165,7 +165,7 @@
     "src": "node_modules/.pnpm/@fontsource+roboto@5.2.10/node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff2"
   },
   "src/pages/faq/index.ts": {
-    "file": "assets/index-CZ1XeVsD.js",
+    "file": "assets/index-DfSJqZyv.js",
     "name": "index",
     "src": "src/pages/faq/index.ts",
     "isDynamicEntry": true,
@@ -174,7 +174,7 @@
     ]
   },
   "src/pages/notes/index.ts": {
-    "file": "assets/index-CbX19-H4.js",
+    "file": "assets/index-B03UqD58.js",
     "name": "index",
     "src": "src/pages/notes/index.ts",
     "isDynamicEntry": true,
@@ -183,7 +183,7 @@
     ]
   },
   "src/pages/projects/index.ts": {
-    "file": "assets/index-DOKAP6gG.js",
+    "file": "assets/index-BKnuhWfc.js",
     "name": "index",
     "src": "src/pages/projects/index.ts",
     "isDynamicEntry": true,
