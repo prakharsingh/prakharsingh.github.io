@@ -116,7 +116,7 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -177,10 +177,10 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js?commonjs-es-import": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js?commonjs-module": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/index.js?commonjs-es-import": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -647,10 +647,10 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "\u0000/home/runner/work/resume/resume/node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js?commonjs-module": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "\u0000commonjsHelpers.js": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1291,7 +1291,7 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom-client.production.js": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/cjs/react-dom.production.js": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1352,7 +1352,7 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/client.js": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "node_modules/.pnpm/react-dom@19.2.6_react@19.2.6/node_modules/react-dom/index.js": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -1702,7 +1702,7 @@
     "/assets/source-sans-3-latin-700-normal-CkzU-mV9.woff2",
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
-  "node_modules/.pnpm/react-router@7.15.0_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/react-router/dist/development/chunk-5KNZJZUH.mjs": [
+  "node_modules/.pnpm/react-router@7.18.1_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/react-router/dist/development/chunk-KS7C4IRE.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
     "/assets/roboto-cyrillic-ext-400-normal-CaK1767H.woff",
     "/assets/roboto-cyrillic-400-normal-CBPI_iaY.woff2",
@@ -1760,7 +1760,7 @@
     "/assets/source-sans-3-latin-700-normal-CkzU-mV9.woff2",
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
-  "node_modules/.pnpm/react-router@7.15.0_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/react-router/dist/development/dom-export.mjs": [
+  "node_modules/.pnpm/react-router@7.18.1_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/react-router/dist/development/dom-export.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
     "/assets/roboto-cyrillic-ext-400-normal-CaK1767H.woff",
     "/assets/roboto-cyrillic-400-normal-CBPI_iaY.woff2",
@@ -2051,12 +2051,12 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
   "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js": [
-    "/assets/client-DfbnUikT.js"
+    "/assets/client-BT5l3EcS.js"
   ],
-  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._cuyhzwriuccluydkwm7fniknwm/node_modules/vite-react-ssg/dist/index.mjs": [
+  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._nxqwyr4jmtvhryrhawmcvrgxwy/node_modules/vite-react-ssg/dist/index.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
     "/assets/roboto-cyrillic-ext-400-normal-CaK1767H.woff",
     "/assets/roboto-cyrillic-400-normal-CBPI_iaY.woff2",
@@ -2114,7 +2114,7 @@
     "/assets/source-sans-3-latin-700-normal-CkzU-mV9.woff2",
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
-  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._cuyhzwriuccluydkwm7fniknwm/node_modules/vite-react-ssg/dist/shared/vite-react-ssg.BhGKpaqQ.mjs": [
+  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._nxqwyr4jmtvhryrhawmcvrgxwy/node_modules/vite-react-ssg/dist/shared/vite-react-ssg.BhGKpaqQ.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
     "/assets/roboto-cyrillic-ext-400-normal-CaK1767H.woff",
     "/assets/roboto-cyrillic-400-normal-CBPI_iaY.woff2",
@@ -2172,7 +2172,7 @@
     "/assets/source-sans-3-latin-700-normal-CkzU-mV9.woff2",
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
-  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._cuyhzwriuccluydkwm7fniknwm/node_modules/vite-react-ssg/dist/shared/vite-react-ssg.C6pK7rvr.mjs": [
+  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._nxqwyr4jmtvhryrhawmcvrgxwy/node_modules/vite-react-ssg/dist/shared/vite-react-ssg.C6pK7rvr.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
     "/assets/roboto-cyrillic-ext-400-normal-CaK1767H.woff",
     "/assets/roboto-cyrillic-400-normal-CBPI_iaY.woff2",
@@ -2230,7 +2230,7 @@
     "/assets/source-sans-3-latin-700-normal-CkzU-mV9.woff2",
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
-  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._cuyhzwriuccluydkwm7fniknwm/node_modules/vite-react-ssg/dist/shared/vite-react-ssg.DTTf7HZy.mjs": [
+  "node_modules/.pnpm/vite-react-ssg@0.9.1-beta.1_prettier@3.8.3_react-dom@19.2.6_react@19.2.6__react-router-dom@7._nxqwyr4jmtvhryrhawmcvrgxwy/node_modules/vite-react-ssg/dist/shared/vite-react-ssg.DTTf7HZy.mjs": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
     "/assets/roboto-cyrillic-ext-400-normal-CaK1767H.woff",
     "/assets/roboto-cyrillic-400-normal-CBPI_iaY.woff2",
@@ -2579,7 +2579,7 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "src/data/notes.json": [
-    "/assets/index-fV74AhZH.js"
+    "/assets/index-CRMg2As6.js"
   ],
   "src/data/resume.json": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -2640,7 +2640,7 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "src/data/seo.json": [
-    "/assets/index-CLduE0z1.js"
+    "/assets/index-BetFF2gk.js"
   ],
   "src/hooks/use-page-title.ts": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -2817,10 +2817,10 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "src/pages/faq/faq.tsx": [
-    "/assets/index-CLduE0z1.js"
+    "/assets/index-BetFF2gk.js"
   ],
   "src/pages/faq/index.ts": [
-    "/assets/index-CLduE0z1.js"
+    "/assets/index-BetFF2gk.js"
   ],
   "src/pages/home/fragments/basic-details.tsx": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
@@ -3229,19 +3229,19 @@
     "/assets/source-sans-3-latin-700-normal-BBbVrHF_.woff"
   ],
   "src/pages/notes/note-card.tsx": [
-    "/assets/index-fV74AhZH.js"
+    "/assets/index-CRMg2As6.js"
   ],
   "src/pages/projects/engagement-card.tsx": [
-    "/assets/index-fV74AhZH.js"
+    "/assets/index-CRMg2As6.js"
   ],
   "src/pages/projects/index.ts": [
-    "/assets/index-fV74AhZH.js"
+    "/assets/index-CRMg2As6.js"
   ],
   "src/pages/projects/project-card.tsx": [
-    "/assets/index-fV74AhZH.js"
+    "/assets/index-CRMg2As6.js"
   ],
   "src/pages/projects/projects.tsx": [
-    "/assets/index-fV74AhZH.js"
+    "/assets/index-CRMg2As6.js"
   ],
   "src/routes.tsx": [
     "/assets/roboto-cyrillic-ext-400-normal-qHufge6k.woff2",
