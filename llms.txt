@@ -55,16 +55,17 @@ link to the canonical URL is appreciated.
 
 - **Master of Computer Applications**, Maharishi Markandeshwar University
   (2011 – 2014). Computer Science.
-- **Bachelor of Computer Applications**, Chhatrapati Shahu Ji Maharaj University
+- **Bachelor of Computer Applications**, Chhatrapati Shahuji Maharaj University
   (2008 – 2011). Computer Science.
 
 ## Skills
 
-- **Leadership:** Engineering Strategy, Agile (Scrum, Kanban), Roadmapping, Hiring, Mentoring, Stakeholder Engagement.
-- **Languages & Frontend:** JavaScript (ES6+), TypeScript, Node.js, Python, React.js, React Native, WebRTC.
-- **Data & APIs:** Distributed Systems, REST, GraphQL, APIs, MongoDB, PostgreSQL, Redis.
+- **Languages:** JavaScript (ES6+), TypeScript, Python, Go.
+- **Languages & Frontend:** React.js, React Native, Next.js, WebRTC.
+- **Backend & Distributed Systems:** Node.js, REST, GraphQL, APIs, Distributed Systems.
 - **Cloud & DevOps:** AWS, GCP, CI/CD (GitHub Actions/Jenkins), Observability (Sentry, Datadog), Kubernetes (K8s), Docker, Terraform.
-- **AI & ML:** Agentic AI, Retrieval-Augmented Generation (RAG), LLM Orchestration, LLM Evaluation, Large Language Models (LLMs), Generative AI (GenAI), Machine Learning (ML), Predictive Analytics, Claude Code, Cursor, GitHub Copilot, Codex.
+- **AI Engineering:** Agentic AI, Retrieval-Augmented Generation (RAG), LLM Orchestration, LLM Evaluation, Large Language Models (LLMs), Generative AI (GenAI), Machine Learning (ML), Predictive Analytics.
+- **AI Developer Tools:** Claude Code, Cursor, GitHub Copilot, Codex, OpenCode.
 
 ## Projects
 

@@ -1,6 +1,6 @@
 {
-  "_client-BT5l3EcS.js": {
-    "file": "assets/client-BT5l3EcS.js",
+  "_client-Cjeexr0x.js": {
+    "file": "assets/client-Cjeexr0x.js",
     "name": "client",
     "isDynamicEntry": true,
     "imports": [
@@ -8,12 +8,12 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-B8itvz9k.js",
+    "file": "assets/app-BU4i7Qgw.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
-      "_client-BT5l3EcS.js",
+      "_client-Cjeexr0x.js",
       "src/pages/projects/index.ts",
       "src/pages/faq/index.ts"
     ],
@@ -304,7 +304,7 @@
     "src": "node_modules/.pnpm/@fontsource+source-sans-3@5.3.0/node_modules/@fontsource/source-sans-3/files/source-sans-3-vietnamese-700-normal.woff2"
   },
   "src/pages/faq/index.ts": {
-    "file": "assets/index-BetFF2gk.js",
+    "file": "assets/index-BKfbj7nv.js",
     "name": "index",
     "src": "src/pages/faq/index.ts",
     "isDynamicEntry": true,
@@ -313,7 +313,7 @@
     ]
   },
   "src/pages/projects/index.ts": {
-    "file": "assets/index-CRMg2As6.js",
+    "file": "assets/index-ChY6jeBP.js",
     "name": "index",
     "src": "src/pages/projects/index.ts",
     "isDynamicEntry": true,

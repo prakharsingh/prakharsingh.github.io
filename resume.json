@@ -151,7 +151,7 @@
       ]
     },
     {
-      "institution": "Chhatrapati Shahu Ji Maharaj University",
+      "institution": "Chhatrapati Shahuji Maharaj University",
       "url": "https://csjmu.ac.in",
       "area": "Computer Science",
       "studyType": "Bachelor",
@@ -165,38 +165,31 @@
   ],
   "skills": [
     {
-      "name": "Leadership & Management",
+      "name": "Languages",
       "keywords": [
-        "Engineering Strategy",
-        "Agile (Scrum, Kanban)",
-        "Roadmapping",
-        "Hiring",
-        "Mentoring",
-        "Stakeholder Engagement"
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "Python",
+        "Go"
       ]
     },
     {
       "name": "Core Technologies (Web/Mobile)",
       "keywords": [
-        "JavaScript (ES6+)",
-        "TypeScript",
-        "Node.js",
-        "Python",
         "React.js",
         "React Native",
+        "Next.js",
         "WebRTC"
       ]
     },
     {
-      "name": "Data & Infrastructure",
+      "name": "Backend & Distributed Systems",
       "keywords": [
-        "Distributed Systems",
+        "Node.js",
         "REST",
         "GraphQL",
         "APIs",
-        "MongoDB",
-        "PostgreSQL",
-        "Redis"
+        "Distributed Systems"
       ]
     },
     {
@@ -212,7 +205,7 @@
       ]
     },
     {
-      "name": "AI & Machine Learning",
+      "name": "AI Engineering",
       "keywords": [
         "Agentic AI",
         "Retrieval-Augmented Generation (RAG)",
@@ -221,11 +214,17 @@
         "Large Language Models (LLMs)",
         "Generative AI (GenAI)",
         "Machine Learning (ML)",
-        "Predictive Analytics",
+        "Predictive Analytics"
+      ]
+    },
+    {
+      "name": "AI Developer Tools",
+      "keywords": [
         "Claude Code",
         "Cursor",
         "GitHub Copilot",
-        "Codex"
+        "Codex",
+        "OpenCode"
       ]
     }
   ],
@@ -252,6 +251,6 @@
   "meta": {
     "canonical": "https://prakharsingh.github.io/resume.json",
     "version": "1.0.0",
-    "lastModified": "2026-07-25"
+    "lastModified": "2026-09-05"
   }
 }
